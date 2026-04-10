@@ -1,0 +1,71 @@
+header {
+  position: fixed;
+  top: 35px;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    padding: 10px 20px;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3.5px);
+
+    span {
+      display: inline-block;
+      line-height: 1;
+      color: #000;
+      font-family: "Ofform TRIAL";
+      font-size: 60px;
+      font-weight: 400;
+      margin-top: -0.2em;
+    }
+  }
+
+  menu {
+    padding: 23px 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+    border: 1px solid #fff;
+    backdrop-filter: blur(3.5px);
+    background: rgba(255, 255, 255, 0.5);
+
+    li:not(:last-of-type) {
+      margin-right: 21px;
+    }
+
+    a {
+      color: #1e2f30;
+      font-family: "Akzidenz-Grotesk Pro Ext";
+      font-size: 16px;
+      font-weight: 400;
+      border-radius: 8px;
+      padding: 10px 12px;
+
+      transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+
+      &.active {
+        background-color: #1e2f30;
+        color: #fff;
+      }
+
+      &:hover {
+        color: #1e2f30;
+        background-color: #c3f994;
+      }
+    }
+  }
+}

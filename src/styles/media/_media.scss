@@ -1,0 +1,146 @@
+.quote-block {
+  padding: 140px 0 150px;
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  &__text {
+    margin-bottom: 70px;
+
+    color: #1e2f30;
+    font-family: "SF Pro";
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__authors {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    &-name {
+      color: #1e2f30;
+      font-family: "SF Pro";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150.4%;
+    }
+
+    &-role {
+      color: #1e2f30;
+      font-family: "SF Pro";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150.4%;
+    }
+  }
+}
+
+.press-section {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.press-card {
+  padding: 24px;
+  border-radius: 15px;
+  background: #fff;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__logo {
+    text-align: center;
+    margin-bottom: 21px;
+
+    img {
+      height: auto;
+    }
+  }
+
+  &__text {
+    color: #1e2f30;
+    font-family: "SF Pro";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 119.365%;
+  }
+}
+
+.insights-section {
+  padding: 100px 0 280px;
+  &__label {
+    margin-bottom: 50px;
+    color: #1e2f30;
+    font-family: "Akzidenz-Grotesk Pro Ext";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.insight-card {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  gap: 180px;
+  border-radius: 20px;
+  background: #fff;
+  padding: 11px;
+
+  &__image {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    color: #1e2f30;
+    font-family: "SF Pro";
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__description {
+    margin: 63px 0;
+    max-width: 614px;
+    color: #1e2f30;
+    font-family: "SF Pro";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 119.365%;
+  }
+
+  &__date {
+    color: #1e2f30;
+    font-family: "SF Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 119.365%;
+  }
+}

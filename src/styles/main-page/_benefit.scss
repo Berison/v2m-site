@@ -1,0 +1,113 @@
+.benefits-section {
+  &__inner {
+  }
+}
+
+.benefit-card {
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(2px);
+  padding: 35px;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 50px;
+  }
+
+  &__number {
+    color: #1e2f30;
+    font-family: "SF Pro";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__content {
+    max-width: 68%;
+  }
+
+  &__title {
+    color: #1e2f30;
+    font-family: "SF Pro";
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__description {
+    margin: 50px 0;
+
+    p {
+      color: #1e2f30;
+      font-family: "SF Pro";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__list {
+    max-width: 80%;
+
+    margin-bottom: 73px;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+
+    padding: 16px 0;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid rgba(30, 47, 48, 0.3);
+    }
+  }
+
+  &__list-text {
+    p {
+      color: #000;
+      font-family: "SF Pro";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+  }
+
+  &__stat-value {
+    margin-bottom: 22px;
+
+    span {
+      color: #c3f994;
+      font-family: "Akzidenz-Grotesk Pro Ext";
+      font-size: 72px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100.025%;
+    }
+  }
+
+  &__stat-text {
+    p {
+      color: #000;
+      font-family: "SF Pro";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 119.365%;
+    }
+  }
+}

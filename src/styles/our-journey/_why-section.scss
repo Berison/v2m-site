@@ -1,0 +1,123 @@
+.why-section {
+  padding-top: 190px;
+  &__content {
+  }
+
+  &__header {
+    padding-bottom: 200px;
+  }
+
+  &__title {
+    color: #1e2f30;
+    font-family: "SF Pro";
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 119.365%;
+  }
+
+  &__timeline {
+    padding: 60px 0;
+
+    max-width: 1070px;
+    width: 100%;
+
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__line {
+    position: absolute;
+    top: 0;
+    left: 314px;
+    height: 100%;
+  }
+
+  &__line-stick {
+    width: 1px;
+    height: 100%;
+    background-color: #1e2f30;
+  }
+
+  &__list {
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &:not(:last-of-type) {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__year {
+    display: flex;
+    align-items: center;
+    gap: 63px;
+
+    p {
+      color: #1e2f30;
+      font-family: "SF Pro";
+      font-size: 92px;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0.6px;
+      width: 230px;
+      text-align: left;
+    }
+  }
+
+  .dot-wrap {
+    height: 44px;
+    width: 44px;
+  }
+
+  &__item-content {
+    max-width: 690px;
+    width: 100%;
+  }
+
+  &__item-title {
+    margin-bottom: 50px;
+
+    color: #000;
+    font-family: "SF Pro";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__amount {
+    color: #1e2f30;
+    font-family: "SF Pro";
+    font-size: 92px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+  }
+
+  &__amount-text {
+    color: #000;
+    font-family: "SF Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__image {
+    padding: 180px 0;
+    text-align: center;
+  }
+}
+
+.why-section__item_only-title {
+  align-items: center;
+  .why-section__item-title {
+    margin-bottom: 0;
+  }
+}
