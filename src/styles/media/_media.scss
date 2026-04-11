@@ -72,6 +72,10 @@
 
     img {
       height: auto;
+
+      &.white-edit {
+        display: none;
+      }
     }
   }
 
@@ -87,12 +91,20 @@
   &:hover {
     background-color: #1e2f30;
 
-    .press-card__logo {
+    .press-card__logo img:not(.white-edit) {
       filter: brightness(0) invert(1);
     }
 
     .press-card__text {
       color: #fff;
+    }
+
+    .white-edit {
+      display: inline;
+    }
+
+    .green-edit {
+      display: none;
     }
   }
 }
