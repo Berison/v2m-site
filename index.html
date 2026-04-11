@@ -342,16 +342,32 @@
             <div class="dots">
               <div class="dot-wrap">
                 <button class="dot dot-first-up" aria-label="More info">
-                  <span class="dot-tooltip">Tooltip</span>
+                  <span class="dot-tooltip dot-tooltip-dark"
+                    >Works with V2M App available for smartphones and
+                    tablets</span
+                  >
                 </button>
                 <button
                   class="dot dot-second-mid dot-white"
                   aria-label="More info"
                 >
-                  <span class="dot-tooltip">Tooltip 1</span>
+                  <span class="dot-tooltip dot-tooltip-white"
+                    >V2M proprietary circuit board</span
+                  >
                 </button>
                 <button class="dot dot-third-down" aria-label="More info">
-                  <span class="dot-tooltip">Tooltip</span>
+                  <span class="dot-tooltip dot-tooltip-dark"
+                    >Designed and produced from widely available components in
+                    the US</span
+                  >
+                </button>
+                <button
+                  class="dot dot-fourth-end dot-white"
+                  aria-label="More info"
+                >
+                  <span class="dot-tooltip dot-tooltip-white"
+                    >Fully autonomous from the vehicle and Internet</span
+                  >
                 </button>
               </div>
             </div>
@@ -362,7 +378,9 @@
           </div>
         </div>
         <div class="how-it-works-button">
-          <button type="button" class="green-button">Become a client</button>
+          <button type="button" class="green-button form-popup">
+            Become a client
+          </button>
         </div>
       </div>
     </section>
@@ -389,25 +407,25 @@
                   class="dot dot-white dot-first-down"
                   aria-label="More info"
                 >
-                  <span class="dot-tooltip">Tooltip</span>
+                  <span class="dot-tooltip">Bevel gear bushing</span>
                 </button>
                 <button
                   class="dot dot-white dot-second-down"
                   aria-label="More info"
                 >
-                  <span class="dot-tooltip">Tooltip 1</span>
+                  <span class="dot-tooltip">Rear left hub</span>
                 </button>
                 <button
                   class="dot dot-white dot-third-down"
                   aria-label="More info"
                 >
-                  <span class="dot-tooltip">Tooltip 2</span>
+                  <span class="dot-tooltip">Alternator</span>
                 </button>
                 <button
                   class="dot dot-white dot-fourth-up"
                   aria-label="More info"
                 >
-                  <span class="dot-tooltip">Tooltip 2</span>
+                  <span class="dot-tooltip">Front right hub</span>
                 </button>
               </div>
             </div>
@@ -656,7 +674,9 @@
           </div>
         </div>
         <div class="impact-button">
-          <button type="button" class="green-button">Become a client</button>
+          <button type="button" class="green-button form-popup">
+            Become a client
+          </button>
         </div>
       </div>
     </section>
@@ -734,6 +754,72 @@
         </div>
       </div>
     </footer>
+    <div class="popup" id="formPopup" aria-hidden="true">
+      <div class="popup__backdrop"></div>
+
+      <div
+        class="popup__content"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Form popup"
+      >
+        <button class="popup__close" type="button" aria-label="Close popup">
+          X
+        </button>
+
+        <div class="popup__body">
+          <div class="footer__col footer__col--connect">
+            <h3 class="footer__title">PLEASE, FILL IN THE FORM</h3>
+
+            <form class="footer-form">
+              <div class="footer-form__row footer-form__row--top">
+                <label class="footer-field">
+                  <input type="text" placeholder="Full Name" />
+                </label>
+
+                <label class="footer-field">
+                  <input type="email" placeholder="Email" />
+                </label>
+
+                <label class="footer-field">
+                  <input type="text" placeholder="Company" />
+                </label>
+              </div>
+
+              <div class="footer-form__row footer-form__row--bottom">
+                <label class="footer-field footer-field--message">
+                  <input type="text" placeholder="Message" />
+                </label>
+
+                <button type="submit" class="footer-form__button">Send</button>
+              </div>
+            </form>
+
+            <div class="footer__bottom">
+              <div class="footer__links">
+                <a
+                  class="non-underline"
+                  href="https://maps.google.com/?q=220+E+23rd+St,+New+York,+NY+10010"
+                  target="_blank"
+                >
+                  220 E 23rd St, New York, NY, 10010, United States
+                </a>
+                <a href="tel:+12124332922">+1 212 433-29-22</a>
+              </div>
+
+              <div class="footer__links">
+                <a
+                  href="https://www.linkedin.com/company/v2minc/"
+                  target="_blank"
+                  >LinkedIn</a
+                >
+                <a href="mailto:ceo@v2minc.com">ceo@v2minc.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

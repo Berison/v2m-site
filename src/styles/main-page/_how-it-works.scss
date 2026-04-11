@@ -57,16 +57,49 @@
     &-first-up {
       top: 46px;
       left: 114px;
+
+      .dot-tooltip {
+        left: 100%;
+        bottom: 50%;
+        transform: translateY(50%) translateX(28px);
+      }
     }
 
     &-second-mid {
       top: 237px;
       left: 139px;
+
+      .dot-tooltip {
+        left: 100%;
+        bottom: 50%;
+        transform: translateY(50%) translateX(28px);
+      }
     }
 
     &-third-down {
       bottom: 67px;
       right: 169px;
+
+      .dot-tooltip {
+        left: auto;
+        right: 99%;
+        bottom: auto;
+        top: 53%;
+        transform: translateX(0) translateY(28px);
+      }
+    }
+
+    &-fourth-end {
+      bottom: 270px;
+      right: 169px;
+
+      .dot-tooltip {
+        left: auto;
+        right: 0%;
+        bottom: auto;
+        top: 75%;
+        transform: translateX(0) translateY(28px);
+      }
     }
   }
 }
