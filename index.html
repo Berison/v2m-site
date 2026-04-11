@@ -12,10 +12,18 @@
   </head>
   <body>
     <section class="hero">
-      <video class="hero__video" autoplay muted loop playsinline preload="auto">
-        <source src="/src/assets/back-video.mp4" type="video/mp4" />
-      </video>
-    </section>
+  <video
+    class="hero__video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="/src/assets/back-poster.jpg"
+  >
+    <source src="/src/assets/back-video.mp4" type="video/mp4" />
+  </video>
+</section>
     <header>
       <div class="container">
         <div class="header-inner">
@@ -384,7 +392,7 @@
         </div>
       </div>
     </section>
-    <section class="why-we-are-here">
+    <!-- <section class="why-we-are-here">
       <div class="container">
         <div class="why-we-are-here-inner">
           <div class="content-title">
@@ -433,6 +441,9 @@
               <img src="./src/assets/car-transparent.png" alt="Car" />
             </div>
           </div>
+          <div class="test-result" id="testResult">
+  <div class="test-result__text"></div>
+</div>
           <div class="sound-cards">
             <div class="sound-card">
               <div class="sound-player">
@@ -467,17 +478,17 @@
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-1" value="1" />
+                  <input type="radio" name="sound-1" value="2" />
                   <span>Belt tensioner</span>
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-1" value="1" />
+                  <input type="radio" name="sound-1" value="3" />
                   <span>Blower motor</span>
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-1" value="1" />
+                  <input type="radio" name="sound-1" value="4" />
                   <span>Alternator</span>
                 </label>
               </div>
@@ -515,17 +526,17 @@
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-2" value="1" />
+                  <input type="radio" name="sound-2" value="2" />
                   <span>Belt tensioner</span>
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-2" value="1" />
+                  <input type="radio" name="sound-2" value="3" />
                   <span>Blower motor</span>
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-2" value="1" />
+                  <input type="radio" name="sound-2" value="4" />
                   <span>Alternator</span>
                 </label>
               </div>
@@ -563,17 +574,17 @@
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-3" value="1" />
+                  <input type="radio" name="sound-3" value="2" />
                   <span>Belt tensioner</span>
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-3" value="1" />
+                  <input type="radio" name="sound-3" value="3" />
                   <span>Blower motor</span>
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-3" value="1" />
+                  <input type="radio" name="sound-3" value="4" />
                   <span>Alternator</span>
                 </label>
               </div>
@@ -611,31 +622,31 @@
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-4" value="1" />
+                  <input type="radio" name="sound-4" value="2" />
                   <span>Belt tensioner</span>
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-4" value="1" />
+                  <input type="radio" name="sound-4" value="3" />
                   <span>Blower motor</span>
                 </label>
 
                 <label class="sound-check-item">
-                  <input type="radio" name="sound-4" value="1" />
+                  <input type="radio" name="sound-4" value="4" />
                   <span>Alternator</span>
                 </label>
               </div>
             </div>
           </div>
           <div class="why-we-are-here-button">
-            <button type="button" class="green-button">
+            <button type="button" class="green-button test-button">
               Test your hearing
             </button>
           </div>
         </div>
       </div>
-    </section>
-    <section class="impact">
+    </section> -->
+    <!-- <section class="impact">
       <div class="container">
         <div class="impact-inner">
           <div class="content-title">
@@ -679,8 +690,8 @@
           </button>
         </div>
       </div>
-    </section>
-    <footer class="footer">
+    </section> -->
+    <!-- <footer class="footer">
       <div class="footer__col footer__col--brand">
         <a href="./index.html" class="footer__logo">V2M</a>
 
@@ -753,7 +764,7 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
     <div class="popup" id="formPopup" aria-hidden="true">
       <div class="popup__backdrop"></div>
 

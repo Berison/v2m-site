@@ -1,6 +1,7 @@
 import './styles/main.scss';
 import './scripts/accordion';
 import './scripts/popup';
+import './scripts/game';
 
 /**
  * Updates the visual progress fill for a range input.
