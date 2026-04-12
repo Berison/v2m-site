@@ -10,7 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>V2M</title>
   </head>
-  <body>
+  <body data-scroll-container id="body">
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
     <section class="hero">
       <video
         class="hero__video"
@@ -34,14 +36,14 @@
             <li><a href="./our-journey.html">Our journey</a></li>
             <li><a href="./team.html">Team</a></li>
             <li><a href="./media.html">Media</a></li>
-            <li><a href="#">Contact us</a></li>
+            <li><a href="#" class="form-popup">Contact us</a></li>
           </menu>
         </div>
       </div>
     </header>
     <section class="about-section">
-      <div class="container">
-        <div class="about-inner">
+      <div class="container" data-scroll-section>
+        <div class="about-inner" data-scroll data-scroll-speed="0.1">
           <h2>
             V2M brings AI-powered, data-driven intelligence to vehicle
             diagnostics.
@@ -58,7 +60,11 @@
     <section class="benefits-section">
       <div class="container">
         <div class="benefits-section__inner">
-          <article class="benefit-card">
+          <article
+            class="benefit-card"
+            data-scroll
+            data-scroll-class="is-inview"
+          >
             <div class="benefit-card__number">
               <span>(01)</span>
             </div>
@@ -196,7 +202,11 @@
               </div>
             </div>
           </article>
-          <article class="benefit-card">
+          <article
+            class="benefit-card"
+            data-scroll
+            data-scroll-class="is-inview"
+          >
             <div class="benefit-card__number">
               <span>(02)</span>
             </div>
@@ -297,7 +307,9 @@
 
                 <div class="benefit-card__stat">
                   <div class="benefit-card__stat-value">
-                    <span>30-50%</span>
+                    <span>30</span>
+                    <span class="not">-</span>
+                    <span>50%</span>
                   </div>
                   <div class="benefit-card__stat-text">
                     <p>More detected issues that require repair</p>
@@ -321,11 +333,11 @@
     <section class="how-it-works">
       <div class="container">
         <div class="how-it-works-inner">
-          <div class="content-left">
-            <div class="content-title">
+          <div class="content-left" data-scroll-section>
+            <div class="content-title" data-scroll data-scroll-speed="0.1">
               <h3>How it works</h3>
             </div>
-            <div class="content-left-text">
+            <div class="content-left-text" data-scroll data-scroll-speed="0.1">
               <p>
                 Control units are temporarily installed to vehicle’s front and
                 back, the vehicle is driven for a few minutes while sensors
@@ -394,11 +406,11 @@
     </section>
     <section class="why-we-are-here">
       <div class="container">
-        <div class="why-we-are-here-inner">
-          <div class="content-title">
+        <div class="why-we-are-here-inner" data-scroll-section>
+          <div class="content-title" data-scroll data-scroll-speed="0.1">
             <h3>Why we are here</h3>
           </div>
-          <div class="content-text">
+          <div class="content-text" data-scroll data-scroll-speed="0.1">
             <p>
               Across the automotive value chain, critical diagnostic and
               maintenance decisions are still driven by human judgment rather
@@ -647,34 +659,50 @@
       </div>
     </section>
     <section class="impact">
-      <div class="container">
+      <div class="container" data-scroll-section>
         <div class="impact-inner">
-          <div class="content-title">
+          <div class="content-title" data-scroll data-scroll-speed="0.1">
             <h3>The impact</h3>
           </div>
           <div class="benefits-inner">
-            <div class="benefits-inner-title">
+            <div
+              class="benefits-inner-title"
+              data-scroll
+              data-scroll-speed="0.1"
+            >
               <h2>
                 Why automotive industry players need V2M One and adoption of
                 data-based diagnostics
               </h2>
             </div>
             <div class="benefits-inner-list">
-              <div class="benefit-item">
+              <div
+                class="benefit-item"
+                data-scroll
+                data-scroll-class="is-inview"
+              >
                 <div class="benefit-item__number">(01)</div>
                 <div class="benefit-item__text">
                   Reduce recall and warranty costs through early, objective
                   detection
                 </div>
               </div>
-              <div class="benefit-item">
+              <div
+                class="benefit-item"
+                data-scroll
+                data-scroll-class="is-inview"
+              >
                 <div class="benefit-item__number">(02)</div>
                 <div class="benefit-item__text">
                   Standardize and revolutionize used-car appraisals with
                   verified diagnostic data
                 </div>
               </div>
-              <div class="benefit-item">
+              <div
+                class="benefit-item"
+                data-scroll
+                data-scroll-class="is-inview"
+              >
                 <div class="benefit-item__number">(03)</div>
                 <div class="benefit-item__text">
                   Enhance fleet and autonomous vehicle monitoring by giving

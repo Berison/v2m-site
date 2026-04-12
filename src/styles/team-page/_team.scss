@@ -59,6 +59,15 @@
 
   position: relative;
 
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+
+  &.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   @media (max-width: 890px) {
     flex-direction: column;
     padding: 10px 10px 20px;
@@ -193,6 +202,15 @@
   max-width: 1400px;
   width: 100%;
 
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+
+  &.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   h2 {
     color: #1e2f30;
     font-family: "SF Pro";
@@ -216,6 +234,15 @@
     background: #fff;
     padding: 43px;
     position: relative;
+
+    opacity: 0;
+    transform: translateX(60px);
+    transition: all 0.8s ease;
+
+    &.is-inview {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
     @media (max-width: 780px) {
       padding: 10px;

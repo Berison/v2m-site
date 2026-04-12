@@ -2,6 +2,9 @@ import './styles/main.scss';
 import './scripts/accordion';
 import './scripts/popup';
 import './scripts/game';
+import LocomotiveScroll from 'locomotive-scroll';
+import { CountUp } from 'countup.js';
+import 'locomotive-scroll/dist/locomotive-scroll.css';
 
 /**
  * Updates the visual progress fill for a range input.
@@ -126,3 +129,144 @@ function stopAllAudios(currentAudio) {
 }
 
 document.addEventListener('DOMContentLoaded', initSoundCards);
+
+function initProCursor() {
+  const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
+  if (!isDesktop) return;
+
+  const cursor = document.querySelector('.cursor');
+  const dot = document.querySelector('.cursor-dot');
+
+  if (!cursor || !dot) return;
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+
+  let cursorX = mouseX;
+  let cursorY = mouseY;
+
+  let dotX = mouseX;
+  let dotY = mouseY;
+
+  let rafId = null;
+
+  const interactiveSelector =
+    'a, button, .magnetic, [data-cursor-hover], input, textarea, select';
+
+  const magneticItems = document.querySelectorAll('.magnetic');
+
+  const showCursor = () => {
+    cursor.classList.add('is-visible');
+    dot.classList.add('is-visible');
+  };
+
+  const hideCursor = () => {
+    cursor.classList.remove('is-visible');
+    dot.classList.remove('is-visible');
+  };
+
+  const onMouseMove = e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    showCursor();
+
+    const target = e.target.closest(interactiveSelector);
+    cursor.classList.toggle('is-hover', !!target);
+  };
+
+  const animate = () => {
+    cursorX += (mouseX - cursorX) * 0.12;
+    cursorY += (mouseY - cursorY) * 0.12;
+
+    dotX += (mouseX - dotX) * 0.28;
+    dotY += (mouseY - dotY) * 0.28;
+
+    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+    dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+
+    rafId = requestAnimationFrame(animate);
+  };
+
+  document.addEventListener('mousemove', onMouseMove);
+
+  document.addEventListener('mousedown', () => {
+    cursor.classList.add('is-pressed');
+  });
+
+  document.addEventListener('mouseup', () => {
+    cursor.classList.remove('is-pressed');
+  });
+
+  document.addEventListener('mouseleave', hideCursor);
+  document.addEventListener('mouseenter', showCursor);
+
+  magneticItems.forEach(item => {
+    item.addEventListener('mousemove', e => {
+      const rect = item.getBoundingClientRect();
+      const relX = e.clientX - rect.left - rect.width / 2;
+      const relY = e.clientY - rect.top - rect.height / 2;
+
+      item.style.transform = `translate(${relX * 0.18}px, ${relY * 0.18}px)`;
+    });
+
+    item.addEventListener('mouseleave', () => {
+      item.style.transform = 'translate(0, 0)';
+    });
+  });
+
+  animate();
+
+  window.addEventListener('beforeunload', () => {
+    if (rafId) cancelAnimationFrame(rafId);
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true,
+  });
+
+  const counterEl = document.querySelector('#stats-count');
+
+  if (counterEl) {
+    const counter = new CountUp(counterEl, 1250, {
+      duration: 2.5,
+      separator: ' ',
+    });
+
+    if (!counter.error) {
+      counter.start();
+    } else {
+      console.error(counter.error);
+    }
+  }
+
+  const cards = document.querySelectorAll('.benefit-card');
+
+  cards.forEach(card => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        const numbers = card.querySelectorAll('.benefit-card__stat-value span:not(.not)');
+
+        numbers.forEach(el => {
+          const value = el.innerText.replace('%', '').replace('x', '');
+
+          const count = new CountUp(el, value, {
+            duration: 2,
+            suffix: el.innerText.includes('%') ? '%' : '',
+            prefix: el.innerText.includes('x') ? 'x' : '',
+          });
+
+          count.start();
+        });
+
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(card);
+  });
+
+  initProCursor();
+});

@@ -11,6 +11,8 @@
     <title>Media</title>
   </head>
   <body>
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
     <header>
       <div class="container">
         <div class="header-inner">
@@ -28,7 +30,7 @@
     </header>
     <section class="quote-block">
       <div class="container">
-        <div class="quote-block__inner">
+        <div class="quote-block__inner" data-scroll-section>
           <div class="quote-block__icon" aria-hidden="true">
             <svg
               width="148"
@@ -49,7 +51,11 @@
               />
             </svg>
           </div>
-          <div class="quote-block__content">
+          <div
+            class="quote-block__content"
+            data-scroll
+            data-scroll-speed="-0.1"
+          >
             <h2 class="quote-block__text">
               The solution V2M is proposing could very well delight customers
               and add to the value proposition that many brands wish to offer
@@ -92,7 +98,7 @@
     <section class="press-section">
       <div class="container">
         <div class="press-section__grid">
-          <div class="press-card">
+          <div class="press-card" data-scroll data-scroll-class="is-inview">
             <div class="press-card__logo">
               <img
                 src="./src/assets/telematics-wire.svg"
@@ -104,7 +110,7 @@
             </div>
           </div>
 
-          <div class="press-card">
+          <div class="press-card" data-scroll data-scroll-class="is-inview">
             <div class="press-card__logo">
               <img src="./src/assets/ee-news.svg" alt="EE News" />
             </div>
@@ -113,7 +119,7 @@
             </div>
           </div>
 
-          <div class="press-card">
+          <div class="press-card" data-scroll data-scroll-class="is-inview">
             <div class="press-card__logo">
               <img src="./src/assets/techacute.svg" alt="TechAcute" />
             </div>
@@ -123,7 +129,7 @@
             </div>
           </div>
 
-          <div class="press-card">
+          <div class="press-card" data-scroll data-scroll-class="is-inview">
             <div class="press-card__logo">
               <img src="./src/assets/telecom-drive.svg" alt="Telecom Drive" />
             </div>
@@ -132,7 +138,7 @@
             </div>
           </div>
 
-          <div class="press-card">
+          <div class="press-card" data-scroll data-scroll-class="is-inview">
             <div class="press-card__logo">
               <img
                 src="./src/assets/wonderful-engineering.svg"
@@ -150,7 +156,7 @@
             </div>
           </div>
 
-          <div class="press-card">
+          <div class="press-card" data-scroll data-scroll-class="is-inview">
             <div class="press-card__logo">
               <img
                 src="./src/assets/interesting-engineering.svg"
@@ -162,17 +168,25 @@
             </div>
           </div>
 
-          <div class="press-card">
+          <div class="press-card" data-scroll data-scroll-class="is-inview">
             <div class="press-card__logo">
-              <img src="./src/assets/new-atlas.svg" alt="New Atlas" class="green-edit" />
-              <img src="./src/assets/new-atlas-white.svg" alt="New Atlas" class="white-edit" />
+              <img
+                src="./src/assets/new-atlas.svg"
+                alt="New Atlas"
+                class="green-edit"
+              />
+              <img
+                src="./src/assets/new-atlas-white.svg"
+                alt="New Atlas"
+                class="white-edit"
+              />
             </div>
             <div class="press-card__text">
               V2M tech is designed to catch car problems – by listening for them
             </div>
           </div>
 
-          <div class="press-card">
+          <div class="press-card" data-scroll data-scroll-class="is-inview">
             <div class="press-card__logo">
               <img src="./src/assets/techacute.svg" alt="TechAcute" />
             </div>
@@ -182,7 +196,7 @@
             </div>
           </div>
 
-          <div class="press-card">
+          <div class="press-card" data-scroll data-scroll-class="is-inview">
             <div class="press-card__logo">
               <img src="./src/assets/ieee.svg" alt="IEEE Xplore" />
             </div>
@@ -194,10 +208,15 @@
       </div>
     </section>
     <section class="insights-section">
-      <div class="container">
+      <div class="container" data-scroll-section>
         <div class="insights-section__label">V2M INSIGHTS</div>
 
-        <a href="./report.html" class="insight-card">
+        <a
+          href="./report.html"
+          class="insight-card"
+          data-scroll
+          data-scroll-speed="0.1"
+        >
           <div class="insight-card__image">
             <img src="./src/assets/report.png" alt="Driving Innovation" />
           </div>
