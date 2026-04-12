@@ -8,12 +8,31 @@
     margin-bottom: 50px;
     max-width: 90%;
 
+    @media (max-width: 780px) {
+      max-width: none;
+      margin-bottom: 20px;
+    }
+
     p {
       color: #1e2f30;
       font-family: "SF Pro";
       font-size: 42px;
       font-weight: 400;
       line-height: 115%;
+
+      @media (max-width: 780px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .dot {
+    @media (max-width: 780px) {
+      transform: scale(0.8);
+    }
+
+    @media (max-width: 600px) {
+      transform: scale(0.5);
     }
   }
 
@@ -24,26 +43,78 @@
     height: 580px;
 
     margin: 0 auto 50px;
+
+    @media (max-width: 780px) {
+      width: 484px;
+      height: 348px;
+    }
+
+    @media (max-width: 600px) {
+      width: 320px;
+      height: 222px;
+
+      margin: 0 auto 20px;
+    }
   }
 
   .dot-first-down {
     bottom: 127px;
     left: 283px;
+
+    @media (max-width: 780px) {
+      bottom: 56px;
+      left: 177px;
+    }
+
+    @media (max-width: 600px) {
+      bottom: 24px;
+      left: 111px;
+    }
   }
 
   .dot-second-down {
     bottom: 223px;
     left: 388px;
+
+    @media (max-width: 780px) {
+      bottom: 117px;
+      left: 235px;
+    }
+
+    @media (max-width: 600px) {
+      bottom: 59px;
+      left: 150px;
+    }
   }
 
   .dot-third-down {
     bottom: 232px;
     left: 128px;
+
+    @media (max-width: 780px) {
+      bottom: 123px;
+      left: 79px;
+    }
+
+    @media (max-width: 600px) {
+      bottom: 64px;
+      left: 42px;
+    }
   }
 
   .dot-fourth-up {
     top: 60px;
     right: 252px;
+
+    @media (max-width: 780px) {
+      top: 36px;
+      right: 147px;
+    }
+
+    @media (max-width: 600px) {
+      top: 15px;
+      right: 86px;
+    }
   }
 
   .sound-cards {
@@ -51,6 +122,10 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
+
+    @media (max-width: 780px) {
+      display: block;
+    }
   }
 
   .sound-card {
@@ -59,6 +134,14 @@
     background: #f5f5f2;
     max-width: 40%;
     width: 100%;
+
+    @media (max-width: 780px) {
+      max-width: none;
+    }
+
+    @media (max-width: 780px) {
+      padding: 10px 0;
+    }
   }
 
   /* --- PLAYER --- */
@@ -137,6 +220,10 @@
     font-family: "SF Pro";
     font-size: 24px;
     font-weight: 400;
+
+    @media (max-width: 780px) {
+      font-size: 18px;
+    }
   }
 
   .sound-progress {
@@ -177,6 +264,15 @@
       font-family: "SF Pro";
       font-size: 16px;
       font-weight: 400;
+
+      @media (max-width: 780px) {
+        font-size: 12px;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 780px) {
+        font-size: 10px;
+      }
     }
   }
 
@@ -189,6 +285,7 @@
     border-radius: 6px;
     cursor: pointer;
     position: relative;
+    flex-shrink: 0;
   }
 
   .sound-check-item input:checked {

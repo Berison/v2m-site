@@ -74,6 +74,10 @@ button {
     background: #c3f994;
     transition: all 0.1s ease-in-out;
   }
+
+  @media (max-width: 560px) {
+    font-size: 10px;
+  }
 }
 
 .dot {
@@ -222,12 +226,20 @@ button {
   &-title {
     margin-bottom: 50px;
 
+    @media (max-width: 780px) {
+      margin-bottom: 25px;
+    }
+
     h3 {
       color: #1e2f30;
       font-family: "Akzidenz-Grotesk Pro Ext";
       font-size: 16px;
       font-weight: 400;
       text-transform: uppercase;
+
+      @media (max-width: 780px) {
+        font-size: 8px;
+      }
     }
   }
 }
@@ -236,8 +248,8 @@ section {
   padding: 50px 0;
 
   @media (max-width: 576px) {
-      padding: 25px 0;
-    }
+    padding: 25px 0;
+  }
 }
 
 .popup {

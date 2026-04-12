@@ -4,9 +4,17 @@
   justify-content: space-between;
   gap: 20px;
 
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+
   & > div {
     max-width: calc(50% - 20px);
     width: 100%;
+
+    @media (max-width: 1000px) {
+      max-width: none;
+    }
   }
 
   &-title {
@@ -16,6 +24,10 @@
       font-size: 52px;
       font-weight: 400;
       line-height: 115%;
+
+      @media (max-width: 780px) {
+        font-size: 16px;
+      }
     }
   }
 
@@ -36,9 +48,18 @@
     font-weight: 400;
     line-height: 115%;
 
+    @media (max-width: 780px) {
+      font-size: 12px;
+      padding: 10px 0;
+    }
+
     &__number {
       flex-shrink: 0;
       width: 120px;
+
+      @media (max-width: 780px) {
+        width: 40px;
+      }
     }
   }
 }
@@ -46,8 +67,16 @@
 .impact-button {
   text-align: center;
   margin-top: 100px;
+
+  @media (max-width: 780px) {
+    margin-top: 70px;
+  }
 }
 
 .impact {
   margin-bottom: 100px;
+
+  @media (max-width: 780px) {
+    margin-bottom: 30px;
+  }
 }

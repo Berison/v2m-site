@@ -23,6 +23,13 @@
   flex-direction: column;
 }
 
+.footer__col--brand,
+.footer__col--nav {
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
 .footer__logo {
   display: inline-flex;
   width: fit-content;
@@ -62,6 +69,13 @@
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
+
+  @media (max-width: 900px) {
+    margin: 0 0 24px;
+  }
+  @media (max-width: 780px) {
+    font-size: 8px;
+  }
 }
 
 .footer__nav {
@@ -93,6 +107,10 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 40px;
   margin-bottom: 56px;
+
+  @media (max-width: 900px) {
+    margin-bottom: 24px;
+  }
 }
 
 .footer-form__row--bottom {
@@ -120,6 +138,10 @@
     font-size: 16px;
     font-weight: 400;
 
+    @media (max-width: 780px) {
+      font-size: 12px;
+    }
+
     &::placeholder {
       color: rgba(255, 255, 255, 0.9);
       opacity: 1;
@@ -133,6 +155,10 @@
 
 .footer-field--message {
   max-width: 100%;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 }
 
 .footer-form__button {
@@ -145,6 +171,16 @@
   font-family: "Akzidenz-Grotesk Pro Ext";
   font-size: 16px;
   font-weight: 400;
+
+  @media (max-width: 900px) {
+    max-width: 180px;
+    width: 100%;
+    margin: 40px auto 60px;
+  }
+
+  @media (max-width: 780px) {
+    font-size: 10px;
+  }
 
   cursor: pointer;
   transition:
@@ -182,6 +218,10 @@
     border-bottom: 1px solid #fff;
 
     transition: all 0.5s ease;
+
+    @media (max-width: 780px) {
+      font-size: 10px;
+    }
 
     &.non-underline {
       border-bottom: 1px solid transparent;
