@@ -1,11 +1,28 @@
 .founder-section {
   padding: 170px 0 70px;
+
+  @media (max-width: 1000px) {
+    padding: 170px 0 30px;
+  }
 }
 
 .founder-inner {
   display: flex;
   align-items: flex-start;
   gap: 160px;
+
+  @media (max-width: 1300px) {
+    gap: 80px;
+  }
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (max-width: 780px) {
+    gap: 20px;
+  }
 
   &__title {
     width: 140px;
@@ -19,6 +36,10 @@
       font-weight: 400;
       line-height: normal;
       text-transform: uppercase;
+
+      @media (max-width: 780px) {
+        font-size: 8px;
+      }
     }
   }
 }
@@ -36,11 +57,37 @@
 
   gap: 40px;
 
+  position: relative;
+
+  @media (max-width: 890px) {
+    flex-direction: column;
+    padding: 10px 10px 20px;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 780px) {
+    gap: 18px;
+  }
+
   &__image {
     flex-shrink: 0;
 
+    @media (max-width: 1000px) {
+      width: 44%;
+    }
+
+    @media (max-width: 890px) {
+      width: auto;
+    }
+
     img {
       border-radius: 15px;
+
+      @media (max-width: 780px) {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 
@@ -55,6 +102,11 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+
+      @media (max-width: 780px) {
+        font-size: 18px;
+        margin-bottom: 18px;
+      }
     }
 
     p {
@@ -65,16 +117,32 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+
+      @media (max-width: 780px) {
+        font-size: 12px;
+        margin-bottom: 20px;
+      }
     }
   }
 
   .green-button {
     text-decoration: underline;
+    display: block;
+
+    width: fit-content;
+
+    @media (max-width: 780px) {
+      margin: 0 auto;
+    }
   }
 }
 
 .team-section {
   padding: 70px 0;
+
+  @media (max-width: 1000px) {
+    padding: 30px 0;
+  }
 }
 
 .team-inner {
@@ -82,6 +150,24 @@
   display: flex;
   align-items: flex-start;
   gap: 160px;
+
+  @media (max-width: 1000px) {
+    padding-bottom: 70px;
+  }
+
+  @media (max-width: 1300px) {
+    gap: 80px;
+  }
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (max-width: 780px) {
+    gap: 20px;
+    padding-bottom: 40px;
+  }
 
   &__title {
     width: 140px;
@@ -95,6 +181,10 @@
       font-weight: 400;
       line-height: normal;
       text-transform: uppercase;
+
+      @media (max-width: 780px) {
+        font-size: 8px;
+      }
     }
   }
 }
@@ -110,6 +200,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @media (max-width: 780px) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -123,6 +217,10 @@
     padding: 43px;
     position: relative;
 
+    @media (max-width: 780px) {
+      padding: 10px;
+    }
+
     &:not(:last-of-type) {
       margin-bottom: 10px;
     }
@@ -135,6 +233,9 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media (max-width: 780px) {
+          font-size: 12px;
+        }
       }
     }
 
@@ -144,15 +245,32 @@
       right: 43px;
       z-index: 9;
 
+      @media (max-width: 780px) {
+        top: 20px;
+        right: 20px;
+      }
+
       button {
         background-color: transparent;
         border: 0;
+
+        svg {
+          @media (max-width: 780px) {
+            height: 16px;
+            width: 16px;
+          }
+        }
       }
     }
 
     &__content {
       &-inner {
         min-height: 180px;
+        @media (max-width: 1000px) {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
 
       p {
@@ -165,6 +283,18 @@
         line-height: normal;
 
         max-width: 54%;
+
+        @media (max-width: 1200px) {
+          max-width: 42%;
+        }
+        @media (max-width: 1000px) {
+          order: 2;
+          max-width: none;
+        }
+        @media (max-width: 780px) {
+          margin-top: 20px;
+          font-size: 10px;
+        }
       }
 
       img {
@@ -173,6 +303,18 @@
         right: 156px;
         z-index: 2;
         height: calc(100% - 44px);
+        max-height: 322px;
+
+        @media (max-width: 1000px) {
+          position: static;
+          max-height: none;
+          height: 320px;
+        }
+
+        @media (max-width: 780px) {
+          height: 145px;
+          margin: 0 auto;
+        }
       }
     }
   }
@@ -205,6 +347,12 @@
 
     .team-list-item__content-inner {
       padding-top: 16px;
+      @media (max-width: 1000px) {
+        padding-top: 30px;
+      }
+      @media (max-width: 780px) {
+        padding-top: 16px;
+      }
     }
 
     .team-list-item__toggle {

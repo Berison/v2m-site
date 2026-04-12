@@ -1,10 +1,12 @@
 .why-section {
   padding-top: 190px;
-  &__content {
-  }
 
   &__header {
     padding-bottom: 200px;
+
+    @media (max-width: 780px) {
+      padding-bottom: 50px;
+    }
   }
 
   &__title {
@@ -14,6 +16,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: 119.365%;
+
+    @media (max-width: 780px) {
+      font-size: 18px;
+    }
   }
 
   &__timeline {
@@ -25,6 +31,10 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+
+    @media (max-width: 780px) {
+      padding: 30px 0;
+    }
   }
 
   &__line {
@@ -32,15 +42,19 @@
     top: 0;
     left: 314px;
     height: 100%;
+
+    @media (max-width: 1200px) {
+      left: 283px;
+    }
+    @media (max-width: 780px) {
+      left: 15px;
+    }
   }
 
   &__line-stick {
     width: 1px;
     height: 100%;
     background-color: #1e2f30;
-  }
-
-  &__list {
   }
 
   &__item {
@@ -50,6 +64,22 @@
 
     &:not(:last-of-type) {
       margin-bottom: 100px;
+
+      @media (max-width: 780px) {
+        margin-bottom: 40px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      gap: 20px;
+    }
+
+    @media (max-width: 780px) {
+      flex-direction: column;
+
+      &-content {
+        padding-left: 61px;
+      }
     }
   }
 
@@ -57,6 +87,14 @@
     display: flex;
     align-items: center;
     gap: 63px;
+
+    @media (max-width: 1200px) {
+      gap: 30px;
+    }
+
+    @media (max-width: 780px) {
+      flex-direction: row-reverse;
+    }
 
     p {
       color: #1e2f30;
@@ -67,12 +105,32 @@
       letter-spacing: 0.6px;
       width: 230px;
       text-align: left;
+
+      @media (max-width: 780px) {
+        width: auto;
+        font-size: 32px;
+      }
     }
   }
 
   .dot-wrap {
     height: 44px;
     width: 44px;
+
+    @media (max-width: 780px) {
+      height: 30px;
+      width: 30px;
+
+      .dot {
+        height: 30px;
+        width: 30px;
+      }
+
+      .dot::after {
+        width: 9px;
+        height: 9px;
+      }
+    }
   }
 
   &__item-content {
@@ -89,6 +147,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @media (max-width: 780px) {
+      font-size: 12px;
+      margin-bottom: 30px;
+    }
   }
 
   &__amount {
@@ -98,6 +161,9 @@
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0.6px;
+    @media (max-width: 780px) {
+      font-size: 32px;
+    }
   }
 
   &__amount-text {
@@ -107,16 +173,32 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    @media (max-width: 780px) {
+      font-size: 8px;
+    }
   }
 
   &__image {
     padding: 180px 0;
     text-align: center;
+
+    @media (max-width: 1200px) {
+      padding: 40px 0;
+    }
+
+    @media (max-width: 780px) {
+      padding-bottom: 0;
+    }
   }
 }
 
 .why-section__item_only-title {
   align-items: center;
+
+  @media (max-width: 780px) {
+    align-items: flex-start;
+  }
+
   .why-section__item-title {
     margin-bottom: 0;
   }
