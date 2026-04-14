@@ -108,6 +108,23 @@
     @media (max-width: 576px) {
       margin-bottom: 20px;
     }
+
+    img.icon {
+      margin-right: 20px;
+
+      @media (max-width: 780px) {
+        height: 71px;
+      }
+
+      @media (max-width: 576px) {
+        height: 50px;
+        margin-right: 5px;
+      }
+    }
+
+    &.no-mr {
+      margin-bottom: 0;
+    }
   }
 
   &__list-item {

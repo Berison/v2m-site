@@ -179,7 +179,7 @@ button {
   width: 313px;
   border-radius: 20px;
   border: 1px solid #1e2f30;
-  background: rgba(30, 47, 48, 0.1);
+  background: rgba(30, 47, 48, 0.2);
   backdrop-filter: blur(3.5px);
   padding: 10px 14px;
   border-radius: 20px;
@@ -190,7 +190,7 @@ button {
   overflow: hidden;
 
   color: #1e2f30;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -200,7 +200,7 @@ button {
     color: #fff;
 
     border: 1px solid #fff;
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.45);
   }
 }
 
@@ -392,5 +392,16 @@ body {
   .cursor,
   .cursor-dot {
     display: none;
+  }
+}
+
+.test-result {
+  font-size: 20px;
+  font-weight: 700;
+  color: red;
+  white-space: pre-line;
+
+  &.success {
+    color: forestgreen;
   }
 }
