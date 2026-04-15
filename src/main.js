@@ -332,45 +332,50 @@ forms.forEach((form) => {
   });
 
   form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    let isValid = true;
+  let isValid = true;
 
-    inputs.forEach((input) => {
-      if (!validateField(input)) isValid = false;
+  inputs.forEach((input) => {
+    if (!validateField(input)) isValid = false;
+  });
+
+  if (!isValid) {
+    form.classList.add('is-error');
+    form.classList.remove('is-success');
+    if (statusEl) statusEl.textContent = 'Fill all fields correctly';
+    return;
+  }
+
+  const formData = new FormData(form);
+  formData.append('action', 'contact-form');
+
+  try {
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    const response = await fetch('/send2.php', {
+      method: 'POST',
+      body: formData,
     });
 
-    if (!isValid) {
-      form.classList.add('is-error');
-      if (statusEl) statusEl.textContent = 'Fill all fields correctly';
-      return;
+    if (!response.ok) {
+      throw new Error('Request failed');
     }
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    console.log('DATA:', data);
-
-    try {
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-
-      // await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(data),
-      // });
-
-      form.classList.add('is-success');
-      if (statusEl) statusEl.textContent = 'Sent successfully';
-      form.reset();
-    } catch (err) {
-      form.classList.add('is-error');
-      if (statusEl) statusEl.textContent = 'Error. Try again';
-    } finally {
-      btn.disabled = false;
-      btn.textContent = 'Send';
-    }
-  });
+    form.classList.add('is-success');
+    form.classList.remove('is-error');
+    if (statusEl) statusEl.textContent = 'Sent successfully';
+    form.reset();
+  } catch (err) {
+    form.classList.add('is-error');
+    form.classList.remove('is-success');
+    if (statusEl) statusEl.textContent = 'Error. Try again';
+    console.error(err);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send';
+  }
+});
 });
 });
