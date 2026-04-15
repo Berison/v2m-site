@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const openButtons = document.querySelectorAll('.form-popup');
   const closeButton = popup.querySelector('.popup__close');
   const backdrop = popup.querySelector('.popup__backdrop');
-
+    
   function openPopup() {
     popup.classList.add('is-open');
     document.body.style.overflow = 'hidden';
