@@ -279,3 +279,26 @@
     gap: 24px;
   }
 }
+
+.footer-field__error {
+  font-size: 12px;
+  color: #ff4d4f;
+  min-height: 16px;
+}
+
+.footer-field.is-invalid input {
+  border-color: #ff4d4f;
+}
+
+.footer-form__status {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.footer-form.is-error .footer-form__status {
+  color: #ff4d4f;
+}
+
+.footer-form.is-success .footer-form__status {
+  color: #22c55e;
+}

@@ -284,29 +284,58 @@
       <div class="footer__col footer__col--connect">
         <h3 class="footer__title">Connect</h3>
 
-        <form class="footer-form">
-          <div class="footer-form__row footer-form__row--top">
-            <label class="footer-field">
-              <input type="text" placeholder="Full Name" />
-            </label>
+        <form class="footer-form" id="contactForm" novalidate>
+  <div class="footer-form__row footer-form__row--top">
+    <label class="footer-field">
+      <input
+        type="text"
+        name="fullName"
+        placeholder="Full Name"
+        required
+        minlength="2"
+      />
+      <span class="footer-field__error"></span>
+    </label>
 
-            <label class="footer-field">
-              <input type="email" placeholder="Email" />
-            </label>
+    <label class="footer-field">
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+      />
+      <span class="footer-field__error"></span>
+    </label>
 
-            <label class="footer-field">
-              <input type="text" placeholder="Company" />
-            </label>
-          </div>
+    <label class="footer-field">
+      <input
+        type="text"
+        name="company"
+        placeholder="Company"
+        required
+        minlength="2"
+      />
+      <span class="footer-field__error"></span>
+    </label>
+  </div>
 
-          <div class="footer-form__row footer-form__row--bottom">
-            <label class="footer-field footer-field--message">
-              <input type="text" placeholder="Message" />
-            </label>
+  <div class="footer-form__row footer-form__row--bottom">
+    <label class="footer-field footer-field--message">
+      <input
+        type="text"
+        name="message"
+        placeholder="Message"
+        required
+        minlength="10"
+      />
+      <span class="footer-field__error"></span>
+    </label>
 
-            <button type="submit" class="footer-form__button">Send</button>
-          </div>
-        </form>
+    <button type="submit" class="footer-form__button">Send</button>
+  </div>
+
+  <div class="footer-form__status" id="formStatus"></div>
+</form>
 
         <div class="footer__bottom">
           <div class="footer__links">
@@ -346,29 +375,58 @@
           <div class="footer__col footer__col--connect">
             <h3 class="footer__title">PLEASE, FILL IN THE FORM</h3>
 
-            <form class="footer-form">
-              <div class="footer-form__row footer-form__row--top">
-                <label class="footer-field">
-                  <input type="text" placeholder="Full Name" />
-                </label>
+           <form class="footer-form" novalidate>
+  <div class="footer-form__row footer-form__row--top">
+    <label class="footer-field">
+      <input
+        type="text"
+        name="fullName"
+        placeholder="Full Name"
+        required
+        minlength="2"
+      />
+      <span class="footer-field__error"></span>
+    </label>
 
-                <label class="footer-field">
-                  <input type="email" placeholder="Email" />
-                </label>
+    <label class="footer-field">
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+      />
+      <span class="footer-field__error"></span>
+    </label>
 
-                <label class="footer-field">
-                  <input type="text" placeholder="Company" />
-                </label>
-              </div>
+    <label class="footer-field">
+      <input
+        type="text"
+        name="company"
+        placeholder="Company"
+        required
+        minlength="2"
+      />
+      <span class="footer-field__error"></span>
+    </label>
+  </div>
 
-              <div class="footer-form__row footer-form__row--bottom">
-                <label class="footer-field footer-field--message">
-                  <input type="text" placeholder="Message" />
-                </label>
+  <div class="footer-form__row footer-form__row--bottom">
+    <label class="footer-field footer-field--message">
+      <input
+        type="text"
+        name="message"
+        placeholder="Message"
+        required
+        minlength="10"
+      />
+      <span class="footer-field__error"></span>
+    </label>
 
-                <button type="submit" class="footer-form__button">Send</button>
-              </div>
-            </form>
+    <button type="submit" class="footer-form__button">Send</button>
+  </div>
+
+  <div class="footer-form__status"></div>
+</form>
 
             <div class="footer__bottom">
               <div class="footer__links">

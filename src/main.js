@@ -269,4 +269,108 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   initProCursor();
+
+  const forms = document.querySelectorAll('.footer-form');
+
+const messages = {
+  fullName: {
+    valueMissing: 'Enter your name',
+    tooShort: 'Minimum 2 characters',
+  },
+  email: {
+    valueMissing: 'Enter email',
+    typeMismatch: 'Invalid email',
+  },
+  company: {
+    valueMissing: 'Enter company',
+    tooShort: 'Minimum 2 characters',
+  },
+  message: {
+    valueMissing: 'Enter message',
+    tooShort: 'Minimum 10 characters',
+  },
+};
+
+const getError = (input) => {
+  const config = messages[input.name];
+
+  if (input.validity.valueMissing) return config.valueMissing;
+  if (input.validity.typeMismatch) return config.typeMismatch;
+  if (input.validity.tooShort) return config.tooShort;
+
+  return 'Invalid field';
+};
+
+const validateField = (input) => {
+  const field = input.closest('.footer-field');
+  const errorEl = field.querySelector('.footer-field__error');
+
+  if (input.validity.valid) {
+    field.classList.remove('is-invalid');
+    errorEl.textContent = '';
+    return true;
+  }
+
+  field.classList.add('is-invalid');
+  errorEl.textContent = getError(input);
+  return false;
+};
+
+forms.forEach((form) => {
+  const inputs = form.querySelectorAll('input');
+  const statusEl = form.querySelector('.footer-form__status');
+  const btn = form.querySelector('.footer-form__button');
+
+  inputs.forEach((input) => {
+    input.addEventListener('input', () => {
+      validateField(input);
+      form.classList.remove('is-error', 'is-success');
+      if (statusEl) statusEl.textContent = '';
+    });
+
+    input.addEventListener('blur', () => validateField(input));
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    let isValid = true;
+
+    inputs.forEach((input) => {
+      if (!validateField(input)) isValid = false;
+    });
+
+    if (!isValid) {
+      form.classList.add('is-error');
+      if (statusEl) statusEl.textContent = 'Fill all fields correctly';
+      return;
+    }
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    console.log('DATA:', data);
+
+    try {
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      // await fetch('/api/contact', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(data),
+      // });
+
+      form.classList.add('is-success');
+      if (statusEl) statusEl.textContent = 'Sent successfully';
+      form.reset();
+    } catch (err) {
+      form.classList.add('is-error');
+      if (statusEl) statusEl.textContent = 'Error. Try again';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send';
+    }
+  });
+});
 });
