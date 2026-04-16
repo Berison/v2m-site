@@ -179,7 +179,7 @@ button {
   width: 313px;
   border-radius: 20px;
   border: 1px solid #1e2f30;
-  background: rgba(30, 47, 48, 0.2);
+  background: rgba(30, 47, 48, 1);
   backdrop-filter: blur(3.5px);
   padding: 10px 14px;
   border-radius: 20px;
@@ -189,7 +189,7 @@ button {
   z-index: 3;
   overflow: hidden;
 
-  color: #1e2f30;
+  color: #fff;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
