@@ -175,11 +175,11 @@ function initProCursor() {
   };
 
   const animate = () => {
-    cursorX += (mouseX - cursorX) * 0.12;
-    cursorY += (mouseY - cursorY) * 0.12;
+    cursorX += (mouseX - cursorX) * 0.18;
+    cursorY += (mouseY - cursorY) * 0.18;
 
-    dotX += (mouseX - dotX) * 0.28;
-    dotY += (mouseY - dotY) * 0.28;
+    dotX += (mouseX - dotX) * 0.36;
+    dotY += (mouseY - dotY) * 0.36;
 
     cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
     dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
@@ -272,110 +272,148 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const forms = document.querySelectorAll('.footer-form');
 
-const messages = {
-  fullName: {
-    valueMissing: 'Enter your name',
-    tooShort: 'Minimum 2 characters',
-  },
-  email: {
-    valueMissing: 'Enter email',
-    typeMismatch: 'Invalid email',
-  },
-  company: {
-    valueMissing: 'Enter company',
-    tooShort: 'Minimum 2 characters',
-  },
-  message: {
-    valueMissing: 'Enter message',
-    tooShort: 'Minimum 10 characters',
-  },
-};
+  const messages = {
+    fullName: {
+      valueMissing: 'Enter your name',
+      tooShort: 'Minimum 2 characters',
+    },
+    email: {
+      valueMissing: 'Enter email',
+      typeMismatch: 'Invalid email',
+    },
+    company: {
+      valueMissing: 'Enter company',
+      tooShort: 'Minimum 2 characters',
+    },
+    message: {
+      valueMissing: 'Enter message',
+      tooShort: 'Minimum 10 characters',
+    },
+  };
 
-const getError = (input) => {
-  const config = messages[input.name];
+  const getError = (input) => {
+    const config = messages[input.name];
 
-  if (input.validity.valueMissing) return config.valueMissing;
-  if (input.validity.typeMismatch) return config.typeMismatch;
-  if (input.validity.tooShort) return config.tooShort;
+    if (input.validity.valueMissing) return config.valueMissing;
+    if (input.validity.typeMismatch) return config.typeMismatch;
+    if (input.validity.tooShort) return config.tooShort;
 
-  return 'Invalid field';
-};
+    return 'Invalid field';
+  };
 
-const validateField = (input) => {
-  const field = input.closest('.footer-field');
-  const errorEl = field.querySelector('.footer-field__error');
+  const validateField = (input) => {
+    const field = input.closest('.footer-field');
+    const errorEl = field.querySelector('.footer-field__error');
 
-  if (input.validity.valid) {
-    field.classList.remove('is-invalid');
-    errorEl.textContent = '';
-    return true;
-  }
-
-  field.classList.add('is-invalid');
-  errorEl.textContent = getError(input);
-  return false;
-};
-
-forms.forEach((form) => {
-  const inputs = form.querySelectorAll('input');
-  const statusEl = form.querySelector('.footer-form__status');
-  const btn = form.querySelector('.footer-form__button');
-
-  inputs.forEach((input) => {
-    input.addEventListener('input', () => {
-      validateField(input);
-      form.classList.remove('is-error', 'is-success');
-      if (statusEl) statusEl.textContent = '';
-    });
-
-    input.addEventListener('blur', () => validateField(input));
-  });
-
-  form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  let isValid = true;
-
-  inputs.forEach((input) => {
-    if (!validateField(input)) isValid = false;
-  });
-
-  if (!isValid) {
-    form.classList.add('is-error');
-    form.classList.remove('is-success');
-    if (statusEl) statusEl.textContent = 'Fill all fields correctly';
-    return;
-  }
-
-  const formData = new FormData(form);
-  formData.append('action', 'contact-form');
-
-  try {
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-
-    const response = await fetch('/send2.php', {
-      method: 'POST',
-      body: formData,
-    });
-
-    if (!response.ok) {
-      throw new Error('Request failed');
+    if (input.validity.valid) {
+      field.classList.remove('is-invalid');
+      errorEl.textContent = '';
+      return true;
     }
 
-    form.classList.add('is-success');
-    form.classList.remove('is-error');
-    if (statusEl) statusEl.textContent = 'Sent successfully';
-    form.reset();
-  } catch (err) {
-    form.classList.add('is-error');
-    form.classList.remove('is-success');
-    if (statusEl) statusEl.textContent = 'Error. Try again';
-    console.error(err);
-  } finally {
-    btn.disabled = false;
-    btn.textContent = 'Send';
+    field.classList.add('is-invalid');
+    errorEl.textContent = getError(input);
+    return false;
+  };
+
+  forms.forEach((form) => {
+    const inputs = form.querySelectorAll('input');
+    const statusEl = form.querySelector('.footer-form__status');
+    const btn = form.querySelector('.footer-form__button');
+
+    inputs.forEach((input) => {
+      input.addEventListener('input', () => {
+        validateField(input);
+        form.classList.remove('is-error', 'is-success');
+        if (statusEl) statusEl.textContent = '';
+      });
+
+      input.addEventListener('blur', () => validateField(input));
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      let isValid = true;
+
+      inputs.forEach((input) => {
+        if (!validateField(input)) isValid = false;
+      });
+
+      if (!isValid) {
+        form.classList.add('is-error');
+        form.classList.remove('is-success');
+        if (statusEl) statusEl.textContent = 'Fill all fields correctly';
+        return;
+      }
+
+      const formData = new FormData(form);
+      formData.append('action', 'contact-form');
+
+      try {
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        const response = await fetch('/send2.php', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error('Request failed');
+        }
+
+        form.classList.add('is-success');
+        form.classList.remove('is-error');
+        if (statusEl) statusEl.textContent = 'Sent successfully';
+        form.reset();
+      } catch (err) {
+        form.classList.add('is-error');
+        form.classList.remove('is-success');
+        if (statusEl) statusEl.textContent = 'Error. Try again';
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send';
+      }
+    });
+  });
+
+  const video = document.querySelector('.video');
+  const btn = document.getElementById('playBtn');
+  const muteBtn = document.getElementById('muteBtn');
+
+  if (video && btn && muteBtn) {
+    video.muted = false;
+    // muteBtn.classList.add('is-muted');
+
+    // play
+    playBtn.addEventListener('click', async () => {
+      if (video.paused) {
+        await video.play();
+      } else {
+        video.pause();
+      }
+    });
+
+    // sync play UI
+    video.addEventListener('play', () => {
+      playBtn.classList.add('is-playing');
+    });
+
+    video.addEventListener('pause', () => {
+      playBtn.classList.remove('is-playing');
+    });
+
+    // mute toggle
+    muteBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+
+      if (video.muted) {
+        muteBtn.classList.add('is-muted');
+      } else {
+        muteBtn.classList.remove('is-muted');
+      }
+    });
   }
-});
-});
 });

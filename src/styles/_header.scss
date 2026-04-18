@@ -83,7 +83,7 @@ header {
         font-size: 10px;
 
         padding: 5px 6px;
-        white-space: nowrap
+        white-space: nowrap;
       }
 
       transition:
@@ -96,8 +96,8 @@ header {
       }
 
       &:hover {
-        color: #1e2f30;
-        background-color: #c3f994;
+        color: #fff;
+        background-color: #00d080;
       }
     }
   }

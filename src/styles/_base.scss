@@ -69,9 +69,9 @@ button {
   transition: all 0.1s ease-in-out;
 
   &:hover {
-    color: #1e2f30;
+    color: #fff;
     border: 1px solid #fff;
-    background: #c3f994;
+    background: #00d080;
     transition: all 0.1s ease-in-out;
   }
 
@@ -318,7 +318,7 @@ section {
     line-height: 1;
     cursor: pointer;
     color: #fff;
-    z-index: 99
+    z-index: 99;
   }
 
   &__body {
@@ -418,7 +418,8 @@ body {
     margin: 20px 0;
   }
 
-  h2, p {
+  h2,
+  p {
     margin: 10px 0;
   }
 }

@@ -524,6 +524,56 @@
             </div>
           </div>
         </div>
+        <div class="video-block">
+          <video
+            class="video"
+            poster="/src/assets/V2M_test-first-frame.jpg"
+            preload="metadata"
+            playsinline
+          >
+            <source src="/src/assets/V2M_test.mp4" type="video/mp4" />
+          </video>
+
+          <button class="play-button" id="playBtn"></button>
+          <button class="mute-button" id="muteBtn">
+            <span class="icon icon-volume">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 10v4h4l5 4V6L7 10H3z" fill="currentColor" />
+                <path
+                  d="M16 7c1.77 1.02 3 2.93 3 5s-1.23 3.98-3 5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+
+            <span class="icon icon-mute">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 10v4h4l5 4V6L7 10H3z" fill="currentColor" />
+                <line
+                  x1="16"
+                  y1="8"
+                  x2="22"
+                  y2="16"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="22"
+                  y1="8"
+                  x2="16"
+                  y2="16"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
         <div class="how-it-works-button">
           <button type="button" class="green-button form-popup">
             Become a client
