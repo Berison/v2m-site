@@ -36,8 +36,8 @@
     }
 
     &-tooltip {
-        background: rgba(30, 47, 48, 1);
-        color: #fff;
+      background: rgba(30, 47, 48, 1);
+      color: #fff;
     }
   }
 
@@ -322,5 +322,58 @@
   .sound-check-item input:checked::after {
     transform: rotate(45deg) scale(1);
     opacity: 1;
+  }
+
+  .content-list {
+    display: flex;
+    align-items: center;
+    gap: 190px;
+
+    @media (max-width: 1400px) {
+      gap: 120px;
+    }
+
+    @media (max-width: 1000px) {
+      gap: 40px;
+      flex-direction: column;
+    }
+
+    @media (max-width: 780px) {
+      gap: 20px;
+    }
+
+    .image {
+      flex-shrink: 0;
+    }
+
+    .content {
+      max-width: 1000px;
+      strong {
+        color: #1e1e1e;
+        font-family: "Akzidenz-Grotesk Pro Med Ext";
+        font-size: 22px;
+        font-style: normal;
+        @media (max-width: 780px) {
+          font-size: 12px;
+        }
+      }
+      ul {
+        margin-top: 40px;
+        @media (max-width: 780px) {
+          margin-top: 20px;
+        }
+      }
+      li {
+        list-style: disc;
+        color: #444;
+        font-family: Arial;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        @media (max-width: 780px) {
+          font-size: 12px;
+        }
+      }
+    }
   }
 }
