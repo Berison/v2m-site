@@ -175,11 +175,11 @@ function initProCursor() {
   };
 
   const animate = () => {
-    cursorX += (mouseX - cursorX) * 0.18;
-    cursorY += (mouseY - cursorY) * 0.18;
+    cursorX += (mouseX - cursorX) * 0.38;
+    cursorY += (mouseY - cursorY) * 0.38;
 
-    dotX += (mouseX - dotX) * 0.36;
-    dotY += (mouseY - dotY) * 0.36;
+    dotX += (mouseX - dotX) * 0.56;
+    dotY += (mouseY - dotY) * 0.56;
 
     cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
     dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
@@ -379,41 +379,41 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const video = document.querySelector('.video');
-  const btn = document.getElementById('playBtn');
-  const muteBtn = document.getElementById('muteBtn');
+  // const video = document.querySelector('.video');
+  // const btn = document.getElementById('playBtn');
+  // const muteBtn = document.getElementById('muteBtn');
 
-  if (video && btn && muteBtn) {
-    video.muted = false;
-    // muteBtn.classList.add('is-muted');
+  // if (video && btn && muteBtn) {
+  //   video.muted = false;
+  //   // muteBtn.classList.add('is-muted');
 
-    // play
-    playBtn.addEventListener('click', async () => {
-      if (video.paused) {
-        await video.play();
-      } else {
-        video.pause();
-      }
-    });
+  //   // play
+  //   playBtn.addEventListener('click', async () => {
+  //     if (video.paused) {
+  //       await video.play();
+  //     } else {
+  //       video.pause();
+  //     }
+  //   });
 
-    // sync play UI
-    video.addEventListener('play', () => {
-      playBtn.classList.add('is-playing');
-    });
+  //   // sync play UI
+  //   video.addEventListener('play', () => {
+  //     playBtn.classList.add('is-playing');
+  //   });
 
-    video.addEventListener('pause', () => {
-      playBtn.classList.remove('is-playing');
-    });
+  //   video.addEventListener('pause', () => {
+  //     playBtn.classList.remove('is-playing');
+  //   });
 
-    // mute toggle
-    muteBtn.addEventListener('click', () => {
-      video.muted = !video.muted;
+  //   // mute toggle
+  //   muteBtn.addEventListener('click', () => {
+  //     video.muted = !video.muted;
 
-      if (video.muted) {
-        muteBtn.classList.add('is-muted');
-      } else {
-        muteBtn.classList.remove('is-muted');
-      }
-    });
-  }
+  //     if (video.muted) {
+  //       muteBtn.classList.add('is-muted');
+  //     } else {
+  //       muteBtn.classList.remove('is-muted');
+  //     }
+  //   });
+  // }
 });

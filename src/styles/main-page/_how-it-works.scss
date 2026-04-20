@@ -157,6 +157,10 @@
 
   aspect-ratio: 16 / 9;
 
+  .video-iframe {
+    aspect-ratio: 16 / 9;
+  }
+
   @media (max-width: 560px) {
     margin-top: -100px;
   }
