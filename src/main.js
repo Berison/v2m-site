@@ -273,7 +273,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const forms = document.querySelectorAll('.footer-form');
 
   const messages = {
-    fullName: {
+    name: {
       valueMissing: 'Enter your name',
       tooShort: 'Minimum 2 characters',
     },
@@ -340,10 +340,20 @@ window.addEventListener('DOMContentLoaded', () => {
         if (!validateField(input)) isValid = false;
       });
 
+      const captchaToken =
+        typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
+
       if (!isValid) {
         form.classList.add('is-error');
         form.classList.remove('is-success');
         if (statusEl) statusEl.textContent = 'Fill all fields correctly';
+        return;
+      }
+
+      if (!captchaToken) {
+        form.classList.add('is-error');
+        form.classList.remove('is-success');
+        if (statusEl) statusEl.textContent = 'Please complete the captcha';
         return;
       }
 
@@ -354,6 +364,7 @@ window.addEventListener('DOMContentLoaded', () => {
         btn.disabled = true;
         btn.textContent = 'Sending...';
 
+
         const response = await fetch('/send2.php', {
           method: 'POST',
           body: formData,
@@ -363,15 +374,29 @@ window.addEventListener('DOMContentLoaded', () => {
           throw new Error('Request failed');
         }
 
+        const result = await response.json();
+
+        if (!result.success) {
+          throw new Error(result.message || 'Captcha verification failed');
+        }
+
         form.classList.add('is-success');
         form.classList.remove('is-error');
         if (statusEl) statusEl.textContent = 'Sent successfully';
         form.reset();
+
+        if (typeof grecaptcha !== 'undefined') {
+          grecaptcha.reset();
+        }
       } catch (err) {
         form.classList.add('is-error');
         form.classList.remove('is-success');
-        if (statusEl) statusEl.textContent = 'Error. Try again';
+        if (statusEl) statusEl.textContent = err.message || 'Error. Try again';
         console.error(err);
+
+        if (typeof grecaptcha !== 'undefined') {
+          grecaptcha.reset();
+        }
       } finally {
         btn.disabled = false;
         btn.textContent = 'Send';

@@ -173,10 +173,22 @@
   font-size: 16px;
   font-weight: 400;
 
+  &_mobile {
+    display: none;
+  }
+
   @media (max-width: 900px) {
     max-width: 180px;
     width: 100%;
     margin: 40px auto 60px;
+
+    &_desktop {
+      display: none;
+    }
+
+    &_mobile {
+      display: block;
+    }
   }
 
   @media (max-width: 780px) {
@@ -303,4 +315,8 @@
 
 .footer-form.is-success .footer-form__status {
   color: #22c55e;
+}
+
+.g-recaptcha {
+  margin: 20px 0;
 }

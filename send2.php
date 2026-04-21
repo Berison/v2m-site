@@ -5,7 +5,7 @@ ini_set('display_startup_errors', '0');
 // error_reporting(E_ALL);
 
 // Load .env
-$envFile = __DIR__ . '/.env';
+$envFile = __DIR__ . '/opt/.env';
 if (file_exists($envFile)) {
     foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
         if (strpos($line, '#') === 0 || strpos($line, '=') === false) continue;
@@ -30,11 +30,11 @@ require_once ROOT_DIR.'class/PHPMailer/SMTP.php';
 require_once ROOT_DIR.'class/PHPMailer/POP3.php';
 require_once ROOT_DIR.'autoload.php';
 
-// $secret = getenv('RECAPTCHA_SECRET');
+$secret = getenv('RECAPTCHA_SECRET');
 
 // If the form submission includes the "g-captcha-response" field
 // Create an instance of the service using your secret
-// $recaptcha = new \ReCaptcha\ReCaptcha($secret);
+$recaptcha = new \ReCaptcha\ReCaptcha($secret);
 
 // If file_get_contents() is locked down on your PHP installation to disallow
 // its use with URLs, then you can use the alternative request method instead.
@@ -42,11 +42,11 @@ require_once ROOT_DIR.'autoload.php';
 //  $recaptcha = new \ReCaptcha\ReCaptcha($secret, new \ReCaptcha\RequestMethod\SocketPost());
 // Make the call to verify the response and also pass the user's IP address
 
-// $response = $recaptcha->setExpectedHostname($_SERVER['SERVER_NAME'])
-//                       ->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+$response = $recaptcha->setExpectedHostname($_SERVER['SERVER_NAME'])
+                      ->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
 
-// if ($response->isSuccess()) {
-if (true) {
+if ($response->isSuccess()) {
+// if (true) {
     $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
     try {
         //Server settings
@@ -55,7 +55,8 @@ if (true) {
         $mail->isSMTP();                                           //Send using SMTP
         $mail->Host       = 'mail.v2minc.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                  //Enable SMTP authentication
-        $mail->Username   = 'info@v2minc.com';                     //SMTP username
+        // $mail->Username   = 'info@v2minc.com';                     //SMTP username
+        $mail->Username   = 'ravr4864@gmail.com';                     //SMTP username
         $mail->Password   = getenv('SMTP_PASSWORD');                    //SMTP password
         $mail->SMTPSecure = 'tls';        //Enable implicit TLS encryption
         $mail->Port       = 587;

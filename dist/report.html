@@ -45,8 +45,9 @@
     />
 
     <meta name="twitter:image" content="https://v2minc.com/og-image.png" />
-    <script type="module" crossorigin src="./assets/main-CHSTjHO2.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-CVB4d59P.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="module" crossorigin src="./assets/main-BNdX8UjV.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-B-xdfOVh.css">
   </head>
   <body>
     <div class="cursor"></div>
@@ -170,9 +171,23 @@
               <span class="footer-field__error"></span>
             </label>
 
-            <button type="submit" class="footer-form__button">Send</button>
+            <button
+              type="submit"
+              class="footer-form__button footer-form__button_desktop"
+            >
+              Send
+            </button>
           </div>
-
+          <div
+            class="g-recaptcha"
+            data-sitekey="6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ"
+          ></div>
+          <button
+            type="submit"
+            class="footer-form__button footer-form__button_mobile"
+          >
+            Send
+          </button>
           <div class="footer-form__status" id="formStatus"></div>
         </form>
 
@@ -261,8 +276,24 @@
                   <span class="footer-field__error"></span>
                 </label>
 
-                <button type="submit" class="footer-form__button">Send</button>
+                <button
+                  type="submit"
+                  class="footer-form__button footer-form__button_desktop"
+                >
+                  Send
+                </button>
               </div>
+
+              <div
+                class="g-recaptcha"
+                data-sitekey="6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ"
+              ></div>
+              <button
+                type="submit"
+                class="footer-form__button footer-form__button_mobile"
+              >
+                Send
+              </button>
 
               <div class="footer-form__status"></div>
             </form>
