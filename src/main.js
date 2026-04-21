@@ -364,7 +364,6 @@ window.addEventListener('DOMContentLoaded', () => {
         btn.disabled = true;
         btn.textContent = 'Sending...';
 
-
         const response = await fetch('/send2.php', {
           method: 'POST',
           body: formData,
@@ -372,12 +371,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (!response.ok) {
           throw new Error('Request failed');
-        }
-
-        const result = await response.json();
-
-        if (!result.success) {
-          throw new Error(result.message || 'Captcha verification failed');
         }
 
         form.classList.add('is-success');

@@ -2,7 +2,7 @@
 
 ini_set('display_errors', '0');
 ini_set('display_startup_errors', '0');
-// error_reporting(E_ALL);
+//error_reporting(E_ALL);
 
 // Load .env
 $envFile = '/opt/.env';
@@ -30,11 +30,11 @@ require_once ROOT_DIR.'class/PHPMailer/SMTP.php';
 require_once ROOT_DIR.'class/PHPMailer/POP3.php';
 require_once ROOT_DIR.'autoload.php';
 
-// $secret = getenv('RECAPTCHA_SECRET');
+$secret = getenv('RECAPTCHA_SECRET');
 
 // If the form submission includes the "g-captcha-response" field
 // Create an instance of the service using your secret
-// $recaptcha = new \ReCaptcha\ReCaptcha($secret);
+$recaptcha = new \ReCaptcha\ReCaptcha($secret);
 
 // If file_get_contents() is locked down on your PHP installation to disallow
 // its use with URLs, then you can use the alternative request method instead.
@@ -42,16 +42,16 @@ require_once ROOT_DIR.'autoload.php';
 //  $recaptcha = new \ReCaptcha\ReCaptcha($secret, new \ReCaptcha\RequestMethod\SocketPost());
 // Make the call to verify the response and also pass the user's IP address
 
-// $response = $recaptcha->setExpectedHostname($_SERVER['SERVER_NAME'])
-//                       ->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+$response = $recaptcha->setExpectedHostname($_SERVER['SERVER_NAME'])
+                      ->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
 
-// if ($response->isSuccess()) {
-if (true) {
+if ($response->isSuccess()) {
+// if (true) {
     $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
     try {
         //Server settings
         // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                     //Enable verbose debug output
-        $mail->SMTPDebug = 0;                     //Disable verbose debug output
+	$mail->SMTPDebug = 0;                     //Disable verbose debug output
         $mail->isSMTP();                                           //Send using SMTP
         $mail->Host       = 'mail.v2minc.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                  //Enable SMTP authentication
@@ -59,6 +59,18 @@ if (true) {
         $mail->Password   = getenv('SMTP_PASSWORD');                    //SMTP password
         $mail->SMTPSecure = 'tls';        //Enable implicit TLS encryption
         $mail->Port       = 587;
+//	echo "SMTP_PASSWORD length: " . strlen((string)getenv('SMTP_PASSWORD'));
+//	echo "<br>";
+//echo "<pre>";
+//var_dump(PHP_SAPI);
+//var_dump(__DIR__);
+//var_dump(getcwd());
+//var_dump(ini_get('open_basedir'));
+//var_dump(file_exists('/opt/.env'));
+//var_dump(is_readable('/opt/.env'));
+//var_dump(realpath('/opt/.env'));
+//echo "</pre>";
+//echo "<br>";
         // $mail->SMTPOptions = array(
         //     'ssl' => array(
         //         'verify_peer' => false,
@@ -70,6 +82,7 @@ if (true) {
         //Recipients
         $mail->setFrom('info@v2minc.com', 'Mailer');
         $mail->addAddress('info@v2minc.com', 'Ceo V2M');     //Add a recipient
+        // $mail->addAddress('ravr4864@gmail.com', 'TEST');     //Add a recipient
         //$mail->addAddress('ellen@example.com');               //Name is optional
         // $mail->addReplyTo('john@example.com', 'Information');
         // $mail->addCC('opensirius@gmail.com');
