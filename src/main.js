@@ -142,20 +142,20 @@ function initProCursor() {
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
 
-  let cursorX = mouseX;
-  let cursorY = mouseY;
-
   let dotX = mouseX;
   let dotY = mouseY;
 
   let rafId = null;
+  let isOverIframe = false;
 
   const interactiveSelector =
     'a, button, .magnetic, [data-cursor-hover], input, textarea, select';
 
   const magneticItems = document.querySelectorAll('.magnetic');
+  const iframeZones = document.querySelectorAll('.iframe-cursor-zone');
 
   const showCursor = () => {
+    if (isOverIframe) return;
     cursor.classList.add('is-visible');
     dot.classList.add('is-visible');
   };
@@ -168,20 +168,20 @@ function initProCursor() {
   const onMouseMove = e => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    showCursor();
 
-    const target = e.target.closest(interactiveSelector);
-    cursor.classList.toggle('is-hover', !!target);
+    if (!isOverIframe) {
+      showCursor();
+      cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+
+      const target = e.target.closest(interactiveSelector);
+      cursor.classList.toggle('is-hover', !!target);
+    }
   };
 
   const animate = () => {
-    cursorX += (mouseX - cursorX) * 0.38;
-    cursorY += (mouseY - cursorY) * 0.38;
+    dotX += (mouseX - dotX) * 0.65;
+    dotY += (mouseY - dotY) * 0.65;
 
-    dotX += (mouseX - dotX) * 0.56;
-    dotY += (mouseY - dotY) * 0.56;
-
-    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
     dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
 
     rafId = requestAnimationFrame(animate);
@@ -190,7 +190,7 @@ function initProCursor() {
   document.addEventListener('mousemove', onMouseMove);
 
   document.addEventListener('mousedown', () => {
-    cursor.classList.add('is-pressed');
+    if (!isOverIframe) cursor.classList.add('is-pressed');
   });
 
   document.addEventListener('mouseup', () => {
@@ -198,7 +198,10 @@ function initProCursor() {
   });
 
   document.addEventListener('mouseleave', hideCursor);
-  document.addEventListener('mouseenter', showCursor);
+
+  document.addEventListener('mouseenter', () => {
+    if (!isOverIframe) showCursor();
+  });
 
   magneticItems.forEach(item => {
     item.addEventListener('mousemove', e => {
@@ -211,6 +214,18 @@ function initProCursor() {
 
     item.addEventListener('mouseleave', () => {
       item.style.transform = 'translate(0, 0)';
+    });
+  });
+
+  iframeZones.forEach(zone => {
+    zone.addEventListener('mouseenter', () => {
+      isOverIframe = true;
+      hideCursor();
+    });
+
+    zone.addEventListener('mouseleave', () => {
+      isOverIframe = false;
+      showCursor();
     });
   });
 
