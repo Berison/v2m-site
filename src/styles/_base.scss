@@ -400,9 +400,10 @@ body {
   font-weight: 700;
   color: red;
   white-space: pre-line;
+  text-align: center;
 
   &.success {
-    color: forestgreen;
+    color: #00d080;
   }
 }
 .privacy-policy {
