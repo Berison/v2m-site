@@ -45,7 +45,12 @@
 
     <meta name="twitter:image" content="https://v2minc.com/og-image.png" />
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+    <script
+      src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit"
+      async
+      defer
+    ></script>
   </head>
   <body data-scroll-container id="body">
     <div class="cursor"></div>
@@ -1018,10 +1023,11 @@
               Send
             </button>
           </div>
-          <div
+          <!-- <div
             class="g-recaptcha"
             data-sitekey="6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ"
-          ></div>
+          ></div> -->
+          <div class="g-recaptcha"></div>
           <button
             type="submit"
             class="footer-form__button footer-form__button_mobile"
@@ -1123,10 +1129,11 @@
                 </button>
               </div>
 
-              <div
+              <!-- <div
                 class="g-recaptcha"
                 data-sitekey="6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ"
-              ></div>
+              ></div> -->
+              <div class="g-recaptcha"></div>
               <button
                 type="submit"
                 class="footer-form__button footer-form__button_mobile"

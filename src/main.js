@@ -6,6 +6,20 @@ import LocomotiveScroll from 'locomotive-scroll';
 import { CountUp } from 'countup.js';
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 
+const SITE_KEY = '6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ';
+
+window.onRecaptchaLoad = function () {
+  document.querySelectorAll('.footer-form').forEach((form) => {
+    const captchaEl = form.querySelector('.g-recaptcha');
+
+    if (captchaEl) {
+      form.dataset.captchaId = grecaptcha.render(captchaEl, {
+        sitekey: SITE_KEY,
+      });
+    }
+  });
+};
+
 /**
  * Updates the visual progress fill for a range input.
  */
@@ -355,8 +369,14 @@ window.addEventListener('DOMContentLoaded', () => {
         if (!validateField(input)) isValid = false;
       });
 
+      // const captchaToken =
+      //   typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
+      const captchaId = form.dataset.captchaId;
+
       const captchaToken =
-        typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
+        typeof grecaptcha !== 'undefined' && captchaId !== undefined
+          ? grecaptcha.getResponse(Number(captchaId))
+          : '';
 
       if (!isValid) {
         form.classList.add('is-error');
@@ -394,7 +414,8 @@ window.addEventListener('DOMContentLoaded', () => {
         form.reset();
 
         if (typeof grecaptcha !== 'undefined') {
-          grecaptcha.reset();
+          // grecaptcha.reset();
+          grecaptcha.reset(Number(captchaId));
         }
       } catch (err) {
         form.classList.add('is-error');
@@ -403,7 +424,8 @@ window.addEventListener('DOMContentLoaded', () => {
         console.error(err);
 
         if (typeof grecaptcha !== 'undefined') {
-          grecaptcha.reset();
+          // grecaptcha.reset();
+          grecaptcha.reset(Number(captchaId));
         }
       } finally {
         btn.disabled = false;
