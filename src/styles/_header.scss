@@ -35,6 +35,11 @@ header {
 
       @media (max-width: 820px) {
         font-size: 30px;
+
+        svg {
+          height: 20px;
+          width: fit-content;
+        }
       }
     }
   }
