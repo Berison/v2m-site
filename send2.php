@@ -53,9 +53,9 @@ if ($response->isSuccess()) {
         // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                     //Enable verbose debug output
 	$mail->SMTPDebug = 0;                     //Disable verbose debug output
         $mail->isSMTP();                                           //Send using SMTP
-        $mail->Host       = 'mail.v2minc.com';                     //Set the SMTP server to send through
+        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                  //Enable SMTP authentication
-        $mail->Username   = 'info@v2minc.com';                     //SMTP username
+        $mail->Username   = 'noreply@v2minc.com';                     //SMTP username
         $mail->Password   = getenv('SMTP_PASSWORD');                    //SMTP password
         $mail->SMTPSecure = 'tls';        //Enable implicit TLS encryption
         $mail->Port       = 587;
@@ -170,9 +170,9 @@ if ($response->isSuccess()) {
             // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                     //Enable verbose debug output
             $mail->SMTPDebug = 0;                     //Enable verbose debug output
             $mail->isSMTP();                                           //Send using SMTP
-            $mail->Host       = 'mail.v2minc.com';                     //Set the SMTP server to send through
+            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                  //Enable SMTP authentication
-            $mail->Username   = 'info@v2minc.com';                     //SMTP username
+            $mail->Username   = 'noreply@v2minc.com';                     //SMTP username
             $mail->Password   = getenv('SMTP_PASSWORD');                    //SMTP password
             $mail->SMTPSecure = 'tls';        //Enable implicit TLS encryption
             $mail->Port       = 587;

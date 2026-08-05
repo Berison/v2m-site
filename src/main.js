@@ -20,7 +20,7 @@ import 'locomotive-scroll/dist/locomotive-scroll.css';
 //   });
 // };
 
-const SITE_KEY = '6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ';
+const SITE_KEY = '6LdoHHctAAAAAEtHnOQk7artruoIaoWxmMlF6mYG';
 
 let recaptchaLoadingPromise = null;
 
