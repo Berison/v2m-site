@@ -6,19 +6,97 @@ import LocomotiveScroll from 'locomotive-scroll';
 import { CountUp } from 'countup.js';
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 
+// const SITE_KEY = '6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ';
+
+// window.onRecaptchaLoad = function () {
+//   document.querySelectorAll('.footer-form').forEach((form) => {
+//     const captchaEl = form.querySelector('.g-recaptcha');
+
+//     if (captchaEl) {
+//       form.dataset.captchaId = grecaptcha.render(captchaEl, {
+//         sitekey: SITE_KEY,
+//       });
+//     }
+//   });
+// };
+
 const SITE_KEY = '6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ';
 
-window.onRecaptchaLoad = function () {
-  document.querySelectorAll('.footer-form').forEach((form) => {
-    const captchaEl = form.querySelector('.g-recaptcha');
+let recaptchaLoadingPromise = null;
 
-    if (captchaEl) {
-      form.dataset.captchaId = grecaptcha.render(captchaEl, {
+/**
+ * Loads Google reCAPTCHA after registering the global callback.
+ */
+function loadRecaptcha() {
+  if (window.grecaptcha?.render) {
+    return Promise.resolve(window.grecaptcha);
+  }
+
+  if (recaptchaLoadingPromise) {
+    return recaptchaLoadingPromise;
+  }
+
+  recaptchaLoadingPromise = new Promise((resolve, reject) => {
+    window.onRecaptchaLoad = () => {
+      const recaptcha = window.grecaptcha;
+
+      delete window.onRecaptchaLoad;
+
+      if (!recaptcha?.render) {
+        reject(new Error('reCAPTCHA API is unavailable'));
+        return;
+      }
+
+      resolve(recaptcha);
+    };
+
+    const script = document.createElement('script');
+
+    script.src =
+      'https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit';
+    script.async = true;
+    script.defer = true;
+
+    script.addEventListener(
+      'error',
+      () => {
+        delete window.onRecaptchaLoad;
+        recaptchaLoadingPromise = null;
+        reject(new Error('Failed to load reCAPTCHA'));
+      },
+      { once: true },
+    );
+
+    document.head.appendChild(script);
+  });
+
+  return recaptchaLoadingPromise;
+}
+
+/**
+ * Renders reCAPTCHA for every contact form.
+ */
+async function initRecaptcha() {
+  try {
+    const recaptcha = await loadRecaptcha();
+
+    document.querySelectorAll('.footer-form').forEach((form) => {
+      const captchaEl = form.querySelector('.g-recaptcha');
+
+      if (!captchaEl || form.dataset.captchaId !== undefined) {
+        return;
+      }
+
+      const captchaId = recaptcha.render(captchaEl, {
         sitekey: SITE_KEY,
       });
-    }
-  });
-};
+
+      form.dataset.captchaId = String(captchaId);
+    });
+  } catch (error) {
+    console.error('Failed to initialize reCAPTCHA:', error);
+  }
+}
 
 /**
  * Updates the visual progress fill for a range input.
@@ -251,6 +329,7 @@ function initProCursor() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  void initRecaptcha();
   const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
