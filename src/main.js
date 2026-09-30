@@ -376,7 +376,7 @@ window.addEventListener('DOMContentLoaded', () => {
     observer.observe(card);
   });
 
-  initProCursor();
+  // initProCursor();
 
   const forms = document.querySelectorAll('.footer-form');
 
