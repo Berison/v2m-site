@@ -125,6 +125,23 @@
     &.no-mr {
       margin-bottom: 0;
     }
+
+    &_logos {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      gap: 40px;
+
+      p {
+        color: #1e2f30;
+        font-size: 24px;
+        font-weight: 400;
+
+        @media (max-width: 576px) {
+          font-size: 12px;
+        }
+      }
+    }
   }
 
   &__list-item {

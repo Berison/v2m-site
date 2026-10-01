@@ -8,11 +8,11 @@
       href="/assets/favicon-32x32-KC00EOyY.png"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>V2M</title>
+    <title>AI Vehicle Diagnostics by Sound | V2M</title>
 
     <meta
       name="description"
-      content="V2M uses sound-based AI for on-board diagnostics, detecting vehicle issues in real time and helping predict future breakdowns."
+      content="V2M-One records a vehicle's sound during a test drive; V2M's acoustic AI finds the abnormal noise and locates its source before the car is on the lift."
     />
 
     <meta name="robots" content="index, follow" />
@@ -21,7 +21,7 @@
 
     <meta
       property="og:description"
-      content="V2M uses sound-based AI for on-board diagnostics, detecting vehicle issues in real time and helping predict future breakdowns."
+      content="V2M-One records a vehicle's sound during a test drive; V2M's acoustic AI finds the abnormal noise and locates its source before the car is on the lift."
     />
 
     <meta property="og:type" content="website" />
@@ -40,7 +40,7 @@
 
     <meta
       name="twitter:description"
-      content="V2M uses sound-based AI for on-board diagnostics, detecting vehicle issues in real time and helping predict future breakdowns."
+      content="V2M-One records a vehicle's sound during a test drive; V2M's acoustic AI finds the abnormal noise and locates its source before the car is on the lift."
     />
 
     <meta name="twitter:image" content="https://v2minc.com/og-image.png" />
@@ -92,7 +92,16 @@
             <li><a href="./our-journey.html">Milestones</a></li>
             <li><a href="./team.html">Team</a></li>
             <li><a href="./media.html">Media</a></li>
-            <li><a href="#" class="form-popup">Contact us</a></li>
+            <li>
+              <button
+                type="button"
+                class="form-popup"
+                aria-haspopup="dialog"
+                aria-controls="formPopup"
+              >
+                Contact us
+              </button>
+            </li>
           </menu>
         </div>
       </div>
@@ -397,13 +406,16 @@
                 <h2 class="benefit-card__title">Industry recognition</h2>
               </div>
 
-              <div class="benefit-card__description">
-                <p>NSF Approved technology patented by the US government</p>
-              </div>
-
-              <div class="benefit-card__list no-mr">
-                <img src="./src/assets/nsf.png" alt="NSF" class="icon" />
-                <img src="./src/assets/doc.png" alt="DOC" class="icon" />
+              <div class="benefit-card__list benefit-card__list_logos no-mr">
+                <!-- <img src="./src/assets/nsf.png" alt="NSF" class="icon" /> -->
+                <p>Patented.</p>
+                <img
+                  src="./src/assets/nvidia.png"
+                  alt="DOC"
+                  class="icon"
+                  height="97"
+                  width="159"
+                />
               </div>
             </div>
           </article>
@@ -480,27 +492,45 @@
     </section>
     <section class="how-it-works">
       <div class="container">
+        <div class="content-title" data-scroll data-scroll-speed="0.1">
+          <h3>How it works</h3>
+          <p>
+            V2M-One sensors capture the vehicle’s sound, digitize it and upload
+            the recordings — with time, speed and location metadata — to V2M’s
+            cloud. There, a cascade of neural-network models trained on V2M’s
+            own library of technician-confirmed recordings detects abnormal
+            sounds, locates their source and matches them to known fault
+            patterns. This is machine learning — artificial intelligence, or
+            “Super Intelligence” (SI) in the U.S. federal government’s new
+            terminology — applied to the one signal every mechanic already uses:
+            what the car sounds like. In our field tests the system has picked
+            up the hum of a failing wheel bearing before an experienced
+            technician could hear it. In that one narrow domain — hearing early
+            mechanical faults — it already outperforms the human ear.
+          </p>
+        </div>
         <div class="how-it-works-inner">
           <div class="content-left" data-scroll-section>
-            <div class="content-title" data-scroll data-scroll-speed="0.1">
-              <h3>How it works</h3>
-            </div>
             <div class="content-left-text" data-scroll data-scroll-speed="0.1">
               <p>
+                <span>(01)</span>
                 Control units are temporarily installed to vehicle’s front and
                 back, the vehicle is driven for a few minutes while sensors
                 collect sound data.
               </p>
               <p>
+                <span>(02)</span>
                 After the test drive the sensors are removed to recharge and
                 retrieve data.
               </p>
               <p>
+                <span>(03)</span>
                 Audio data is transmitted to a V2M cloud server where it is
                 analyzed by V2M AI, embedding-based and reconstruction-based
                 methods are employed for anomaly detection.
               </p>
               <p>
+                <span>(04)</span>
                 After a short period of time, the test report is sent back to
                 the user via V2M application.
               </p>
@@ -978,6 +1008,9 @@
         <p class="footer__description">
           Pioneering Computer hearing, creating solutions for on-board
           diagnostics using sound and AI.
+          <br />
+          <br />
+          Founded in New York City in 2021
         </p>
 
         <p class="footer__copyright">2026. V2M. All rights reserved.</p>

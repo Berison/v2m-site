@@ -75,7 +75,8 @@ header {
       }
     }
 
-    a {
+    a,
+    button {
       color: #1e2f30;
       font-family: "Akzidenz-Grotesk Pro Ext";
       font-size: 16px;
@@ -104,6 +105,12 @@ header {
         color: #fff;
         background-color: #00d080;
       }
+    }
+
+    button {
+      outline: none;
+      background-color: transparent;
+      border: 0;
     }
   }
 }
