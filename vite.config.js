@@ -1,8 +1,17 @@
-import { defineConfig } from 'vite';
+import { defineConfig, normalizePath } from 'vite';
 import { resolve } from 'path';
+import handlebarsPlugin from '@yoichiro/vite-plugin-handlebars';
 
 export default defineConfig({
   base: './',
+  plugins: [
+    handlebarsPlugin({
+      partialsDirectoryPath: normalizePath(
+        resolve(__dirname, 'src/partials'),
+      ),
+      transformIndexHtmlOptions: {},
+    }),
+  ],
   build: {
     rollupOptions: {
       input: {
@@ -12,6 +21,7 @@ export default defineConfig({
         privacyPolicy: resolve(__dirname, 'privacy-policy.html'),
         media: resolve(__dirname, 'media.html'),
         report: resolve(__dirname, 'report.html'),
+        news: resolve(__dirname, 'news.html'),
       },
     },
   },
