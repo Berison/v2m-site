@@ -328,12 +328,118 @@ function initProCursor() {
   });
 }
 
+function initSiteMenu(scroll) {
+  const trigger = document.querySelector('.header-burger');
+  const dialog = document.querySelector('#siteMenu');
+  const closeButton = dialog?.querySelector('.site-menu__close');
+  const formPopup = document.querySelector('#formPopup');
+
+  if (!trigger || !dialog || !closeButton) return;
+
+  let scrollLocked = false;
+
+  const syncScroll = () => {
+    const shouldLock =
+      dialog.open || Boolean(formPopup?.classList.contains('is-open'));
+
+    if (shouldLock === scrollLocked) return;
+
+    scrollLocked = shouldLock;
+
+    if (shouldLock) {
+      scroll.stop();
+    } else {
+      scroll.start();
+    }
+  };
+
+  const syncMenuState = () => {
+    trigger.setAttribute('aria-expanded', String(dialog.open));
+
+    document.documentElement.classList.toggle(
+      'site-menu-open',
+      dialog.open,
+    );
+
+    syncScroll();
+  };
+
+  const closeMenu = () => {
+    if (!dialog.open) return;
+
+    dialog.close();
+    trigger.setAttribute('aria-expanded', 'false');
+    document.documentElement.classList.remove('site-menu-open');
+
+    queueMicrotask(syncScroll);
+  };
+
+  trigger.addEventListener('click', () => {
+    if (dialog.open) return;
+
+    dialog.showModal();
+    syncMenuState();
+  });
+
+  closeButton.addEventListener('click', closeMenu);
+
+  dialog.addEventListener('close', syncMenuState);
+
+  let pointerStartedOnBackdrop = false;
+
+  dialog.addEventListener('pointerdown', (event) => {
+    pointerStartedOnBackdrop = event.target === dialog;
+  });
+
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog && pointerStartedOnBackdrop) {
+      closeMenu();
+    }
+
+    pointerStartedOnBackdrop = false;
+  });
+
+  dialog.addEventListener(
+    'click',
+    (event) => {
+      if (!(event.target instanceof Element)) return;
+
+      const action = event.target.closest(
+        '.site-menu__nav a, .site-menu__nav .form-popup',
+      );
+
+      if (action) closeMenu();
+    },
+    true,
+  );
+
+  if (formPopup) {
+    const observer = new MutationObserver(syncScroll);
+
+    observer.observe(formPopup, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+  }
+
+  dialog.querySelectorAll('.site-menu__nav a').forEach((link) => {
+    const path = new URL(link.href).pathname;
+
+    if (path === window.location.pathname) {
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+
+  syncMenuState();
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   void initRecaptcha();
   const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
   });
+  initSiteMenu(scroll);
 
   const counterEl = document.querySelector('#stats-count');
 

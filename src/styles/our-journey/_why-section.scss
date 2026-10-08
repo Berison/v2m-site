@@ -1,6 +1,10 @@
 .why-section {
   padding-top: 190px;
 
+  @media (max-width: 780px) {
+    padding-top: 110px;
+  }
+
   &__header {
     padding-bottom: 200px;
 
