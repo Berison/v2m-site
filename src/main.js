@@ -73,6 +73,124 @@ function loadRecaptcha() {
   return recaptchaLoadingPromise;
 }
 
+function initSubscribePopup() {
+  const dialog = document.querySelector('#subscribePopup');
+  const form = dialog?.querySelector('.subscribe-form');
+  const closeButton = dialog?.querySelector('.newsletter-popup__close');
+
+  if (!dialog || !form || !closeButton) return;
+
+  const emailInput = form.querySelector('[name="email"]');
+  const submitButton = form.querySelector('[type="submit"]');
+  const status = form.querySelector('.subscribe-form__status');
+
+  let isSubmitting = false;
+  let backdropPress = false;
+
+  document.querySelectorAll('.subscribe-popup').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (dialog.open) return;
+
+      dialog.showModal();
+      document.documentElement.classList.add('subscribe-popup-open');
+      emailInput.focus({ preventScroll: true });
+    });
+  });
+
+  closeButton.addEventListener('click', () => dialog.close());
+
+  dialog.addEventListener('close', () => {
+    document.documentElement.classList.remove('subscribe-popup-open');
+  });
+
+  dialog.addEventListener('pointerdown', (event) => {
+    backdropPress = event.target === dialog;
+  });
+
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog && backdropPress) {
+      dialog.close();
+    }
+
+    backdropPress = false;
+  });
+
+  const showStatus = (message, type) => {
+    status.textContent = message;
+    status.classList.toggle('is-error', type === 'error');
+    status.classList.toggle('is-success', type === 'success');
+  };
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (isSubmitting || !form.reportValidity()) return;
+
+    const captchaId = form.dataset.captchaId;
+    const captcha = window.grecaptcha;
+
+    if (!captcha || captchaId === undefined) {
+      showStatus('Verification is loading. Please try again shortly.', 'error');
+      return;
+    }
+
+    const token = captcha.getResponse(Number(captchaId));
+
+    if (!token) {
+      showStatus('Please complete the captcha.', 'error');
+      return;
+    }
+
+    isSubmitting = true;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Subscribing…';
+    showStatus('', '');
+
+    const data = new FormData();
+    data.set('email', emailInput.value.trim());
+    data.set('g-recaptcha-response', token);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok || result?.success !== true) {
+        throw new Error(
+          result?.message ||
+          'Could not complete your request. Please try again later.',
+        );
+      }
+
+      showStatus(
+        result.message ||
+        'Check your inbox to confirm your subscription.',
+        'success',
+      );
+
+      form.reset();
+    } catch (error) {
+      showStatus(
+        error instanceof Error && error.message !== 'Failed to fetch'
+          ? error.message
+          : 'Could not connect. Please try again later.',
+        'error',
+      );
+    } finally {
+      captcha.reset(Number(captchaId));
+      isSubmitting = false;
+      submitButton.disabled = false;
+      submitButton.textContent = 'Subscribe';
+    }
+  });
+}
+
 /**
  * Renders reCAPTCHA for every contact form.
  */
@@ -80,7 +198,7 @@ async function initRecaptcha() {
   try {
     const recaptcha = await loadRecaptcha();
 
-    document.querySelectorAll('.footer-form').forEach((form) => {
+    document.querySelectorAll('.footer-form, .subscribe-form').forEach((form) => {
       const captchaEl = form.querySelector('.g-recaptcha');
 
       if (!captchaEl || form.dataset.captchaId !== undefined) {
@@ -89,8 +207,8 @@ async function initRecaptcha() {
 
       const captchaId = recaptcha.render(captchaEl, {
         sitekey: SITE_KEY,
+        size: captchaEl.dataset.size || 'normal',
       });
-
       form.dataset.captchaId = String(captchaId);
     });
   } catch (error) {
@@ -333,6 +451,7 @@ function initSiteMenu(scroll) {
   const dialog = document.querySelector('#siteMenu');
   const closeButton = dialog?.querySelector('.site-menu__close');
   const formPopup = document.querySelector('#formPopup');
+  const subscribePopup = document.querySelector('#subscribePopup');
 
   if (!trigger || !dialog || !closeButton) return;
 
@@ -340,7 +459,9 @@ function initSiteMenu(scroll) {
 
   const syncScroll = () => {
     const shouldLock =
-      dialog.open || Boolean(formPopup?.classList.contains('is-open'));
+      dialog.open ||
+      Boolean(formPopup?.classList.contains('is-open')) ||
+      Boolean(subscribePopup?.open);
 
     if (shouldLock === scrollLocked) return;
 
@@ -422,6 +543,15 @@ function initSiteMenu(scroll) {
     });
   }
 
+  if (subscribePopup) {
+    const observer = new MutationObserver(syncScroll);
+
+    observer.observe(subscribePopup, {
+      attributes: true,
+      attributeFilter: ['open'],
+    });
+  }
+
   dialog.querySelectorAll('.site-menu__nav a').forEach((link) => {
     const path = new URL(link.href).pathname;
 
@@ -431,6 +561,40 @@ function initSiteMenu(scroll) {
   });
 
   syncMenuState();
+
+  const desktopMenuQuery = window.matchMedia('(min-width: 1101px)');
+
+  const syncMenuBreakpoint = () => {
+    if (desktopMenuQuery.matches && dialog.open) {
+      closeMenu();
+    }
+  };
+
+  desktopMenuQuery.addEventListener('change', syncMenuBreakpoint);
+  syncMenuBreakpoint();
+}
+
+function initNavigationActiveState() {
+  const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+
+  document
+    .querySelectorAll('.header-nav a, .site-menu__nav a')
+    .forEach((link) => {
+      const linkPath = new URL(link.href).pathname;
+      const isExactPage = currentPath === linkPath;
+
+      const isProductArticle =
+        linkPath === '/product.html' &&
+        currentPath.startsWith('/product/');
+
+      link.classList.toggle('active', isExactPage || isProductArticle);
+
+      if (isExactPage) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -440,6 +604,8 @@ window.addEventListener('DOMContentLoaded', () => {
     smooth: true,
   });
   initSiteMenu(scroll);
+  initSubscribePopup();
+  initNavigationActiveState()
 
   const counterEl = document.querySelector('#stats-count');
 

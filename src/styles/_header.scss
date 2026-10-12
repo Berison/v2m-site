@@ -392,3 +392,108 @@ html.site-menu-open body {
     transition: none;
   }
 }
+
+.header-nav {
+  min-width: 0;
+  padding: 10px 12px;
+
+  border: 1px solid #fff;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a,
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 0;
+      border-radius: 8px;
+
+      background: transparent;
+      color: #1e2f30;
+      font-family: "Akzidenz-Grotesk Pro Ext";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+      cursor: pointer;
+
+      transition:
+        background-color 180ms ease,
+        color 180ms ease;
+
+      &.active,
+      &[aria-current="page"] {
+        background: #1e2f30;
+        color: #fff;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #1e2f30;
+        outline-offset: 3px;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background: #00d080;
+          color: #1e2f30;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1400px) {
+    padding-right: 19px;
+    padding-left: 19px;
+
+    &__list {
+      gap: 16px;
+
+      a,
+      button {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
+}
+
+.header-burger {
+  display: none;
+
+  @media (max-width: 1100px) {
+    display: inline-flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-nav__list a,
+  .header-nav__list button {
+    transition: none;
+  }
+}
