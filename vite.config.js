@@ -21,7 +21,7 @@ export default defineConfig({
         privacyPolicy: resolve(__dirname, 'privacy-policy.html'),
         media: resolve(__dirname, 'media.html'),
         report: resolve(__dirname, 'report.html'),
-        news: resolve(__dirname, 'news.html'),
+        // news: resolve(__dirname, 'news.html'),
         product: resolve(__dirname, 'product.html'),
         evolutionOfV2mOne: resolve(__dirname, 'evolution-of-v2m-one.html'),
       },
