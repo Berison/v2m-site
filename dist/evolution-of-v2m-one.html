@@ -48,8 +48,8 @@
       content="Explore V2M-One's evolution from a bulky prototype in 2021 to a compact device in 2026, and the engineering lessons that shaped its hardware along the way."
     />
     <meta name="twitter:image" content="https://v2minc.com/og-image.png" />
-    <script type="module" crossorigin src="./assets/main-C5OPe7__.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-cWy_bWwt.css">
+    <script type="module" crossorigin src="./assets/main-GoX7UZAn.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-EGBGKEt8.css">
   </head>
 
   <body data-scroll-container id="body">
@@ -72,7 +72,25 @@
                 fill="black"
               /></svg>
           </a>
-    
+          <nav class="header-nav" aria-label="Main navigation">
+            <ul class="header-nav__list">
+              <li><a href="/our-journey.html">Milestones</a></li>
+              <li><a href="/news.html">News</a></li>
+              <li><a href="/product.html">Product</a></li>
+              <li><a href="/team.html">Team</a></li>
+              <li><a href="/media.html">Media</a></li>
+              <li>
+                <button
+                  type="button"
+                  class="form-popup"
+                  aria-haspopup="dialog"
+                  aria-controls="formPopup"
+                >
+                  Contact us
+                </button>
+              </li>
+            </ul>
+          </nav>
           <button
             class="header-burger"
             type="button"
@@ -206,6 +224,9 @@
             </div>
 
             <h1 id="article-title">2021–2026: Evolution of V2M-One</h1>
+            <p class="product-article__authors">
+              by А. Demshin, I. Kordunsky, P. Bakulov
+            </p>
           </div>
 
           <div class="product-article__content">
@@ -354,12 +375,20 @@
               come, so
               <button
                 type="button"
+                class="subscribe-popup product-article__subscribe"
+                aria-haspopup="dialog"
+                aria-controls="subscribePopup"
+              >
+                subscribe
+              </button>
+              <!-- <button
+                type="button"
                 class="form-popup product-article__subscribe"
                 aria-haspopup="dialog"
                 aria-controls="formPopup"
               >
                 subscribe
-              </button>
+              </button> -->
               to our updates to stay tuned.
             </p>
           </div>
@@ -599,6 +628,65 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>
+    <dialog
+      class="newsletter-popup"
+      id="subscribePopup"
+      aria-labelledby="subscribe-title"
+      aria-describedby="subscribe-description"
+    >
+      <div class="newsletter-popup__content">
+        <button
+          class="newsletter-popup__close"
+          type="button"
+          aria-label="Close subscription form"
+        >
+          ×
+        </button>
+    
+        <h2 id="subscribe-title" class="newsletter-popup__title">
+          Subscribe to V2M updates
+        </h2>
+    
+        <p id="subscribe-description" class="newsletter-popup__description">
+          Product developments, engineering stories and company news.
+        </p>
+    
+        <form class="subscribe-form" action="/subscribe.php" method="post">
+          <label class="subscribe-form__field" for="subscribe-email">
+            Email address
+          </label>
+    
+          <input
+            class="subscribe-form__input"
+            id="subscribe-email"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+    
+          <div class="subscribe-form__captcha">
+            <div class="g-recaptcha" data-size="compact"></div>
+          </div>
+    
+          <button class="subscribe-form__button" type="submit">
+            Subscribe
+          </button>
+    
+          <p class="subscribe-form__note">
+            Confirm your subscription by email. Unsubscribe anytime.
+          </p>
+    
+          <p
+            class="subscribe-form__status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          ></p>
+        </form>
+      </div>
+    </dialog>
   </body>
 </html>
