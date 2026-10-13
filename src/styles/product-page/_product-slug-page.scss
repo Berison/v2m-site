@@ -59,7 +59,7 @@
   }
 
   &__header {
-    margin: 28px 0 32px;
+    margin: 48px 0 48px;
 
     h1 {
       margin: 0;
@@ -78,7 +78,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 8px 16px;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
 
     font-size: 16px;
     line-height: 1.5;
@@ -94,8 +94,12 @@
   }
 
   &__authors {
-    margin-top: 16px;
+    margin-top: 48px;
     font-size: 14px;
+
+    @media (max-width: 780px) {
+      margin-top: 48px;
+    }
   }
 
   &__content {
@@ -105,7 +109,7 @@
     overflow-wrap: anywhere;
 
     p {
-      margin: 0 0 24px;
+      margin: 0 0 48px;
       font-family: inherit;
       font-size: 18px;
       font-weight: 400;
@@ -127,7 +131,7 @@
 
     ul,
     ol {
-      margin: 0 0 24px;
+      margin: 0 0 48px;
       padding: 0 0 0 26px;
       font-size: inherit;
       line-height: inherit;
@@ -157,11 +161,11 @@
     }
 
     .article-list-intro {
-      margin-bottom: 8px;
+      margin-bottom: 48px;
     }
 
     .article-list-compact {
-      margin-bottom: 8px;
+      margin-bottom: 48px;
     }
 
     h2,
@@ -219,7 +223,7 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       align-items: start;
       gap: var(--article-gallery-gap);
-      margin: 40px 0 32px;
+      margin: 40px 0 48px;
 
       .article-figure {
         width: 100%;
@@ -229,7 +233,7 @@
 
     .article-figure {
       min-width: 0;
-      margin: 36px 0 32px;
+      margin: 48px 0 48px;
 
       img {
         display: block;
@@ -246,7 +250,7 @@
       }
 
       figcaption {
-        margin-top: 12px;
+        margin-top: 16px;
         padding: 0 2px;
         color: #1e2f30;
         font-family: inherit;
@@ -360,7 +364,7 @@
     }
 
     &__header {
-      margin: 24px 0 26px;
+      margin: 48px 0;
 
       h1 {
         font-size: 36px;
@@ -371,7 +375,7 @@
 
     &__meta {
       gap: 8px 12px;
-      margin-bottom: 36px;
+      margin-bottom: 48px;
       font-size: 12px;
     }
 
@@ -384,7 +388,7 @@
       line-height: 1.5;
 
       p {
-        margin-bottom: 22px;
+        margin-bottom: 48px;
         font-size: 16px;
       }
 
@@ -413,12 +417,12 @@
 
       .article-gallery {
         grid-template-columns: minmax(0, 1fr);
-        gap: 24px;
-        margin: 30px 0;
+        gap: 48px;
+        margin: 48px 0;
       }
 
       .article-figure {
-        margin: 30px 0;
+        margin: 48px 0;
 
         &--half {
           width: 100%;
@@ -429,7 +433,7 @@
         }
 
         figcaption {
-          margin-top: 10px;
+          margin-top: 16px;
           font-size: 12px;
         }
       }
@@ -462,7 +466,7 @@
   ul,
   ol {
     padding-left: 26px;
-    margin: 0 0 24px;
+    margin: 0 0 48px;
   }
 
   ul {
