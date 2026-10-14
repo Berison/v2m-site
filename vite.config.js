@@ -24,6 +24,7 @@ export default defineConfig({
         // news: resolve(__dirname, 'news.html'),
         product: resolve(__dirname, 'product.html'),
         evolutionOfV2mOne: resolve(__dirname, 'evolution-of-v2m-one.html'),
+        evolutionOfV2mOneSoftware: resolve(__dirname, 'evolution-of-v2m-one-software.html'),
         websitePrivacyPolicy: resolve(__dirname, 'privacy.html'),
       },
     },
