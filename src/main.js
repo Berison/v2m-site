@@ -597,8 +597,48 @@ function initNavigationActiveState() {
     });
 }
 
+function initYoutubePreviews() {
+  document.querySelectorAll('[data-youtube]').forEach((block) => {
+    const button = block.querySelector('.video-preview');
+    const videoId = block.dataset.youtube;
+
+    if (!button || !videoId) return;
+
+    button.addEventListener(
+      'click',
+      () => {
+        const iframe = document.createElement('iframe');
+
+        iframe.className = 'video-iframe';
+        iframe.title = 'V2M video — YouTube';
+        iframe.src =
+          `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}` +
+          '?autoplay=1&playsinline=1';
+
+        iframe.allow =
+          'accelerometer; autoplay; clipboard-write; encrypted-media; ' +
+          'gyroscope; picture-in-picture; web-share';
+
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+
+        button.replaceWith(iframe);
+        iframe.focus({ preventScroll: true });
+      },
+      { once: true },
+    );
+  });
+}
+
 window.addEventListener('DOMContentLoaded', () => {
-  void initRecaptcha();
+  // void initRecaptcha()
+  document.addEventListener('focusin', (event) => {
+    if (!(event.target instanceof Element)) return;
+
+    if (event.target.closest('form')) {
+      void initRecaptcha();
+    }
+  });
   const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
@@ -606,6 +646,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initSiteMenu(scroll);
   initSubscribePopup();
   initNavigationActiveState()
+  initYoutubePreviews();
 
   const counterEl = document.querySelector('#stats-count');
 

@@ -320,3 +320,19 @@
 .g-recaptcha {
   margin: 20px 0;
 }
+
+.footer__privacy-links {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+
+  a {
+    border-bottom: 1px solid transparent;
+    transition: all 0.5s ease;
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
+}

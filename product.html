@@ -25,7 +25,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://v2minc.com/product.html" />
-    <meta property="og:image" content="https://v2minc.com/og-image.png" />
+    <meta property="og:image" content="/assets/og-image.png" />
     <meta property="og:site_name" content="V2M" />
     <meta property="og:locale" content="en_US" />
 
@@ -35,7 +35,40 @@
       name="twitter:description"
       content="Explore the hardware and software behind V2M One."
     />
-    <meta name="twitter:image" content="https://v2minc.com/og-image.png" />
+    <meta name="twitter:image" content="/assets/og-image.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": "https://v2minc.com/product.html#webpage",
+        "url": "https://v2minc.com/product.html",
+        "name": "Product — V2M",
+        "description": "How we build the hardware and software behind V2M One.",
+        "inLanguage": "en",
+        "about": {
+          "@type": "Organization",
+          "@id": "https://v2minc.com/#organization",
+          "name": "V2M",
+          "url": "https://v2minc.com/"
+        },
+        "publisher": {
+          "@id": "https://v2minc.com/#organization"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "V2M product development articles",
+          "numberOfItems": 1,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://v2minc.com/evolution-of-v2m-one.html",
+              "name": "2021-2026: Evolution of V2M-One"
+            }
+          ]
+        }
+      }
+    </script>
   </head>
 
   <body data-scroll-container id="body">
@@ -71,7 +104,7 @@
                 <li class="product-list__item">
                   <a class="product-card" href="/evolution-of-v2m-one.html">
                     <div class="product-card__content">
-                      <time class="product-card__date" datetime="2026-10-06">
+                      <time class="product-card__date" datetime="2026-10-08">
                         Oct 8, 2026
                       </time>
 

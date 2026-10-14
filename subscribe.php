@@ -90,12 +90,6 @@ try {
         'type' => 'unactivated',
     ];
 
-    $ip = $_SERVER['REMOTE_ADDR'] ?? '';
-
-    if (filter_var($ip, FILTER_VALIDATE_IP)) {
-        $payload['ip_address'] = $ip;
-    }
-
     $curl = curl_init('https://api.buttondown.com/v1/subscribers');
 
     curl_setopt_array($curl, [

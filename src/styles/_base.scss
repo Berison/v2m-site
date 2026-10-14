@@ -443,7 +443,8 @@ html.subscribe-popup-open body {
 
   overflow-y: auto;
   overscroll-behavior: contain;
-  background: transparent;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.45);
   color: #fff;
   font-family: "SF Pro";
 
@@ -599,7 +600,7 @@ html.subscribe-popup-open body {
   }
 
   &__note {
-    margin: 16px 0 0;
+    margin: 16px 0 16px;
     color: #bbb;
     font-size: 13px;
     line-height: 1.5;
@@ -622,5 +623,32 @@ html.subscribe-popup-open body {
     &.is-success {
       color: #00d080;
     }
+  }
+}
+
+.privacy-policy {
+  .privacy-link a {
+    margin-top: auto;
+    font-family: "SF Pro";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 119.365%;
+    text-decoration: underline;
+  }
+}
+
+.google-privacy {
+  p {
+    margin-bottom: 10px;
+  }
+  a {
+    margin-top: auto;
+    font-family: "SF Pro";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 119.365%;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    transition: all 0.5s ease;
   }
 }
