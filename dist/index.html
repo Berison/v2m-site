@@ -16,6 +16,7 @@
     />
 
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://v2minc.com/" />
 
     <meta property="og:title" content="V2M" />
 
@@ -28,7 +29,7 @@
 
     <meta property="og:url" content="https://v2minc.com/" />
 
-    <meta property="og:image" content="https://v2minc.com/og-image.png" />
+    <meta property="og:image" content="/assets/og-image.png" />
 
     <meta property="og:site_name" content="V2M" />
 
@@ -43,16 +44,31 @@
       content="V2M-One records a vehicle's sound during a test drive; V2M's acoustic AI finds the abnormal noise and locates its source before the car is on the lift."
     />
 
-    <meta name="twitter:image" content="https://v2minc.com/og-image.png" />
+    <meta name="twitter:image" content="/assets/og-image.png" />
 
-    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-    <!-- <script
-      src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit"
-      async
-      defer
-    ></script> -->
-    <script type="module" crossorigin src="./assets/main-MZoTpiwq.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-UG2AKkYZ.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://v2minc.com/#organization",
+        "name": "V2M",
+        "url": "https://v2minc.com/",
+        "description": "V2M develops AI-powered vehicle diagnostics using sound analysis to detect mechanical anomalies across manufacturing, servicing and fleet operations.",
+        "email": "info@v2minc.com",
+        "telephone": "+12124332922",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "220 E 23rd St",
+          "addressLocality": "New York",
+          "addressRegion": "NY",
+          "postalCode": "10010",
+          "addressCountry": "US"
+        },
+        "sameAs": ["https://www.linkedin.com/company/v2minc/"]
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/main-CueptcRx.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-FxDxv9Gk.css">
   </head>
   <body data-scroll-container id="body">
     <div class="cursor"></div>
@@ -667,24 +683,30 @@
             </div>
           </div>
         </div>
-        <div class="video-block iframe-cursor-zone">
-          <iframe
-            class="video-iframe"
-            src="https://www.youtube.com/embed/jFN-_sGUNGo?si=K_YV2X_5_07qepjV"
-            title="YouTube video player"
-            frameborder="0"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-              web-share;
-            "
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+        <div class="video-block iframe-cursor-zone" data-youtube="jFN-_sGUNGo">
+          <button
+            class="video-preview"
+            type="button"
+            aria-label="Play V2M video on YouTube"
+          >
+            <img
+              class="video-preview__image"
+              src="./assets/video-cover-COLfoAUG.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+
+            <span class="video-preview__play" aria-hidden="true">
+              <svg width="28" height="32" viewBox="0 0 28 32" fill="none">
+                <path d="M28 16L0 32V0L28 16Z" fill="currentColor" />
+              </svg>
+            </span>
+
+            <span class="video-preview__notice">
+              Play video · Connects to YouTube
+            </span>
+          </button>
         </div>
         <div class="how-it-works-button">
           <button type="button" class="green-button form-popup">
@@ -1068,8 +1090,14 @@
           <a href="./media.html">Media</a>
         </nav>
     
-        <a href="./privacy-policy.html" class="footer__policy">Privacy and cookie
-          policy</a>
+        <div class="footer__privacy-links">
+          <a href="/privacy-policy.html" class="footer__policy">
+            App Privacy Policy
+          </a>
+          <a href="/privacy.html" class="footer__policy">
+            Privacy Policy
+          </a>
+        </div>
       </div>
     
       <div class="footer__col footer__col--connect">
@@ -1137,6 +1165,15 @@
           </button>
           <div class="footer-form__status" id="formStatus"></div>
         </form>
+        <div class="google-privacy">
+          <p>This site is protected by reCAPTCHA and the
+            <a href="https://policies.google.com/privacy" target="_blank">Google
+              Privacy Policy</a>
+            and
+            <a href="https://policies.google.com/terms" target="_blank">Terms of
+              Service apply</a></p>
+        </div>
+    
         <div class="footer__bottom">
           <div class="footer__links">
             <a
@@ -1241,6 +1278,15 @@
               <div class="footer-form__status"></div>
             </form>
     
+            <div class="google-privacy">
+              <p>This site is protected by reCAPTCHA and the
+                <a href="https://policies.google.com/privacy" target="_blank">Google
+                  Privacy Policy</a>
+                and
+                <a href="https://policies.google.com/terms" target="_blank">Terms of
+                  Service apply</a></p>
+            </div>
+    
             <div class="footer__bottom">
               <div class="footer__links">
                 <a
@@ -1322,6 +1368,15 @@
             aria-atomic="true"
           ></p>
         </form>
+    
+        <div class="google-privacy">
+          <p>This site is protected by reCAPTCHA and the
+            <a href="https://policies.google.com/privacy" target="_blank">Google
+              Privacy Policy</a>
+            and
+            <a href="https://policies.google.com/terms" target="_blank">Terms of
+              Service apply</a></p>
+        </div>
       </div>
     </dialog>    
   </body>
