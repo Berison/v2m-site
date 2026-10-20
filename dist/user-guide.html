@@ -1,0 +1,1284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/favicon-32x32-KC00EOyY.png"
+    />
+
+    <title>V2M One User Guide: Setup, Testing &amp; Reports — V2M</title>
+
+    <meta
+      name="description"
+      content="Learn how to set up V2M One, connect and mount sensors on ICE and electric vehicles, run a diagnostic test drive, and review and share your vehicle report."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://v2minc.com/user-guide.html" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="V2M One User Guide: Setup, Testing &amp; Reports — V2M"
+    />
+    <meta
+      property="og:description"
+      content="Step-by-step instructions for setting up V2M One, installing sensors, running a test drive, and reviewing diagnostic reports."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://v2minc.com/user-guide.html" />
+    <meta
+      property="og:image"
+      content="https://v2minc.com/assets/og-image.png"
+    />
+    <meta property="og:site_name" content="V2M" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="V2M One User Guide: Setup, Testing &amp; Reports — V2M"
+    />
+    <meta
+      name="twitter:description"
+      content="Step-by-step instructions for setting up V2M One, installing sensors, running a test drive, and reviewing diagnostic reports."
+    />
+    <meta
+      name="twitter:image"
+      content="https://v2minc.com/assets/og-image.png"
+    />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://v2minc.com/user-guide.html#webpage",
+        "url": "https://v2minc.com/user-guide.html",
+        "name": "V2M One User Guide: Setup, Testing & Reports — V2M",
+        "description": "Learn how to set up V2M One, connect and mount sensors on ICE and electric vehicles, run a diagnostic test drive, and review and share your vehicle report.",
+        "inLanguage": "en",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://v2minc.com/#organization",
+          "name": "V2M",
+          "url": "https://v2minc.com/"
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/main-DZWzIWGc.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-TrUZok-U.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="header-inner">
+          <a class="header-inner__logo" href="/index.html" aria-label="V2M — Home">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="176"
+              height="33"
+              viewBox="0 0 176 33"
+              fill="none"
+            >
+              <path
+                d="M157.91 0C155.062 0 153.118 0.78025 151.296 2.58171L146.87 6.90177V0H128.792C125.943 0 124.121 0.90073 122.178 2.58171L113.075 11.4628C111.375 13.3847 110.464 15.1805 110.464 18.0031V26.4023H61.3645V24.1247C61.3645 21.7265 63.4298 19.8046 65.855 19.8046H105.051V18.0031C105.051 15.1805 104.262 13.2643 102.44 11.4628L93.3375 2.58171C91.5158 0.78025 89.5781 0 86.7236 0H50.962H43.7911H43.6867V22.0765C43.6867 24.4746 41.6213 26.3966 39.1962 26.3966H11.7716C9.34652 26.3966 7.28112 24.4746 7.28112 22.0765V0H0V14.9969C0 17.8195 0.789029 19.7357 2.61076 21.5372L11.7136 30.4183C13.5353 32.2197 15.4731 33 18.3275 33H32.6461C35.5005 33 37.4383 32.2197 39.26 30.4183L48.3629 21.5372C50.1846 19.7357 50.9736 17.8195 50.9736 14.9969V6.5977H93.2853C95.7104 6.5977 97.7759 8.51964 97.7759 10.9178V13.1954H72.4167C69.568 13.1954 67.6245 13.9757 65.8027 15.7771L56.6999 24.6582C54.8782 26.4597 54.0891 28.3759 54.0891 31.1985V33H110.47H115.749H117.751V10.9235C117.751 8.52538 119.816 6.60344 122.242 6.60344H139.594V33H146.876V10.9235C146.876 8.52538 148.941 6.60344 151.366 6.60344H168.719V33H176V0H157.91Z"
+                fill="black"
+              /></svg>
+          </a>
+          <nav class="header-nav" aria-label="Main navigation">
+            <ul class="header-nav__list">
+              <li><a href="/our-journey.html">Milestones</a></li>
+              <li><a href="/product.html">Product</a></li>
+              <li><a href="/team.html">Team</a></li>
+              <li><a href="/media.html">Media</a></li>
+              <li>
+                <button
+                  type="button"
+                  class="form-popup"
+                  aria-haspopup="dialog"
+                  aria-controls="formPopup"
+                >
+                  Contact us
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <button
+            class="header-burger"
+            type="button"
+            aria-label="Open navigation"
+            aria-haspopup="dialog"
+            aria-controls="siteMenu"
+            aria-expanded="false"
+          >
+            <span class="header-burger__text">Menu</span>
+    
+            <span class="header-burger__icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+    
+    <dialog class="site-menu" id="siteMenu" aria-labelledby="site-menu-title">
+      <div class="site-menu__panel">
+        <div class="site-menu__top">
+          <h2 id="site-menu-title">Navigation</h2>
+    
+          <button
+            class="site-menu__close"
+            type="button"
+            aria-label="Close navigation"
+            autofocus
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M6 6L18 18M18 6L6 18"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+    
+        <nav class="site-menu__nav" aria-label="Main navigation">
+          <ul class="site-menu__list">
+            <li>
+              <a href="/our-journey.html">
+                <span class="site-menu__number" aria-hidden="true">01</span>
+                <span>Milestones</span>
+              </a>
+            </li>
+    
+            <li>
+              <a href="/product.html">
+                <span class="site-menu__number" aria-hidden="true">02</span>
+                <span>Product</span>
+              </a>
+            </li>
+    
+            <li>
+              <a href="/team.html">
+                <span class="site-menu__number" aria-hidden="true">03</span>
+                <span>Team</span>
+              </a>
+            </li>
+    
+            <li>
+              <a href="/media.html">
+                <span class="site-menu__number" aria-hidden="true">04</span>
+                <span>Media</span>
+              </a>
+            </li>
+    
+            <li>
+              <button
+                type="button"
+                class="form-popup"
+                aria-haspopup="dialog"
+                aria-controls="formPopup"
+              >
+                <span class="site-menu__number" aria-hidden="true">05</span>
+                <span>Contact us</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </dialog>
+    <section class="user-guide-section">
+      <div class="container">
+        <h2>USER GUIDE</h2>
+        <h4>V2MOne app and V2MOne sensors</h4>
+        <h3>INTRODUCTION</h3>
+        <p>
+          Welcome to V2M. This guide walks you through installing the V2MOne
+          app, checking your kit, preparing the sensors, mounting them on your
+          vehicle, running a diagnostic test drive, and reviewing your report.
+          The V2MOne sensors are the wireless devices you mount on the vehicle
+          to capture its acoustic signature during the drive. Throughout the
+          rest of this guide, they are referred to simply as “the sensors.”
+        </p>
+        <p>
+          <strong>1. Install the V2MOne app.</strong> Scan the QR code below to
+          open the app download page. The link works for both iOS (App Store)
+          and Android (Google Play).
+        </p>
+        <a href="https://onelink.to/ym7yjy" target="_blank"
+          ><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAABJCAMAAABGrfvuAAAAM1BMVEX///8AAAC/v7/f398fHx9/f39gYGCfn59fX18+Pj7v7+/Pz89vb28QEBCPj4+vr69QUFBiW7VxAAADEklEQVRYw82Y2ZabMAxAsRZvbPn/r60QInIxJW0PM+19mEksc0N8ZMlh+D+p0DEOA+7/DQDU/xbqqHs0dMRhyEEoJsIQWF9YqAOeN8XUsNyYUgINLakhN6Y0NOCNSdAQDg3pq0yFdkYzVRQSGSHMEmpNYJHSmSjsgJks1AKN6R2iO5PfExDNIRz3lFCof2jydWK5zNapaIL8Q9PKO3L5xJNImenvTFfp/90mMKqa+jKxbREANx2h8VOOd7BOl9B9ji/YAEc+6Z8qasSzCbBh+VhVNMTbEtLJdOJ5E8aOpNNTYjVNcZL8ipFTUlOKHePwK/yD2Ycsxy952DTmDPIVsrDKeuQd/SpCyVkbx5ozmSn5UB2qzsZTjts2FXQoGDqNTzk++OYW4HmTYibbSZ72viXboXLaEc+axlJkbilFxgAoEMAkUnhf+CoCicm7+eymUpbByf6NG252cDCT87hpZZbM4A0KM/MrhBcLW93yKhyZD9PEB/bVetoVt47woWZ+iQmoBaxdzkTbPGLEIwtWa/CzmSYN6VXjZcvG0MKnfEqW9nAOCaNa5a3eiJioob2nZKVWAFzVVEiYzWTYvuvgcEk7O32ByVu3DlQ2dpN182D5FCzVspoW3sHLUxp6jnel4yg43iysjD5sGkvRjV+LAYabKkB2U1HUBBuplPGnbo591prJd/DNij9n6jmdetiG7vh6U9VuDilpo1/d9IoxBIo7JYQS4xxmfQn3PdjfeBacbpe0Bj1vGnNHUpO+XE8m6+Zv05xz+Xh+Urg35XN9etzUnzPdVBCZCEW1UYjeR1AzoVE//r6zHO/PT2Zy3DSezuNcipgAYggrgLbwvA29YGfR3l/t1F7vfyOEN35iPYG+777BtDIHY7JuDuLjlw1lD73uTbn9YLzqd843mhCPywbESadrmxS8mwsvxHpvsvS/qpnYdYT+ecFhmogQ17t7MhPR1Joua+b9OnlVGR413TzrgSTXkJbWJS1ughhpG2JZ6ZSk+uo1v/Mki6+ehnTAw6YKHai14fxQrppphI46/Jf8APmCJdpuDhU3AAAAAElFTkSuQmCC"
+            alt="QR code to open the V2MOne app download page for iOS and Android"
+            decoding="async"
+        /></a>
+        <p>
+          After installation, open the app and log in with the credentials
+          provided to you.
+        </p>
+        <div class="installation-step">
+          <p class="installation-step__intro">
+            <strong>2. Check your kit.</strong>
+            Before you begin, confirm that your box contains all of the
+            following items:
+          </p>
+
+          <ul class="installation-kit-list">
+            <li>2 (or 4) × V2MOne sensor</li>
+            <li>1 × wireless charging platform</li>
+            <li>1 × USB-C cable</li>
+            <li>1 × power supply (wall adapter)</li>
+          </ul>
+
+          <figure class="installation-kit">
+            <img
+              src="./assets/kit-Bu77OBIc.png"
+              alt="Open V2MOne carrying case containing four sensors, a wireless charging platform, a USB-C cable, and a power supply"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <div class="installation-video">
+            <img
+              class="installation-qr installation-qr--small"
+              src="data:image/png;base64,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"
+              alt="QR code to open the sensor installation guide video"
+              loading="lazy"
+              decoding="async"
+            />
+
+            <p>Scan the QR code to access the installation guide video</p>
+          </div>
+        </div>
+
+        <h3>Preparing for use</h3>
+
+        <p>
+          Complete the following steps once, before the first test drive. The
+          same steps apply each time you use the system after an extended break.
+        </p>
+
+        <p>
+          <strong>1. Assemble the charger.</strong>
+          Connect the power supply to the wireless charging platform using the
+          USB-C cable, then plug the power supply into a wall outlet.
+        </p>
+
+        <p>
+          <strong>2. Turn on both sensors.</strong>
+          Press and hold the power button on each sensor until you hear two
+          beeps. To turn a sensor off, press the button once, then press and
+          hold it for about 5 seconds until you hear three beeps.
+        </p>
+
+        <p>
+          <strong>3. Charge the sensors.</strong>
+          Place both sensors on the charging platform. The platform's indicator
+          LEDs are red when a sensor is not properly seated and turn blue once
+          charging begins correctly. Do not continue until both LEDs are blue.
+        </p>
+
+        <p>
+          <strong>
+            4. Open the V2MOne app and sign in with your account credentials.
+          </strong>
+          You can sign in with your email and password, or use Face ID if your
+          device supports it and you have it enabled for the V2MOne app.
+        </p>
+
+        <p>
+          <strong>5. Pair the sensors.</strong>
+          In the app, open the Devices screen and make sure both sensors appear
+          in the list of discovered devices. Tap Connect next to each sensor to
+          pair it with the app.
+        </p>
+
+        <figure class="installation-app-screen">
+          <img
+            src="./assets/app-screen-DAanziyF.png"
+            alt="V2MOne Devices screen showing two discovered sensors, each with a Connect button"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <p>
+          From this screen you can also switch the sensors' Front/Rear
+          positions, remove a sensor, or locate a sensor — swipe right on the
+          sensor entry to access these actions.
+        </p>
+
+        <p class="installation-step__intro">
+          <strong>6. Connect the sensors to Wi-Fi.</strong>
+          The sensors need a Wi-Fi connection to send audio data to the V2M
+          server for analysis. Until this step is complete, each sensor card on
+          the Devices screen will show WiFi not connected. On the Devices
+          screen, tap the green WiFi button to open the Sensor WiFi screen. You
+          have two options:
+        </p>
+
+        <ul class="installation-kit-list">
+          <li>
+            Use Personal Hotspot — share your phone's cellular data with the
+            sensors.
+          </li>
+          <li>
+            Use External WiFi — connect the sensors to a nearby Wi-Fi network,
+            such as a shop or home network.
+          </li>
+        </ul>
+
+        <p>
+          Enter the network name and password in the Network Credentials fields
+          and tap Connect Sensors. Both sensors will connect to the same
+          network. Each sensor will then show a green checkmark with its
+          assigned IP address. Tap Done to return to the Devices screen, where
+          each sensor will display the network name and IP instead of WiFi not
+          connected.
+        </p>
+
+        <p class="installation-step__intro">
+          <strong>Personal Hotspot setup.</strong>
+          iOS does not allow apps to read your hotspot credentials or open
+          Personal Hotspot directly, so the setup has to be done by hand the
+          first time you use it. Open the iOS Settings app, tap Personal
+          Hotspot, and turn on Allow Others to Join. Then enter the credentials
+          in the V2MOne app. They must match exactly:
+        </p>
+
+        <ul class="installation-kit-list">
+          <li>
+            Network name — your iPhone's name, set in Settings → General → About
+            → Name. For example, iPhone 17 Pro V2M.
+          </li>
+          <li>
+            Password — shown in Settings → Personal Hotspot → Wi-Fi Password.
+          </li>
+        </ul>
+
+        <figure class="installation-app-screen">
+          <img
+            src="./assets/app-screen-1-CAZWskw8.png"
+            alt="V2MOne Sensor WiFi screen with Personal Hotspot and External WiFi options, network credentials fields, and a Connect Sensors button"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <aside class="troubleshooting-tip" aria-label="Tip">
+          <svg
+            class="troubleshooting-tip__border"
+            viewBox="0 0 600 80"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M18 15H6L1 20V65L14 79H586L599 65V12L587 1H128L116 15H52"
+              stroke="currentColor"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+
+          <span class="troubleshooting-tip__label" aria-hidden="true">Tip</span>
+
+          <p>
+            If you plan to run tests away from a known Wi-Fi network, set up the
+            iPhone Hotspot once before your first drive. The credentials are
+            remembered, and your phone's hotspot takes care of the rest.
+          </p>
+        </aside>
+
+        <p>
+          <strong>7. Check the battery level.</strong>
+          Before starting a diagnostic session, make sure each sensor's battery
+          level is at least 40%.
+        </p>
+
+        <p>
+          <strong>8. Install the sensors on the vehicle.</strong>
+          With the sensors turned on and paired, mount them on the vehicle
+          according to the appropriate Sensor Installation Guide on the
+          following pages — ICE or EV.
+        </p>
+
+        <h3>Mounting the sensors</h3>
+
+        <p>
+          Choose your mounting method. Both methods are field-proven and
+          universal: they work on any vehicle — gas, hybrid, or electric, with
+          or without an underbody shield — and neither makes any permanent
+          change to the car.
+        </p>
+
+        <p>
+          <strong>Recommended:</strong> Mode A — Double-sided tape strips
+          (included). The fastest install; holds on any flat, clean surface.
+        </p>
+
+        <p>
+          <strong>When in doubt:</strong> Mode B — Zip ties. Use them when you
+          are unsure the tape will hold — the surface is cold, dusty, oily, or
+          curved — or when you want mechanical backup, and the panel has
+          openings, slots, or an edge to loop through.
+          <br />
+          In both modes, mount the sensors between the wheels, close to the
+          vehicle centerline, with the microphones facing left and right and the
+          base level with the road.
+        </p>
+
+        <h4 class="troubleshooting-issue-title">
+          Mode A: Double-sided tape strips, recommended.
+        </h4>
+
+        <ol>
+          <li>
+            Wipe the sensor base and the mounting spot with isopropyl alcohol
+            and let them dry. On plastic panels this step is required.
+          </li>
+          <li>
+            Apply exactly two tape strips (about 0.8 × 3 in / 20 × 80 mm) along
+            the base edges, clear of the microphone ports.
+          </li>
+          <li>Press hard over each strip for 10–15 seconds.</li>
+          <li>Wait 15–20 minutes before starting the test drive.</li>
+        </ol>
+
+        <aside class="troubleshooting-tip" aria-label="Tip">
+          <svg
+            class="troubleshooting-tip__border"
+            viewBox="0 0 600 80"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M18 15H6L1 20V65L14 79H586L599 65V12L587 1H128L116 15H52"
+              stroke="currentColor"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+
+          <span class="troubleshooting-tip__label" aria-hidden="true">Tip</span>
+
+          <p>
+            Two strips hold the sensor with a large safety margin. A third strip
+            adds nothing — it only makes removal destructive.
+          </p>
+        </aside>
+
+        <p>
+          <strong>Note.</strong> Do not apply tape below 50 °F (10 °C). The
+          adhesive reaches half strength in 20 minutes and 90 % in a day.
+        </p>
+
+        <p>
+          <strong>Removal.</strong> Saw through the foam with fishing line or
+          dental floss, then roll the residue off with IPA. Never pry or pull
+          the housing straight off.
+        </p>
+
+        <div class="installation-gallery">
+          <figure>
+            <img
+              src="./assets/device-photo-C_QznYAE.png"
+              alt="Applying double-sided tape along the edge of the V2MOne sensor base"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure>
+            <img
+              src="./assets/device-photo-1-C75cZoaG.png"
+              alt="Peeling the protective backing from a tape strip on the V2MOne sensor base"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+
+        <h4 class="troubleshooting-issue-title">
+          Mode B: Zip ties, when in doubt.
+        </h4>
+
+        <ol>
+          <li>
+            Hold the sensor against the panel in its position. The microphones
+            face left and right.
+          </li>
+          <li>
+            Route two zip ties over the sensor body and through the openings or
+            slots in the panel — or around a reachable edge.
+          </li>
+          <li>
+            Tension each tie until snug. The sensor must not rotate or slide
+            when you push it by hand.
+          </li>
+          <li>Trim the tie tails flush so nothing rattles in the airflow.</li>
+        </ol>
+
+        <aside class="troubleshooting-tip" aria-label="Tip">
+          <svg
+            class="troubleshooting-tip__border"
+            viewBox="0 0 600 80"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M18 15H6L1 20V65L14 79H586L599 65V12L587 1H128L116 15H52"
+              stroke="currentColor"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+
+          <span class="troubleshooting-tip__label" aria-hidden="true">Tip</span>
+
+          <p>
+            Place the ties away from the microphone ports so they don’t shadow
+            them.
+          </p>
+        </aside>
+
+        <p>
+          <strong>Note.</strong> Nothing to loop a tie through at the right
+          spot? Clean the surface thoroughly and use tape strips (Mode A) —
+          don’t stretch a tie to a far-away opening at an angle.
+        </p>
+
+        <p>
+          <strong>Removal.</strong> Cut the ties and pull them out. Use fresh
+          ties for every install — never reuse a closed tie.
+        </p>
+
+        <h3>Sensor installation guide — ICE vehicles</h3>
+
+        <p>
+          Follow these steps for vehicles with an internal combustion engine
+          (ICE).
+        </p>
+
+        <p>
+          1. With both sensors turned on, begin installation on the vehicle.
+          <br />
+          Attach the sensor as described in Mounting the Sensors, then continue
+          below.
+        </p>
+
+        <p>
+          2. Pay particular attention to sensor positioning. Both the front and
+          rear sensors must be placed between the wheels, as close as possible
+          to the vehicle's centerline.
+        </p>
+
+        <p>3. Remove the sensors after the test drive is complete.</p>
+
+        <figure class="installation-kit">
+          <img
+            src="./assets/installation-car-DPyc71RV.png"
+            alt="Underside of an ICE vehicle showing front (F) and rear (R) sensor positions near the vehicle centerline, with close-up photographs of both mounted sensors"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <div class="installation-video">
+          <img
+            class="installation-qr installation-qr--small"
+            src="data:image/png;base64,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"
+            alt="QR code for the ICE vehicle sensor installation guide video"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <p>Scan the QR code to access the installation guide video</p>
+        </div>
+
+        <h3>Sensor installation guide — EV vehicles</h3>
+
+        <p>Follow these steps for battery electric vehicles (EV).</p>
+
+        <p>
+          1. With both sensors turned on, begin installation on the vehicle.
+          <br />
+          Attach the sensor as described in Mounting the Sensors, then continue
+          below.
+        </p>
+
+        <p>
+          2. Mount the sensors in the front and rear trunks (frunk and trunk).
+          Center each sensor so that the microphones face the left and right
+          sides of the trunk compartment, and keep the sensor horizontally
+          aligned with the road surface.
+        </p>
+
+        <p>3. Remove the sensors after the test drive is complete.</p>
+
+        <figure class="installation-kit">
+          <img
+            src="./assets/installation-car-1-BsC7bZoS.png"
+            alt="Side view of an electric vehicle showing front (F) and rear (R) sensor positions in the frunk and trunk, with photographs of the mounted sensors"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <div class="installation-video">
+          <img
+            class="installation-qr installation-qr--small"
+            src="data:image/png;base64,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"
+            alt="QR code for the electric vehicle sensor installation guide video"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <p>Scan the QR code to access the installation guide video</p>
+        </div>
+
+        <h3>Running a diagnostic session</h3>
+
+        <p>
+          Once the sensors are mounted on the vehicle, switch to the V2MOne app
+          to set up the test and start the diagnostic session.
+        </p>
+
+        <p>
+          <strong>1. Open the Testing tab.</strong> In the V2MOne app, tap the
+          Testing tab to begin a new session.
+        </p>
+
+        <p><strong>2. Enter the vehicle information.</strong></p>
+
+        <aside
+          class="troubleshooting-tip troubleshooting-tip--warning"
+          aria-label="Warning"
+        >
+          <svg
+            class="troubleshooting-tip__border"
+            viewBox="0 0 600 80"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M6 15H116L128 1H587L599 12V65L586 79H14L1 65V20Z"
+              stroke="currentColor"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+
+          <span class="troubleshooting-tip__label" aria-hidden="true"
+            >Warning</span
+          >
+
+          <p>
+            A VIN is required. The diagnostic test cannot be started without
+            one. The fastest and most reliable way to enter vehicle information
+            is to scan the VIN. The V2MOne app can read the VIN from virtually
+            any source — the plate visible through the windshield, an insurance
+            card, a telematics app, the infotainment display, a vehicle
+            nameplate or door-jamb label, the vehicle title, and more. Once the
+            VIN is captured, the app automatically identifies the make, model,
+            and model year using NHTSA data.
+          </p>
+        </aside>
+
+        <p>
+          <strong>3. Start the test.</strong> Once all required vehicle
+          information has been entered, the Start the test button becomes
+          active. The V2MOne app is now ready to run the diagnostic.
+        </p>
+
+        <h3>Performing the test drive</h3>
+
+        <p>
+          With the sensors installed, paired, and the session started in the
+          V2MOne app, drive the vehicle the way you normally would. The system
+          is designed to work with real-world driving — there is no prescribed
+          route, speed, or technique you need to follow.
+        </p>
+
+        <p>
+          If you are aware of a specific sound or vibration you want diagnosed
+          and you know the conditions under which it typically appears — a
+          particular speed range, a turn, braking, a cold engine, a certain type
+          of road surface, and so on — try to reproduce those conditions during
+          the drive. The more faithfully your drive replicates the situation in
+          which the issue occurs, the better V2M can isolate its cause.
+        </p>
+
+        <aside
+          class="troubleshooting-tip troubleshooting-tip--speed"
+          aria-label="Tip"
+        >
+          <svg
+            class="troubleshooting-tip__border"
+            viewBox="0 0 600 80"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M18 15H6L1 20V65L14 79H586L599 65V12L587 1H128L116 15H52"
+              stroke="currentColor"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+
+          <span class="troubleshooting-tip__label" aria-hidden="true">Tip</span>
+
+          <p>
+            Aim for speeds near 50 mph (80 km/h) at some point during the drive
+            to reveal speed-dependent faults.
+          </p>
+
+          <span class="troubleshooting-tip__value" aria-hidden="true"
+            >50 mph</span
+          >
+        </aside>
+
+        <aside
+          class="troubleshooting-tip troubleshooting-tip--warning"
+          aria-label="Warning"
+        >
+          <svg
+            class="troubleshooting-tip__border"
+            viewBox="0 0 600 80"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M6 15H116L128 1H587L599 12V65L586 79H14L1 65V20Z"
+              stroke="currentColor"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+
+          <span class="troubleshooting-tip__label" aria-hidden="true"
+            >Warning</span
+          >
+
+          <p>
+            Do not run the test in heavy rain, snow, or on wet pavement. Road
+            spray and precipitation hitting the underside of the vehicle
+            directly affect the acoustic signature picked up by the sensors and
+            can invalidate the results.
+          </p>
+        </aside>
+
+        <p>
+          The device running the V2MOne app can sit anywhere in the cabin — no
+          specific mount or placement is required. If the Bluetooth connection
+          between the device and the sensors drops during the drive, the sensors
+          keep recording on their own. Once the device is back within range, the
+          session is synced automatically: it appears in the app, the recording
+          is uploaded to the server, the model processes the data, and the
+          diagnostic report is delivered as usual.
+        </p>
+
+        <p>
+          <strong>Location permissions.</strong> For the route to display
+          correctly on the map in your report, the V2MOne app needs access to
+          your location. The simplest setup is to grant the V2MOne app location
+          permission as Always Allow in your phone's settings. If you prefer
+          While Using the app, keep the V2MOne app in the foreground for the
+          entire test — switching to another app or locking the screen pauses
+          location capture. When this happens, the missing segment appears on
+          your route map as a straight line between the points where capture
+          stopped and resumed, instead of your actual path. The same gap can
+          also affect the average and maximum speed shown in your report, since
+          both values are calculated from location data.
+        </p>
+
+        <p>
+          <strong>Session duration.</strong> The test runs up to 10 minutes, at
+          which point the V2MOne app automatically ends the session. For a
+          reliable diagnostic with a confidence grade from the model, let the
+          session run for at least 9 minutes. A session that ends between 5 and
+          9 minutes may still produce a result, but success is not guaranteed. A
+          session shorter than 5 minutes will fail and will need to be re-run.
+        </p>
+
+        <figure class="installation-app-screen">
+          <img
+            src="./assets/app-screen-2-_cDeasO2.png"
+            alt="V2MOne Testing screen showing the route map, an active recording at 05:28, vehicle details, and the Finish the Test button"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <h3>Ending the session and reviewing results</h3>
+
+        <p>
+          When V2MOne app ends the session, the app automatically switches to
+          the Reports tab. Reports are sorted by date and time with the most
+          recent first, so your latest report appears at the top of the list.
+        </p>
+
+        <figure class="installation-app-screen">
+          <img
+            src="./assets/app-screen-3-D8acANAZ.png"
+            alt="V2MOne Reports tab showing a list of vehicle diagnostic reports with letter grades and summaries of detected sound irregularities"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <p>
+          The status of the report updates in real time as the recording is
+          uploaded, processed by the V2M model, and graded. Report generation
+          typically takes no more than two minutes. The exact time depends on
+          whether the sensors were connected to Wi-Fi during the test (see
+          Connect the sensors to Wi-Fi in Preparing for Use) and on the quality
+          of the cellular or Wi-Fi connection available at your location, both
+          during the test and while the report is being generated.
+        </p>
+
+        <p class="installation-step__intro">
+          <strong>What's in the report.</strong> Each report is a comprehensive
+          summary of your vehicle's acoustic signature — the unique pattern of
+          sounds and vibrations captured by the sensors during the drive — and
+          what V2M's analysis found in it. Tap any report in the list to open
+          it. A report includes:
+        </p>
+
+        <ul class="installation-kit-list">
+          <li>
+            An overall letter grade summarizing the condition of the vehicle.
+          </li>
+          <li>
+            A plain-language assessment explaining what the grade means and any
+            recommended next steps.
+          </li>
+          <li>
+            Vehicle and test details — make, model, year, VIN, location, test
+            date and time, duration, and average and maximum speed.
+          </li>
+          <li>
+            A map of your diagnostic driving route with start and end markers.
+          </li>
+        </ul>
+
+        <figure class="installation-app-screen">
+          <img
+            src="./assets/app-screen-4-C1NdJr2F.png"
+            alt="V2MOne report details showing grade A, vehicle information, the test route map, and View PDF and Share PDF buttons"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <p id="report-grades-description">
+          <strong>How to read the grade.</strong> The four grade levels are
+          color-coded for at-a-glance interpretation:
+        </p>
+
+        <table
+          class="report-grades"
+          aria-labelledby="report-grades-description"
+        >
+          <tbody>
+            <tr>
+              <th scope="row">
+                <span class="report-grades__letter report-grades__letter--a"
+                  >A</span
+                >
+              </th>
+              <td>No issues detected. The vehicle is running like new.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <span class="report-grades__letter report-grades__letter--b"
+                  >B</span
+                >
+              </th>
+              <td>Minor sound variations within normal range.</td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <span class="report-grades__letter report-grades__letter--c"
+                  >C</span
+                >
+              </th>
+              <td>
+                Noticeable irregularities. The vehicle is safe to drive but
+                should be inspected soon.
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <span class="report-grades__letter report-grades__letter--d"
+                  >D</span
+                >
+              </th>
+              <td>
+                Significant irregularities. Schedule a diagnostic inspection as
+                soon as possible.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          <strong>Sharing and printing.</strong> Each report can be exported
+          from the V2MOne app as a PDF. Open the report and tap Share PDF to
+          send it to a mechanic, attach it to a service request, or print it.
+          View PDF opens a preview before sharing.
+        </p>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer__col footer__col--brand">
+        <a href="./index.html" class="footer__logo" style="display: block"><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="176"
+            height="33"
+            viewBox="0 0 176 33"
+            fill="none"
+          >
+            <path
+              d="M157.91 0C155.062 0 153.118 0.78025 151.296 2.58171L146.87 6.90177V0H128.792C125.943 0 124.121 0.90073 122.178 2.58171L113.075 11.4628C111.375 13.3847 110.464 15.1805 110.464 18.0031V26.4023H61.3645V24.1247C61.3645 21.7265 63.4298 19.8046 65.855 19.8046H105.051V18.0031C105.051 15.1805 104.262 13.2643 102.44 11.4628L93.3375 2.58171C91.5158 0.78025 89.5781 0 86.7236 0H50.962H43.7911H43.6867V22.0765C43.6867 24.4746 41.6213 26.3966 39.1962 26.3966H11.7716C9.34652 26.3966 7.28112 24.4746 7.28112 22.0765V0H0V14.9969C0 17.8195 0.789029 19.7357 2.61076 21.5372L11.7136 30.4183C13.5353 32.2197 15.4731 33 18.3275 33H32.6461C35.5005 33 37.4383 32.2197 39.26 30.4183L48.3629 21.5372C50.1846 19.7357 50.9736 17.8195 50.9736 14.9969V6.5977H93.2853C95.7104 6.5977 97.7759 8.51964 97.7759 10.9178V13.1954H72.4167C69.568 13.1954 67.6245 13.9757 65.8027 15.7771L56.6999 24.6582C54.8782 26.4597 54.0891 28.3759 54.0891 31.1985V33H110.47H115.749H117.751V10.9235C117.751 8.52538 119.816 6.60344 122.242 6.60344H139.594V33H146.876V10.9235C146.876 8.52538 148.941 6.60344 151.366 6.60344H168.719V33H176V0H157.91Z"
+              fill="white"
+            />
+          </svg>
+        </a>
+    
+        <p class="footer__description">
+          Pioneering Computer hearing, creating solutions for on-board diagnostics
+          using sound and AI.
+          <br />
+          <br />
+          Founded in New York City in 2021
+        </p>
+    
+        <p class="footer__copyright">2026. V2M. All rights reserved.</p>
+      </div>
+    
+      <div class="footer__col footer__col--nav">
+        <h3 class="footer__title">Navigate</h3>
+    
+        <nav class="footer__nav">
+          <a href="./our-journey.html">Milestones</a>
+          <a href="./team.html">Team</a>
+          <a href="./media.html">Media</a>
+        </nav>
+    
+        <div class="footer__privacy-links">
+          <a href="/privacy-policy.html" class="footer__policy">
+            App Privacy Policy
+          </a>
+          <a href="/privacy.html" class="footer__policy">
+            Privacy Policy
+          </a>
+        </div>
+      </div>
+    
+      <div class="footer__col footer__col--connect">
+        <h3 class="footer__title">Connect</h3>
+    
+        <form class="footer-form" id="contactForm" novalidate>
+          <div class="footer-form__row footer-form__row--top">
+            <label class="footer-field">
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required
+                minlength="2"
+              />
+              <span class="footer-field__error"></span>
+            </label>
+    
+            <label class="footer-field">
+              <input type="email" name="email" placeholder="Email" required />
+              <span class="footer-field__error"></span>
+            </label>
+    
+            <label class="footer-field">
+              <input
+                type="text"
+                name="company"
+                placeholder="Company"
+                required
+                minlength="2"
+              />
+              <span class="footer-field__error"></span>
+            </label>
+          </div>
+    
+          <div class="footer-form__row footer-form__row--bottom">
+            <label class="footer-field footer-field--message">
+              <input
+                type="text"
+                name="message"
+                placeholder="Message"
+                required
+                minlength="10"
+              />
+              <span class="footer-field__error"></span>
+            </label>
+    
+            <button
+              type="submit"
+              class="footer-form__button footer-form__button_desktop"
+            >
+              Send
+            </button>
+          </div>
+          <!-- <div
+                class="g-recaptcha"
+                data-sitekey="6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ"
+              ></div> -->
+          <div class="g-recaptcha"></div>
+          <button
+            type="submit"
+            class="footer-form__button footer-form__button_mobile"
+          >
+            Send
+          </button>
+          <div class="footer-form__status" id="formStatus"></div>
+        </form>
+        <div class="google-privacy">
+          <p>This site is protected by reCAPTCHA and the
+            <a href="https://policies.google.com/privacy" target="_blank">Google
+              Privacy Policy</a>
+            and
+            <a href="https://policies.google.com/terms" target="_blank">Terms of
+              Service apply</a></p>
+        </div>
+    
+        <div class="footer__bottom">
+          <div class="footer__links">
+            <a
+              class="non-underline"
+              href="https://maps.google.com/?q=220+E+23rd+St,+New+York,+NY+10010"
+              target="_blank"
+            >
+              220 E 23rd St, New York, NY, 10010, United States
+            </a>
+            <a href="tel:+12124332922">+1 212 433-29-22</a>
+          </div>
+    
+          <div class="footer__links">
+            <a
+              href="https://www.linkedin.com/company/v2minc/"
+              target="_blank"
+            >LinkedIn</a>
+            <a href="mailto:info@v2minc.com">info@v2minc.com</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="popup" id="formPopup" aria-hidden="true">
+      <div class="popup__backdrop"></div>
+    
+      <div
+        class="popup__content"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Form popup"
+      >
+        <button class="popup__close" type="button" aria-label="Close popup">
+          X
+        </button>
+    
+        <div class="popup__body">
+          <div class="footer__col footer__col--connect">
+            <h3 class="footer__title">PLEASE, FILL IN THE FORM</h3>
+    
+            <form class="footer-form" novalidate>
+              <div class="footer-form__row footer-form__row--top">
+                <label class="footer-field">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                    required
+                    minlength="2"
+                  />
+                  <span class="footer-field__error"></span>
+                </label>
+    
+                <label class="footer-field">
+                  <input type="email" name="email" placeholder="Email" required />
+                  <span class="footer-field__error"></span>
+                </label>
+    
+                <label class="footer-field">
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Company"
+                    required
+                    minlength="2"
+                  />
+                  <span class="footer-field__error"></span>
+                </label>
+              </div>
+    
+              <div class="footer-form__row footer-form__row--bottom">
+                <label class="footer-field footer-field--message">
+                  <input
+                    type="text"
+                    name="message"
+                    placeholder="Message"
+                    required
+                    minlength="10"
+                  />
+                  <span class="footer-field__error"></span>
+                </label>
+    
+                <button
+                  type="submit"
+                  class="footer-form__button footer-form__button_desktop"
+                >
+                  Send
+                </button>
+              </div>
+    
+              <!-- <div
+                    class="g-recaptcha"
+                    data-sitekey="6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ"
+                  ></div> -->
+              <div class="g-recaptcha"></div>
+              <button
+                type="submit"
+                class="footer-form__button footer-form__button_mobile"
+              >
+                Send
+              </button>
+    
+              <div class="footer-form__status"></div>
+            </form>
+    
+            <div class="google-privacy">
+              <p>This site is protected by reCAPTCHA and the
+                <a href="https://policies.google.com/privacy" target="_blank">Google
+                  Privacy Policy</a>
+                and
+                <a href="https://policies.google.com/terms" target="_blank">Terms of
+                  Service apply</a></p>
+            </div>
+    
+            <div class="footer__bottom">
+              <div class="footer__links">
+                <a
+                  class="non-underline"
+                  href="https://maps.google.com/?q=220+E+23rd+St,+New+York,+NY+10010"
+                  target="_blank"
+                >
+                  220 E 23rd St, New York, NY, 10010, United States
+                </a>
+                <a href="tel:+12124332922">+1 212 433-29-22</a>
+              </div>
+    
+              <div class="footer__links">
+                <a
+                  href="https://www.linkedin.com/company/v2minc/"
+                  target="_blank"
+                >LinkedIn</a>
+                <a href="mailto:info@v2minc.com">info@v2minc.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <dialog
+      class="newsletter-popup"
+      id="subscribePopup"
+      aria-labelledby="subscribe-title"
+      aria-describedby="subscribe-description"
+    >
+      <div class="newsletter-popup__content">
+        <button
+          class="newsletter-popup__close"
+          type="button"
+          aria-label="Close subscription form"
+        >
+          ×
+        </button>
+    
+        <h2 id="subscribe-title" class="newsletter-popup__title">
+          Subscribe to V2M updates
+        </h2>
+    
+        <p id="subscribe-description" class="newsletter-popup__description">
+          Product developments, engineering stories and company news.
+        </p>
+    
+        <form class="subscribe-form" action="/subscribe.php" method="post">
+          <label class="subscribe-form__field" for="subscribe-email">
+            Email address
+          </label>
+    
+          <input
+            class="subscribe-form__input"
+            id="subscribe-email"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+    
+          <div class="subscribe-form__captcha">
+            <div class="g-recaptcha" data-size="compact"></div>
+          </div>
+    
+          <button class="subscribe-form__button" type="submit">
+            Subscribe
+          </button>
+    
+          <p class="subscribe-form__note">
+            Confirm your subscription by email. Unsubscribe anytime.
+          </p>
+    
+          <p
+            class="subscribe-form__status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          ></p>
+        </form>
+    
+        <div class="google-privacy">
+          <p>This site is protected by reCAPTCHA and the
+            <a href="https://policies.google.com/privacy" target="_blank">Google
+              Privacy Policy</a>
+            and
+            <a href="https://policies.google.com/terms" target="_blank">Terms of
+              Service apply</a></p>
+        </div>
+      </div>
+    </dialog>    
+  </body>
+</html>
