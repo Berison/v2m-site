@@ -26,6 +26,8 @@ export default defineConfig({
         evolutionOfV2mOne: resolve(__dirname, 'evolution-of-v2m-one.html'),
         evolutionOfV2mOneSoftware: resolve(__dirname, 'evolution-of-v2m-one-software.html'),
         websitePrivacyPolicy: resolve(__dirname, 'privacy.html'),
+        troubleshooting: resolve(__dirname, 'troubleshooting.html'),
+        userGuide: resolve(__dirname, 'user-guide.html'),
       },
     },
   },

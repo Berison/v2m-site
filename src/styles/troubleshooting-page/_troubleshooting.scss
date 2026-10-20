@@ -1,0 +1,696 @@
+.troubleshooting-section,
+.user-guide-section {
+  padding: 190px 0 100px;
+  color: #1e2f30;
+  font-family: "SF Pro";
+  font-weight: 400;
+
+  > .container {
+    max-width: 1166px;
+  }
+
+  h2 {
+    position: relative;
+    margin: 0 0 4px;
+
+    font-family: "Akzidenz-Grotesk Pro Ext";
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: -28px;
+      width: 5px;
+      height: 48px;
+      background: currentColor;
+    }
+  }
+
+  h4 {
+    margin: 0 0 48px;
+
+    font-family: "Akzidenz-Grotesk Pro Ext";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 780px) {
+    h2 {
+      font-size: 26px;
+
+      &::before {
+        width: 4px;
+        height: 44px;
+      }
+    }
+
+    h4 {
+      margin-bottom: 36px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    h2 {
+      font-size: 22px;
+
+      &::before {
+        left: -16px;
+        height: calc(100% - 6px);
+      }
+    }
+
+    h4 {
+      font-size: 14px;
+    }
+  }
+
+  h3 {
+    margin: 36px 0 22px;
+    padding-left: 12px;
+    border-left: 5px solid #1e2f30;
+
+    font-family: "Akzidenz-Grotesk Pro Ext";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-transform: uppercase;
+
+    scroll-margin-top: 130px;
+  }
+
+  p {
+    margin: 0 0 20px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    &:focus-visible {
+      outline: 2px solid #1e2f30;
+      outline-offset: 4px;
+    }
+  }
+
+  table {
+    width: 100%;
+    margin: 8px 0 40px;
+    border: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  th,
+  td {
+    padding: 12px 18px;
+    border: 0;
+    text-align: left;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+
+    &:first-child {
+      width: 53%;
+    }
+
+    &:last-child {
+      width: 47%;
+    }
+
+    p {
+      margin: 0;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+  }
+
+  thead {
+    background: transparent;
+
+    th {
+      padding-top: 0;
+      padding-bottom: 12px;
+      font-weight: 700;
+      vertical-align: bottom;
+    }
+  }
+
+  tbody {
+    tr:nth-child(odd) {
+      background: #f0f0f2;
+    }
+
+    tr:nth-child(even) {
+      background: transparent;
+    }
+
+    th {
+      font-weight: 400;
+    }
+  }
+
+  @media (max-width: 780px) {
+    padding: 150px 0 60px;
+
+    h2 {
+      font-size: 34px;
+    }
+
+    h4 {
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 18px;
+      padding-left: 10px;
+      border-left-width: 4px;
+      font-size: 17px;
+      scroll-margin-top: 110px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    table {
+      margin-bottom: 30px;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      vertical-align: top;
+    }
+  }
+
+  @media (max-width: 450px) {
+    > .container {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+
+    h3 {
+      font-size: 15px;
+    }
+
+    table {
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 10px 8px;
+    }
+  }
+
+  h4.troubleshooting-issue-title {
+    margin: 32px 0 8px;
+    font-family: "SF Pro";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: none;
+  }
+
+  p.troubleshooting-steps-intro {
+    margin-bottom: 4px;
+  }
+
+  ol {
+    margin: 0 0 32px;
+    padding-left: 26px;
+    font-size: 18px;
+    line-height: 1.45;
+
+    > li {
+      padding-left: 2px;
+      list-style: decimal outside;
+
+      & + li {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  @media (max-width: 780px) {
+    h4.troubleshooting-issue-title,
+    ol {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  .troubleshooting-tip {
+    position: relative;
+    isolation: isolate;
+    margin: 24px 0 32px;
+    padding: 30px 24px 18px;
+
+    &__border {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      color: #00d080;
+      pointer-events: none;
+    }
+
+    &__label {
+      position: absolute;
+      top: 18.75%;
+      left: 3.2%;
+      transform: translateY(-50%);
+
+      color: #00cf48;
+      text-align: center;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: uppercase;
+
+      @media (min-width: 780px) {
+        left: 4.5%;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .troubleshooting-tip {
+      padding: 32px 18px 18px;
+
+      &__label {
+        font-size: 12px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .troubleshooting-tip--warning {
+    .troubleshooting-tip__border {
+      color: #ff0004;
+    }
+
+    .troubleshooting-tip__label {
+      color: #ff0004;
+    }
+  }
+
+  .troubleshooting-tip--warning {
+    --tip-background: #f7f7f5;
+
+    .troubleshooting-tip__label {
+      left: 24px;
+      padding: 0 8px;
+      background: var(--tip-background);
+    }
+  }
+
+  @media (max-width: 780px) {
+    .troubleshooting-tip--warning {
+      .troubleshooting-tip__label {
+        left: 16px;
+        padding: 0 6px;
+      }
+    }
+  }
+
+  .troubleshooting-support-list {
+    margin: 0 0 32px;
+    padding-left: 26px;
+    font-size: 18px;
+    line-height: 1.45;
+
+    > li {
+      padding-left: 2px;
+      list-style: disc outside;
+
+      & + li {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  @media (max-width: 780px) {
+    .troubleshooting-support-list {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  .installation-step {
+    margin-bottom: 32px;
+
+    &__intro {
+      margin-bottom: 4px;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  .installation-qr {
+    display: block;
+    position: static;
+    width: 132px;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    margin: 20px 0;
+    border-radius: 0;
+    object-fit: contain;
+
+    &--small {
+      flex-shrink: 0;
+      width: 88px;
+      margin: 0;
+    }
+  }
+
+  .installation-kit-list {
+    margin: 0 0 32px;
+    padding-left: 26px;
+    font-size: 18px;
+    line-height: 1.45;
+
+    > li {
+      margin: 0;
+      padding-left: 2px;
+      list-style: disc outside;
+
+      & + li {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .installation-kit {
+    margin: 40px 0;
+
+    img {
+      display: block;
+      position: static;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: none;
+      margin: 0;
+      border-radius: 0;
+      object-fit: contain;
+    }
+  }
+
+  .installation-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin: 32px 0 0;
+
+    p {
+      min-width: 0;
+      margin: 0;
+      color: #62686a;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .installation-kit-list {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .installation-kit {
+      margin: 28px 0;
+    }
+
+    .installation-video {
+      justify-content: flex-start;
+      gap: 16px;
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .installation-video {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .installation-app-screen {
+    width: 100%;
+    max-width: 300px;
+    margin: 36px auto 48px;
+
+    img {
+      display: block;
+      position: static;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: none;
+      margin: 0;
+      border-radius: 0;
+      object-fit: contain;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .installation-app-screen {
+      max-width: 240px;
+      margin: 28px auto 36px;
+    }
+  }
+
+  .installation-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 28px;
+    margin: 48px 0;
+
+    figure {
+      min-width: 0;
+      margin: 0;
+    }
+
+    img {
+      display: block;
+      position: static;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: none;
+      margin: 0;
+      border-radius: 0;
+      object-fit: contain;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .installation-gallery {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 24px;
+      margin: 32px 0;
+    }
+  }
+
+  .troubleshooting-tip--speed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    p {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  .troubleshooting-tip__value {
+    flex-shrink: 0;
+    font-family: "SF Pro";
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 780px) {
+    .troubleshooting-tip--speed {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .troubleshooting-tip__value {
+      font-size: 36px;
+    }
+  }
+
+  .report-grades {
+    width: 100%;
+    min-width: 0;
+    margin: 20px 0 28px;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 10px 16px;
+      border: 0;
+      vertical-align: middle;
+      text-align: left;
+    }
+
+    th:first-child {
+      width: 80px;
+    }
+
+    td:last-child {
+      width: auto;
+    }
+
+    tbody tr:nth-child(odd) {
+      background: transparent;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f0f0f2;
+    }
+
+    &__letter {
+      display: block;
+      font-family: "Akzidenz-Grotesk Pro Med Ext";
+      font-size: 40px;
+      line-height: 1;
+
+      &--a {
+        color: #00cf48;
+      }
+
+      &--b {
+        color: #00dac3;
+      }
+
+      &--c {
+        color: #ff8d28;
+      }
+
+      &--d {
+        color: #ff383c;
+      }
+    }
+  }
+
+  @media (max-width: 780px) {
+    .report-grades {
+      th,
+      td {
+        padding: 12px;
+      }
+
+      th:first-child {
+        width: 60px;
+      }
+
+      &__letter {
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  aside.troubleshooting-tip {
+    --tip-frame-color: #00d080;
+    --tip-label-color: #007a4b;
+    --tip-background: #f7f7f5;
+
+    position: relative;
+    margin: 28px 0 32px;
+    padding: 26px 18px 20px;
+
+    border: 1px solid var(--tip-frame-color);
+    border-radius: 12px;
+    background: var(--tip-background);
+  }
+
+  aside.troubleshooting-tip.troubleshooting-tip--warning {
+    --tip-frame-color: #ff0004;
+    --tip-label-color: #c62828;
+  }
+
+  aside.troubleshooting-tip > svg.troubleshooting-tip__border {
+    display: none !important;
+  }
+
+  aside.troubleshooting-tip > .troubleshooting-tip__label {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: auto;
+    bottom: auto;
+    transform: translateY(-50%);
+
+    margin: 0;
+    padding: 0 8px;
+    background: var(--tip-background);
+    color: var(--tip-label-color);
+
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  aside.troubleshooting-tip > p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}

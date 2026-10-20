@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon-32x32-KC00EOyY.png"
+    />
+
+    <title>V2M One Troubleshooting Guide — V2M</title>
+
+    <meta
+      name="description"
+      content="Find help with common V2M One sensor issues during setup, test drives and reporting. Use the troubleshooting guide to identify symptoms and find the next steps."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://v2minc.com/troubleshooting.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="V2M One Troubleshooting Guide — V2M" />
+    <meta
+      property="og:description"
+      content="Help with common V2M One sensor issues during setup, test drives and reporting."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://v2minc.com/troubleshooting.html" />
+    <meta
+      property="og:image"
+      content="https://v2minc.com/assets/og-image.png"
+    />
+    <meta property="og:site_name" content="V2M" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="V2M One Troubleshooting Guide — V2M" />
+    <meta
+      name="twitter:description"
+      content="Help with common V2M One sensor issues during setup, test drives and reporting."
+    />
+    <meta
+      name="twitter:image"
+      content="https://v2minc.com/assets/og-image.png"
+    />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://v2minc.com/troubleshooting.html#webpage",
+        "url": "https://v2minc.com/troubleshooting.html",
+        "name": "V2M One Troubleshooting Guide — V2M",
+        "description": "Find help with common V2M One sensor issues during setup, test drives and reporting. Use the troubleshooting guide to identify symptoms and find the next steps.",
+        "inLanguage": "en",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://v2minc.com/#organization",
+          "name": "V2M",
+          "url": "https://v2minc.com/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    {{> header}}
+
+    <section class="troubleshooting-section">
+      <div class="container">
+        <h2>TROUBLESHOOTING GUIDE</h2>
+        <h4>Common issues and how to resolve them</h4>
+        <h3>HOW TO USE THIS GUIDE</h3>
+        <p>
+          Throughout this guide, the V2MOne sensors mounted on the vehicle are
+          referred to simply as “the sensors.” Issues are grouped by phase:
+          setup, test drive, and reports. Find the symptom that matches what
+          you're seeing in the Quick Reference Table below, jump to that
+          section, and follow the steps in order — they go from the simplest fix
+          to the most involved. If nothing here resolves the issue, see Getting
+          further help at the end of this document.
+        </p>
+        <h3 id="quick-reference">Quick Reference</h3>
+
+        <p>Find your symptom and go straight to the matching section.</p>
+
+        <table aria-labelledby="quick-reference">
+          <thead>
+            <tr>
+              <th scope="col"><p>If you see/experience</p></th>
+              <th scope="col"><p>Go to</p></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><p>A sensor won't turn on (no beep)</p></td>
+              <td><p>Setup → Sensor won't turn on</p></td>
+            </tr>
+
+            <tr>
+              <td><p>Charging-platform LED stays red</p></td>
+              <td><p>Setup → Sensor won't charge</p></td>
+            </tr>
+
+            <tr>
+              <td><p>A sensor doesn't appear in the Devices list</p></td>
+              <td><p>Setup → Sensor not appearing in app</p></td>
+            </tr>
+
+            <tr>
+              <td><p>Battery is below 40% before a test</p></td>
+              <td><p>Setup → Low battery before a test</p></td>
+            </tr>
+
+            <tr>
+              <td>
+                <p>VIN scan fails or vehicle info doesn't auto-populate</p>
+              </td>
+              <td><p>Setup → VIN won't scan</p></td>
+            </tr>
+
+            <tr>
+              <td><p>Sensor cards still show “WiFi not connected”</p></td>
+              <td><p>Setup → Sensors won’t connect to Wi-Fi</p></td>
+            </tr>
+
+            <tr>
+              <td><p>iPhone Personal Hotspot credentials are rejected</p></td>
+              <td><p>Setup → iPhone Personal Hotspot won’t connect</p></td>
+            </tr>
+
+            <tr>
+              <td><p>Public Wi-Fi shows a sign-in page</p></td>
+              <td><p>Setup → Captive-portal Wi-Fi</p></td>
+            </tr>
+
+            <tr>
+              <td><p>Tape strips won’t stick</p></td>
+              <td><p>Setup → Tape strips won’t stick</p></td>
+            </tr>
+
+            <tr>
+              <td>
+                <p>Bluetooth dropped during the drive and didn't reconnect</p>
+              </td>
+              <td><p>Test Drive → Bluetooth dropped mid-test</p></td>
+            </tr>
+
+            <tr>
+              <td>
+                <p>A sensor came loose from the vehicle during the drive</p>
+              </td>
+              <td><p>Test Drive → Sensor came loose</p></td>
+            </tr>
+
+            <tr>
+              <td><p>A sensor rattles or buzzes during the drive</p></td>
+              <td>
+                <p>
+                  Test Drive → Sensor rattles, buzzes, or came loose during the
+                  drive
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td><p>Phone died or restarted during the test</p></td>
+              <td><p>Test Drive → Phone shut down mid-test</p></td>
+            </tr>
+
+            <tr>
+              <td><p>The session ended in under 5 minutes</p></td>
+              <td><p>Test Drive → Session ended too early</p></td>
+            </tr>
+
+            <tr>
+              <td><p>The session ended between 5 and 9 minutes</p></td>
+              <td>
+                <p>Test Drive → Session ended in the 5–9 minute window</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td><p>Route on the report map shows a straight-line gap</p></td>
+              <td><p>Reports → Straight line on the route map</p></td>
+            </tr>
+
+            <tr>
+              <td><p>Average or maximum speed in the report looks wrong</p></td>
+              <td><p>Reports → Speed values look wrong</p></td>
+            </tr>
+
+            <tr>
+              <td>
+                <p>Report status stays in processing for more than 2 minutes</p>
+              </td>
+              <td><p>Reports → Report stuck in processing</p></td>
+            </tr>
+
+            <tr>
+              <td><p>Report can't be graded by the model</p></td>
+              <td><p>Reports → Report has no grade</p></td>
+            </tr>
+
+            <tr>
+              <td><p>No report appears after the test ends</p></td>
+              <td><p>Reports → Report didn't appear at all</p></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Setup issues</h3>
+
+        <p>
+          Problems that occur before you start a test — while preparing the
+          sensors, pairing them with the V2MOne app, or entering vehicle
+          information.
+        </p>
+
+        <h4 class="troubleshooting-issue-title">Sensor won't turn on.</h4>
+
+        <p>
+          What it means. Pressing and holding the power button does not produce
+          the single confirmation beep, and the sensor does not appear in the
+          Devices list. Most often this means the sensor's battery is fully
+          depleted.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Confirm you're using the correct power-on gesture: a single press
+            and hold until you hear one beep.
+          </li>
+          <li>
+            Place the sensor on the wireless charging platform and confirm the
+            platform's LED turns blue.
+          </li>
+          <li>
+            Leave the sensor charging for at least 15 minutes, then try the
+            power button again.
+          </li>
+          <li>
+            If the LED on the platform stays red instead of turning blue, see
+            Sensor won't charge below.
+          </li>
+          <li>
+            If the sensor still does not turn on after a full charge, contact
+            V2M support.
+          </li>
+        </ol>
+
+        <h4 class="troubleshooting-issue-title">
+          Sensor won't charge (platform LED stays red).
+        </h4>
+
+        <p>
+          What it means. The wireless charging platform shows a red LED instead
+          of blue. The sensor is on the platform but is not aligned correctly
+          with the charging coil, or the platform itself is not powered.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Confirm the power supply is plugged into a working outlet and
+            connected to the platform via the USB-C cable.
+          </li>
+          <li>
+            Reposition the sensor so it sits flat and centered on the platform.
+          </li>
+          <li>
+            Wait a few seconds. The LED should turn blue once the sensor is
+            correctly seated.
+          </li>
+          <li>
+            If the LED stays red with both sensors and across multiple
+            repositioning attempts, contact V2M support.
+          </li>
+        </ol>
+
+        <h4 class="troubleshooting-issue-title">
+          Sensor doesn't appear in the Devices list.
+        </h4>
+
+        <p>
+          What it means. The sensor is turned on but the V2MOne app is not
+          discovering it over Bluetooth.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Confirm Bluetooth is enabled on the phone and that the V2MOne app
+            has Bluetooth permission in the phone's settings.
+          </li>
+          <li>Make sure the sensor is within a few feet of the phone.</li>
+          <li>Pull down to refresh the Devices list in the app.</li>
+          <li>
+            Power-cycle the sensor. To turn it off: press the power button once,
+            then press and hold it for about 5 seconds until you hear three
+            beeps. Wait a few seconds, then turn it back on by pressing and
+            holding the power button until you hear one beep.
+          </li>
+          <li>If the sensor still doesn't appear, contact V2M support.</li>
+        </ol>
+
+        <h4 class="troubleshooting-issue-title">
+          Battery is below 40% before a test.
+        </h4>
+
+        <p>
+          What it means. The V2MOne app reports a sensor's battery level below
+          the 40% threshold required to start a reliable test.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Place both sensors on the charging platform and confirm the LEDs
+            turn blue.
+          </li>
+          <li>
+            Wait until both sensors reach at least 40% charge before starting
+            the test. Charging time depends on the remaining charge and can take
+            up to 3 hours to full battery. If the device is hot, allow extra
+            time for it to cool down.
+          </li>
+        </ol>
+
+        <aside class="troubleshooting-tip" aria-label="Tip">
+          <svg
+            class="troubleshooting-tip__border"
+            viewBox="0 0 600 80"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M18 15H6L1 20V65L14 79H586L599 65V12L587 1H128L116 15H52"
+              stroke="currentColor"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+
+          <span class="troubleshooting-tip__label" aria-hidden="true">Tip</span>
+
+          <p>
+            Keep the sensors on the charging platform between tests so they're
+            ready to go when you need them.
+          </p>
+        </aside>
+
+        <h4 class="troubleshooting-issue-title">
+          VIN won't scan or vehicle info doesn't auto-populate.
+        </h4>
+
+        <p>
+          What it means. The V2MOne app can't read the VIN from the source you
+          pointed it at, or it read the VIN but the make, model, and year fields
+          didn't fill in automatically from NHTSA data.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Confirm the V2MOne app has camera permission in the phone's
+            settings.
+          </li>
+          <li>
+            Make sure the VIN is in focus, well lit, and free of glare. If
+            you're scanning the windshield plate, view it straight on rather
+            than at an angle.
+          </li>
+          <li>
+            Try scanning the VIN from a different source — door-jamb label,
+            vehicle title, insurance card, or infotainment display.
+          </li>
+          <li>
+            If scanning still fails, enter the 17-character VIN manually in the
+            Testing tab.
+          </li>
+          <li>
+            If make, model, and year don't auto-populate after a successful VIN
+            entry, the vehicle may not be in the NHTSA database. Enter these
+            fields manually and proceed with the test.
+          </li>
+        </ol>
+
+        <h4 class="troubleshooting-issue-title">
+          Sensors won’t connect to Wi-Fi.
+        </h4>
+
+        <p>
+          What it means. You entered the network credentials and tapped Connect
+          Sensors, but one or both sensor cards on the Devices screen still read
+          “WiFi not connected” instead of showing a network name and IP address.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Re-open the Sensor WiFi screen and re-enter the network name and
+            password exactly — both are case-sensitive, and one wrong character
+            blocks the connection.
+          </li>
+          <li>
+            Keep the phone or router close during setup so the sensors stay in
+            range.
+          </li>
+          <li>Make sure the network is broadcasting on 2.4 GHz.</li>
+          <li>
+            If you’re using Personal Hotspot, confirm it's still on — iOS
+            switches it off when no device has joined for a while.
+          </li>
+          <li>
+            Tap Connect Sensors again and wait for both cards to show a green
+            checkmark with an IP address.
+          </li>
+          <li>
+            If a sensor still won't connect, power-cycle it and retry; if it
+            still fails, contact V2M support.
+          </li>
+        </ol>
+
+        <aside class="troubleshooting-tip" aria-label="Tip">
+          <svg
+            class="troubleshooting-tip__border"
+            viewBox="0 0 600 80"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M18 15H6L1 20V65L14 79H586L599 65V12L587 1H128L116 15H52"
+              stroke="currentColor"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+
+          <span class="troubleshooting-tip__label" aria-hidden="true">Tip</span>
+
+          <p>
+            A sensor is connected only when its card shows a network name and IP
+            address. “WiFi not connected” means it isn't.
+          </p>
+        </aside>
+
+        <h4 class="troubleshooting-issue-title">
+          iPhone Personal Hotspot credentials are rejected.
+        </h4>
+
+        <p>
+          What it means. The sensors won’t join your iPhone’s Personal Hotspot
+          even though you entered a name and password.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            In iOS, open Settings → Personal Hotspot and turn on Allow Others to
+            Join.
+          </li>
+          <li>
+            Check the network name: it’s your iPhone’s device name (Settings →
+            General → About → Name), case-sensitive.
+          </li>
+          <li>
+            Check the password against Settings → Personal Hotspot → Wi-Fi
+            Password.
+          </li>
+          <li>
+            Keep the Personal Hotspot screen open while the sensors join — iOS
+            keeps the hotspot discoverable while that screen is visible.
+          </li>
+          <li>
+            Re-enter the credentials on the Sensor WiFi screen and tap Connect
+            Sensors.
+          </li>
+        </ol>
+
+        <p>
+          Note: Don’t lock the phone or leave the Personal Hotspot screen until
+          both sensors show a green checkmark — the hotspot may switch off
+          before they connect.
+        </p>
+
+        <h4 class="troubleshooting-issue-title">
+          External Wi-Fi shows a sign-in page (captive portal).
+        </h4>
+
+        <p>
+          What it means. The sensors joined a public network (café, hotel,
+          dealership guest Wi-Fi) but can’t reach the V2M server. These networks
+          often require you to accept terms or sign in on a web page first, and
+          the sensors can’t complete that step.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Use a network without a sign-in page — a private shop or home
+            network, or your iPhone’s Personal Hotspot.
+          </li>
+          <li>Complete the sign-in page, then reconnect the sensors.</li>
+          <li>
+            Re-open the Sensor WiFi screen, select the new network, and tap
+            Connect Sensors.
+          </li>
+        </ol>
+
+        <aside class="troubleshooting-tip" aria-label="Tip">
+          <svg
+            class="troubleshooting-tip__border"
+            viewBox="0 0 600 80"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M18 15H6L1 20V65L14 79H586L599 65V12L587 1H128L116 15H52"
+              stroke="currentColor"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+
+          <span class="troubleshooting-tip__label" aria-hidden="true">Tip</span>
+
+          <p>
+            Personal Hotspot avoids captive-portal problems entirely and is the
+            most reliable option away from a known network.
+          </p>
+        </aside>
+
+        <h4 class="troubleshooting-issue-title">Tape strips won’t stick</h4>
+
+        <p>
+          What it means. The surface is too cold or not clean enough. The
+          adhesive needs a degreased surface and at least 50 °F (10 °C) to bond.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Wipe both the sensor base and the mounting spot with isopropyl
+            alcohol and let them dry.
+          </li>
+          <li>
+            If the car just came in from the cold, let the underbody warm up
+            above 50 °F (10 °C).
+          </li>
+          <li>
+            Press hard over each strip for 10–15 seconds and wait 15–20 minutes
+            before the drive.
+          </li>
+          <li>
+            If the spot still won’t hold and the panel has openings or a
+            reachable edge, mount with zip ties (Mode B) instead.
+          </li>
+        </ol>
+
+        <aside class="troubleshooting-tip" aria-label="Tip">
+          <svg
+            class="troubleshooting-tip__border"
+            viewBox="0 0 600 80"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M18 15H6L1 20V65L14 79H586L599 65V12L587 1H128L116 15H52"
+              stroke="currentColor"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+
+          <span class="troubleshooting-tip__label" aria-hidden="true">Tip</span>
+
+          <p>
+            Leftover residue from a previous install rolls off with your thumb
+            and IPA. Don’t scrape it.
+          </p>
+        </aside>
+        <h3>Test drive issues</h3>
+
+        <p>
+          Problems that occur after the session has started — while you are
+          driving the vehicle.
+          <br />
+          Note: The sensors record audio independently of the phone. Most
+          test-drive issues do not cause the recording to be lost — but they may
+          affect the route map, speed values, or the model's ability to grade
+          the report.
+        </p>
+
+        <h4 class="troubleshooting-issue-title">
+          Bluetooth dropped during the drive and didn't reconnect.
+        </h4>
+
+        <p>
+          What it means. The phone lost its Bluetooth link to the sensors and
+          did not reconnect by the end of the drive. The sensors continued
+          recording on their own — no audio data is lost.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            After the drive, bring the phone back near the sensors. The V2MOne
+            app reconnects automatically as soon as the sensors are in range.
+          </li>
+          <li>
+            Once reconnected, the recording uploads to the server and the report
+            is generated as usual.
+          </li>
+          <li>
+            If the V2MOne app does not reconnect within a few minutes of being
+            in range, force-quit the app and reopen it.
+          </li>
+          <li>If the sensors still don't reconnect, contact V2M support.</li>
+        </ol>
+
+        <h4 class="troubleshooting-issue-title">
+          Sensor came loose from the vehicle during the drive.
+        </h4>
+
+        <p>
+          What it means. A cable tie (ICE) or adhesive pad (EV) failed during
+          the drive, and a sensor moved from its mounted position. Recordings
+          made after that point will not reflect the vehicle's normal acoustic
+          signature and can lead to incorrect findings.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>Pull over when it is safe to do so.</li>
+          <li>
+            End the current session in the V2MOne app and discard the report.
+          </li>
+          <li>
+            Reinstall the sensor following the appropriate Sensor Installation
+            Guide (ICE or EV).
+          </li>
+          <li>
+            For ICE, use fresh cable ties. For EV, replace the adhesive pad if
+            it has lost its tack.
+          </li>
+          <li>Start a new test.</li>
+        </ol>
+
+        <aside
+          class="troubleshooting-tip troubleshooting-tip--warning"
+          aria-label="Warning"
+        >
+          <svg
+            class="troubleshooting-tip__border"
+            viewBox="0 0 600 80"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              d="M6 15H116L128 1H587L599 12V65L586 79H14L1 65V20Z"
+              stroke="currentColor"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+
+          <span class="troubleshooting-tip__label" aria-hidden="true">
+            Warning
+          </span>
+
+          <p>Don't try to reattach the sensor while driving.</p>
+        </aside>
+
+        <h4 class="troubleshooting-issue-title">
+          Phone shut down or restarted during the test.
+        </h4>
+
+        <p>
+          What it means. The sensors continued recording — the audio side of the
+          diagnostic is not lost. While the phone was off, the V2MOne app could
+          not capture location data, so the missing segment will appear on the
+          route map as a straight line, and the average and maximum speed values
+          may be affected. The sensors will end the session automatically at the
+          10-minute mark.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>Pull over when it is safe to do so.</li>
+          <li>
+            Power the phone back on and open the V2MOne app. The app will
+            reconnect to the session in progress.
+          </li>
+          <li>
+            Decide whether to keep the session or discard it. If your phone was
+            off only briefly and the session is still within the 10-minute
+            window, you can let it finish. If the session is largely lost, end
+            it in the V2MOne app and start a new test.
+          </li>
+        </ol>
+
+        <h4 class="troubleshooting-issue-title">
+          Sensor rattles, buzzes, or came loose during the drive.
+        </h4>
+
+        <p>
+          What it means. The mounting has lost tension or grip, so the sensor is
+          vibrating against the vehicle. Recordings from this session may
+          contain rattle that is not coming from the car.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>Pull over when it is safe to do so.</li>
+          <li>
+            Tape mount: press each strip firmly for 10–15 seconds. If a strip
+            has let go, clean the spot with IPA and apply a fresh strip.
+          </li>
+          <li>
+            Zip-tie mount: check both ties. Replace any loose or stretched tie
+            with a fresh one and tension it until the sensor can’t move by hand.
+            Trim the tails.
+          </li>
+          <li>
+            Start a new test from the Testing tab and let it run for at least 9
+            minutes for a guaranteed result.
+          </li>
+        </ol>
+
+        <p>
+          Note. Re-mount the same way as the previous session on this vehicle —
+          changing the mounting method changes how the sensors hear the car.
+        </p>
+
+        <h4 class="troubleshooting-issue-title">
+          Session ended in under 5 minutes.
+        </h4>
+
+        <p>
+          What it means. A session shorter than 5 minutes does not contain
+          enough data for the V2M model to produce a reliable diagnostic. The
+          report will fail.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Confirm the sensors are still installed and have at least 40%
+            battery.
+          </li>
+          <li>
+            Start a new test from the Testing tab and let it run for at least 9
+            minutes for a guaranteed result.
+          </li>
+        </ol>
+
+        <h4 class="troubleshooting-issue-title">
+          Session ended in the 5–9 minute window.
+        </h4>
+
+        <p>
+          What it means. Sessions in this window may produce a result, but a
+          confidence grade from the model is not guaranteed. If the report comes
+          back without a grade, or if you want a higher-confidence diagnostic,
+          run a new test.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Wait for the report to finish processing — it may still produce a
+            usable result.
+          </li>
+          <li>
+            If the report has no grade or you want a more reliable diagnostic,
+            start a new test and let it run for at least 9 minutes.
+          </li>
+        </ol>
+
+        <h3>Reports and results issues</h3>
+
+        <p>
+          Problems with the report itself — its contents, how it looks, or
+          whether it appears at all.
+        </p>
+
+        <h4 class="troubleshooting-issue-title">
+          Straight line on the route map.
+        </h4>
+
+        <p>
+          What it means. Location capture was paused at some point during the
+          drive — usually because the phone was off, the V2MOne app was not in
+          the foreground (under the While Using the app permission), or the
+          phone lost GPS signal. The missing segment is drawn as a straight line
+          between where capture stopped and where it resumed.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            To prevent this in future tests, set the V2MOne app location
+            permission to Always Allow in the phone's settings.
+          </li>
+          <li>
+            If you prefer While Using the app, keep the V2MOne app in the
+            foreground for the entire test — don't switch apps or lock the
+            screen.
+          </li>
+        </ol>
+
+        <p>
+          Note: The straight line affects only how the route is drawn. The
+          acoustic data captured by the sensors is unaffected, and the
+          diagnostic itself is still valid.
+        </p>
+
+        <h4 class="troubleshooting-issue-title">
+          Average or maximum speed in the report looks wrong.
+        </h4>
+
+        <p>
+          What it means. Average and maximum speed are calculated from location
+          data. If location capture was paused during the drive — same root
+          cause as the straight-line issue above — the calculation is based on
+          incomplete data and may not match what you actually drove.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            To get accurate speed values in future tests, set the V2MOne app
+            location permission to Always Allow.
+          </li>
+          <li>
+            If you prefer While Using the App, keep the V2MOne app in the
+            foreground for the entire test.
+          </li>
+        </ol>
+
+        <h4 class="troubleshooting-issue-title">
+          Report stuck in processing for more than 2 minutes.
+        </h4>
+
+        <p>
+          What it means. The recording has been uploaded but the V2M model has
+          not finished generating the report. This is almost always a
+          connectivity issue — either the upload itself is slow on a weak
+          cellular signal, or the model is waiting on data that hasn't fully
+          arrived.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Confirm the sensors were connected to Wi-Fi during the test. On the
+            Devices screen, each sensor should show a network name and IP
+            address, not “WiFi not connected.” If the sensors had no Wi-Fi, the
+            recording can’t upload and the report won’t progress — reconnect
+            them (see Connect the sensors to Wi-Fi in the User Guide) and re-run
+            the test.
+          </li>
+          <li>
+            Move to an area with better cellular coverage or connect the phone
+            to Wi-Fi.
+          </li>
+          <li>Pull down on the Reports tab to refresh the list.</li>
+          <li>
+            Wait a few more minutes. On a slow connection, processing can take
+            longer than usual.
+          </li>
+          <li>
+            If the report is still stuck after 15 minutes, contact V2M support
+            and reference the test date and VIN.
+          </li>
+        </ol>
+
+        <h4 class="troubleshooting-issue-title">Report has no grade.</h4>
+
+        <p>
+          What it means. The model received the recording but couldn't assign a
+          confidence grade. The most common reasons are a session shorter than 9
+          minutes, sensors that came loose during the drive, or recording
+          conditions that contaminated the audio (heavy rain, very rough roads).
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>
+            Review the test conditions: was the session at least 9 minutes long,
+            were the sensors firmly mounted, and was the road dry?
+          </li>
+          <li>Reinstall the sensors if needed and start a new test.</li>
+          <li>
+            If repeated tests under good conditions still produce no grade,
+            contact V2M support.
+          </li>
+        </ol>
+
+        <h4 class="troubleshooting-issue-title">
+          No report appears after the test ends.
+        </h4>
+
+        <p>
+          What it means. The session ended but no entry showed up at the top of
+          the Reports tab. Either the recording never made it to the server, or
+          the app hasn't refreshed yet.
+        </p>
+
+        <p class="troubleshooting-steps-intro">What to do.</p>
+
+        <ol>
+          <li>Confirm the phone has an active cellular or Wi-Fi connection.</li>
+          <li>Pull down on the Reports tab to refresh.</li>
+          <li>
+            Force-quit the V2MOne app and reopen it. The app will reconnect to
+            the sensors and sync any pending recording.
+          </li>
+          <li>
+            If no report appears within 15 minutes, contact V2M support and
+            reference the approximate test time and VIN.
+          </li>
+        </ol>
+
+        <h3>Getting further help</h3>
+
+        <p>
+          If you've worked through the steps above and the issue isn't resolved,
+          V2M support is here to help:
+          <a href="mailto:support@v2minc.com">
+            <strong>support@v2minc.com</strong>
+          </a>
+        </p>
+
+        <p class="troubleshooting-steps-intro">
+          When contacting support, please include:
+        </p>
+
+        <ul class="troubleshooting-support-list">
+          <li>The VIN of the vehicle you were testing.</li>
+          <li>The approximate date and time of the test.</li>
+          <li>
+            A short description of what you were trying to do and what happened
+            instead.
+          </li>
+          <li>Screenshots from the V2MOne app, if applicable.</li>
+        </ul>
+      </div>
+    </section>
+    {{> footer}}
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
