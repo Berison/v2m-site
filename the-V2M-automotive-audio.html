@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon-32x32-KC00EOyY.png"
+    />
+
+    <title>The V2M Automotive Audio Archive — V2M</title>
+
+    <meta
+      name="description"
+      content="Explore how V2M collects and labels vehicle audio, building a 60,000-hour archive to train and test acoustic AI for automotive fault detection and diagnosis."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <link
+      rel="canonical"
+      href="https://v2minc.com/the-V2M-automotive-audio.html"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="The V2M Automotive Audio Archive — V2M"
+    />
+    <meta
+      property="og:description"
+      content="How V2M records, labels and reuses 60,000 hours of vehicle sounds to develop and test acoustic AI for automotive diagnostics."
+    />
+    <meta
+      property="og:url"
+      content="https://v2minc.com/the-V2M-automotive-audio.html"
+    />
+    <meta
+      property="og:image"
+      content="https://v2minc.com/assets/og-image.png"
+    />
+    <meta property="og:site_name" content="V2M" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="article:published_time" content="2026-10-22" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="The V2M Automotive Audio Archive — V2M"
+    />
+    <meta
+      name="twitter:description"
+      content="How V2M records, labels and reuses 60,000 hours of vehicle sounds to develop and test acoustic AI for automotive diagnostics."
+    />
+    <meta
+      name="twitter:image"
+      content="https://v2minc.com/assets/og-image.png"
+    />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": "https://v2minc.com/the-V2M-automotive-audio.html#article",
+        "url": "https://v2minc.com/the-V2M-automotive-audio.html",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://v2minc.com/the-V2M-automotive-audio.html"
+        },
+        "headline": "The V2M automotive audio archive",
+        "description": "Explore how V2M collects and labels vehicle audio, building a 60,000-hour archive to train and test acoustic AI for automotive fault detection and diagnosis.",
+        "image": "https://v2minc.com/assets/og-image.png",
+        "datePublished": "2026-10-22",
+        "inLanguage": "en",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://v2minc.com/#organization",
+          "name": "V2M",
+          "url": "https://v2minc.com/"
+        }
+      }
+    </script>
+  </head>
+
+  <body data-scroll-container id="body">
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+
+    {{> header}}
+
+    <main class="product-article-section">
+      <div class="container">
+        <article class="product-article" aria-labelledby="article-title">
+          <a class="product-article__back" href="/product.html">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M20 12H4M11 5L4 12L11 19"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            Back to Product
+          </a>
+
+          <div class="product-article__header">
+            <div class="product-article__meta">
+              <a href="/product.html">Product</a>
+              <time datetime="2026-10-08">Oct 22, 2026</time>
+              <span>2 min read</span>
+            </div>
+
+            <h1 id="article-title">The V2M automotive audio archive</h1>
+            <p class="product-article__authors">
+              By Aleksanr Iovlev, Igor Kordunsky, Andrey Maltsev
+            </p>
+          </div>
+
+          <div class="product-article__content">
+            <p>
+              In this rather short article we want to expand on the data we base
+              our acoustic diagnostics research on. This is going to be a
+              follow-up to our previous article on the evolution of the
+              <a href="https://v2minc.com/evolution-of-v2m-one-software.html"
+                >V2M software</a
+              >
+              .
+            </p>
+
+            <h2>How we record audio</h2>
+
+            <p>
+              Since 2021, when the idea of acoustic research was put into action
+              and the company was founded, we’ve been working on a reliable way
+              of collecting audio data from vehicles, both in normal operation
+              and with faulty components (you can read more about our hardware
+              design journey in our earlier
+              <a href="https://v2minc.com/evolution-of-v2m-one.html">article</a>
+              ).
+            </p>
+
+            <p>
+              By 2023, we had a fully functional and relatively reliable device
+              (actually, a couple of them first, but we never stopped building
+              them), which we used to start recording and storing audio
+              continuously. For this, we took advantage of having full access to
+              the V2M founder’s main venture at the time: a 15-year-old car
+              repair shop in central Moscow. With full-time access to literally
+              any equipment and expertise needed to diagnose and disassemble
+              cars, we made the most of what we had. For about 16 months, we
+              recorded every single ride of the vehicles representing the main
+              platforms we were interested in at the time (Tesla, Volvo, and
+              Lexus) and kept a daily log of component conditions.
+            </p>
+
+            <p>
+              This operation produced around 37 000 hours of vehicle sounds,
+              which became the foundation of our current collection of hums,
+              squeaks, whistles, knocks, clunks, clicks and other peculiar
+              sounds. Some of these sounds are normal and some are not, and
+              reliably distinguishing between them using an automated system
+              became the focus of our research.
+            </p>
+            <p>
+              As of October 2026, we store around 60 000 hours of expertly
+              labeled data collected on roads around the globe, including in our
+              main cities of operation: Moscow, Dubai and Boston. The data
+              covers multiple combinations of road surfaces and conditions
+              (asphalt, concrete, cracks, pots, bumps, grooves etc) in quite
+              diverse weather conditions, whether it’s dry, snow, rain or mud,
+              temperatures varying from below freezing to unbearably hot for a
+              human.
+            </p>
+            <p>
+              All of this adds distortions on how mechanisms sound in both
+              normal and fault states, ultimately contributing to the robustness
+              of our recognition algorithms.
+            </p>
+            <h3>Built for reuse</h3>
+            <p>
+              We record audio from cars operating normally and from cars with
+              confirmed malfunctions, and we also make recordings of the same
+              car again after the faulty component has been replaced and the
+              malfunction fixed, to use these recordings for either training or
+              testing our models. We keep the original raw audio data, along
+              with any available (anonymized) metadata: GPS, date and time,
+              speed, the vehicle’s model, make and mileage, the vehicle’s
+              condition and any noted fault or repair, which devices captured
+              the audio, any confirmed recording problems, such as a failed
+              microphone or incorrectly installed sensors. Audio can be recut
+              and relabeled for new tasks, such as pretraining on unlabeled
+              audio, detecting unusual sounds, classifying sound types, locating
+              events and studying the effect of recording conditions.
+            </p>
+            <h2>What cars we recorded</h2>
+            <p>
+              Across several periods, we logged faults of varying severity in
+              hub bearing, ball joints, splash guards, engine mount, and
+              differential bearings along with belt or brake squeals, turbo
+              whistle etc., and recorded the same cars after the faulty
+              components were repaired. These vehicles represent the most
+              popular car platforms, including:
+            </p>
+
+            <ul>
+              <li>Small cars: Toyota Yaris, Suzuki Swift, Renault Symbol.</li>
+              <li>Crossovers: Honda CR-V, Volkswagen Tiguan.</li>
+              <li>
+                Full-size pickups: Ram 1500, Chevrolet Silverado, Toyota Tundra.
+              </li>
+              <li>
+                SUVs and off-roaders: Nissan Patrol, Cadillac Escalade, Land
+                Rover Defender.
+              </li>
+              <li>Electric vehicles: Tesla Model 3 and Model X.</li>
+              <li>
+                Luxury and performance models: BMW 7 Series, Mercedes-Benz
+                S-Class, Porsche Cayenne, Rolls-Royce Wraith, Lamborghini Urus.
+              </li>
+            </ul>
+            <p>
+              All this data has allowed us to achieve 98% accuracy on detecting
+              the vehicle’s fault state, which exceeds the hearing abilities of
+              an average human technician, and to shorten the diagnostics time
+              to minutes. If you’d like to try our malfunction diagnostics on
+              your vehicles, contact us
+              <button
+                type="button"
+                class="form-popup product-article__subscribe"
+                aria-haspopup="dialog"
+                aria-controls="formPopup"
+              >
+                contact us</button
+              >, or if you’re interested in reading more about the technology,
+              the business challenges in the industry and the solutions we find,
+              <button
+                type="button"
+                class="subscribe-popup product-article__subscribe"
+                aria-haspopup="dialog"
+                aria-controls="subscribePopup"
+              >
+                subscribe
+              </button>
+              to our monthly digest.
+            </p>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    {{> footer}}
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

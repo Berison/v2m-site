@@ -28,6 +28,7 @@ export default defineConfig({
         websitePrivacyPolicy: resolve(__dirname, 'privacy.html'),
         troubleshooting: resolve(__dirname, 'troubleshooting.html'),
         userGuide: resolve(__dirname, 'user-guide.html'),
+        theV2MAutomotiveAudio: resolve(__dirname, 'the-V2M-automotive-audio.html'),
       },
     },
   },
