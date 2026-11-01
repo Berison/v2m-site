@@ -137,7 +137,8 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     background-color: #1e2f30;
 
     .press-card__logo img:not(.white-edit) {
@@ -277,4 +278,64 @@
 .press-card.is-inview .press-card__text {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+.media-page {
+  .media-heading {
+    padding-top: 150px;
+    h1 {
+      color: #1e2f30;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+  }
+
+  .quote-block { padding-top: 40px; }
+  .quote-block__text { margin: 0 0 70px; }
+
+  .media-section-title {
+    margin-bottom: 30px;
+    color: #1e2f30;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .press-section__grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .press-card,
+  .press-card__logo,
+  .press-card__text {
+    opacity: 1;
+    transform: none;
+  }
+
+  .press-card a,
+  .insight-card { scroll-margin-block: 120px 40px; }
+  .press-card a { display: block; }
+  .press-card a:focus-visible { outline-color: #fff; }
+  .insights-section__label { font-weight: 400; }
+
+  @media (max-width: 900px) {
+    .press-section__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 780px) {
+    .media-heading { padding-top: 110px; }
+    .quote-block__text { margin-bottom: 30px; }
+    .quote-block__author-name,
+    .quote-block__author-role,
+    .insight-card__description { font-size: 16px; line-height: 1.5; }
+  }
+
+  @media (max-width: 600px) {
+    .press-section__grid { grid-template-columns: minmax(0, 1fr); }
+  }
 }

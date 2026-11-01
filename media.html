@@ -128,10 +128,15 @@
       }
     </script>
   </head>
-  <body>
-    <div class="cursor"></div>
-    <div class="cursor-dot"></div>
+  <body class="media-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
     {{> header}}
+    <main id="main-content" tabindex="-1" aria-labelledby="media-title">
+      <div class="container media-heading">
+        <h1 id="media-title">Media</h1>
+      </div>
     <section class="quote-block">
       <div class="container">
         <div class="quote-block__inner" data-scroll-section>
@@ -160,11 +165,11 @@
             data-scroll
             data-scroll-speed="-0.1"
           >
-            <h2 class="quote-block__text">
+            <blockquote class="quote-block__text">
               The solution V2M is proposing could very well delight customers
               and add to the value proposition that many brands wish to offer
               their customers through integrated and connected solutions.
-            </h2>
+            </blockquote>
             <div class="quote-block__authors">
               <div class="quote-block__author">
                 <div class="quote-block__author-image">
@@ -199,10 +204,11 @@
         </div>
       </div>
     </section>
-    <section class="press-section">
+    <section class="press-section" aria-labelledby="press-title">
       <div class="container">
-        <div class="press-section__grid">
-          <div class="press-card" data-scroll data-scroll-class="is-inview">
+        <h2 class="media-section-title" id="press-title">In the press</h2>
+        <ul class="press-section__grid" role="list">
+          <li class="press-card" data-scroll data-scroll-class="is-inview">
             <a
               href="https://telematicswire.net/acoustic-based-vehicle-diagnostic-system/"
               target="_blank"
@@ -217,9 +223,9 @@
                 Acoustic based vehicle diagnostic system
               </div>
             </a>
-          </div>
+          </li>
 
-          <div class="press-card" data-scroll data-scroll-class="is-inview">
+          <li class="press-card" data-scroll data-scroll-class="is-inview">
             <a
               href="https://www.eenewseurope.com/en/ai-diagnoses-a-vehicle-by-its-sound/"
               target="_blank"
@@ -231,9 +237,9 @@
                 Acoustic based vehicle diagnostic system
               </div></a
             >
-          </div>
+          </li>
 
-          <div class="press-card" data-scroll data-scroll-class="is-inview">
+          <li class="press-card" data-scroll data-scroll-class="is-inview">
             <a
               href="https://techacute.com/v2m-ai-based-self-diagnostic-solution/"
               target="_blank"
@@ -246,9 +252,9 @@
                 malfunctions to Improve safety
               </div></a
             >
-          </div>
+          </li>
 
-          <div class="press-card" data-scroll data-scroll-class="is-inview">
+          <li class="press-card" data-scroll data-scroll-class="is-inview">
             <a
               href="https://telecomdrive.com/without-ai-you-cant-be-safe-on-the-road/"
               target="_blank"
@@ -260,9 +266,9 @@
                 Without AI you can't be safe on the road
               </div></a
             >
-          </div>
+          </li>
 
-          <div class="press-card" data-scroll data-scroll-class="is-inview">
+          <li class="press-card" data-scroll data-scroll-class="is-inview">
             <a
               href="https://wonderfulengineering.com/this-novel-tech-listens-to-your-car-to-diagnose-issues/"
               target="_blank"
@@ -283,9 +289,9 @@
                 This novel tech listens to your car to diagnose issues
               </div></a
             >
-          </div>
+          </li>
 
-          <div class="press-card" data-scroll data-scroll-class="is-inview">
+          <li class="press-card" data-scroll data-scroll-class="is-inview">
             <a
               href="https://interestingengineering.com/innovation/novel-tech-listens-car-issues"
               target="_blank"
@@ -301,9 +307,9 @@
                 issues
               </div></a
             >
-          </div>
+          </li>
 
-          <div class="press-card" data-scroll data-scroll-class="is-inview">
+          <li class="press-card" data-scroll data-scroll-class="is-inview">
             <a
               href="https://newatlas.com/automotive/v2m-car-problems-electroacoustic-modules/"
               target="_blank"
@@ -325,9 +331,9 @@
                 them
               </div></a
             >
-          </div>
+          </li>
 
-          <div class="press-card" data-scroll data-scroll-class="is-inview">
+          <li class="press-card" data-scroll data-scroll-class="is-inview">
             <a
               href="https://techacute.com/v2ms-cutting-edge-neural-networks-transform-automotive-fault-diagnosis/"
               target="_blank"
@@ -340,9 +346,9 @@
                 diagnosis
               </div></a
             >
-          </div>
+          </li>
 
-          <div class="press-card" data-scroll data-scroll-class="is-inview">
+          <li class="press-card" data-scroll data-scroll-class="is-inview">
             <a
               href="https://ieeexplore.ieee.org/document/9744317"
               target="_blank"
@@ -355,13 +361,13 @@
                 vehicles
               </div></a
             >
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </section>
-    <section class="insights-section">
+    <section class="insights-section" aria-labelledby="insights-title">
       <div class="container" data-scroll-section>
-        <div class="insights-section__label">V2M INSIGHTS</div>
+        <h2 class="insights-section__label" id="insights-title">V2M Insights</h2>
 
         <a
           href="./report.html"
@@ -370,11 +376,11 @@
           data-scroll-speed="0.1"
         >
           <div class="insight-card__image">
-            <img src="./src/assets/report.png" alt="Driving Innovation" />
+            <img src="./src/assets/report.png" alt="" />
           </div>
 
           <div class="insight-card__content">
-            <h2 class="insight-card__title">Driving Innovation</h2>
+            <h3 class="insight-card__title">Driving Innovation</h3>
 
             <p class="insight-card__description">
               V2M original report with everything you want to know about AI
@@ -390,7 +396,7 @@
       <div class="container">
         <div class="news-inner">
           <div class="news-inner__title">
-            <h1 id="news-title">News</h1>
+            <h2 id="news-title">News</h2>
             <p>Updates from V2M — our product, our company and our team.</p>
           </div>
 
@@ -399,8 +405,7 @@
               <div class="news-timeline__line-stick"></div>
             </div>
 
-            <section class="news-year" aria-labelledby="news-year-2026">
-              <!-- <h2 class="news-year__title" id="news-year-2026">2026</h2> -->
+            <div class="news-year">
 
               <div class="news-year__entries">
                 <article
@@ -442,11 +447,12 @@
                   </div>
                 </article>
               </div>
-            </section>
+            </div>
           </div>
         </div>
       </div>
     </section>
+    </main>
     {{> footer}}
     <script type="module" src="/src/main.js"></script>
   </body>
