@@ -68,13 +68,16 @@
       }
     </script>
   </head>
-  <body data-scroll-container id="body">
+  <body class="home-page" data-scroll-container id="body">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="cursor"></div>
     <div class="cursor-dot"></div>
-    <section class="hero">
+    {{> header}}
+    <main id="main-content" tabindex="-1">
+    <section class="hero" aria-label="V2M introduction">
       <video
         class="hero__video"
-        autoplay
+        aria-hidden="true"
         muted
         loop
         playsinline
@@ -84,15 +87,15 @@
         <source src="/src/assets/back-video.webm" type="video/webm" />
         <source src="/src/assets/back-video.mp4" type="video/mp4" />
       </video>
+      <button type="button" class="motion-toggle">Play background animation</button>
     </section>
-    {{> header}}
     <section class="about-section">
       <div class="container" data-scroll-section>
         <div class="about-inner" data-scroll data-scroll-speed="0.1">
-          <h2>
+          <h1>
             V2M brings AI-powered, data-driven intelligence to vehicle
             diagnostics.
-          </h2>
+          </h1>
           <p>
             By recording and analyzing car sounds in minutes, V2M One detects
             mechanical anomalies with precision eliminating bias, improving
@@ -133,7 +136,7 @@
               <div class="benefit-card__list">
                 <div class="benefit-card__list-item">
                   <div class="benefit-card__list-icon">
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       xmlns="http://www.w3.org/2000/svg"
                       width="29"
                       height="29"
@@ -153,7 +156,7 @@
 
                 <div class="benefit-card__list-item">
                   <div class="benefit-card__list-icon">
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       xmlns="http://www.w3.org/2000/svg"
                       width="29"
                       height="29"
@@ -173,7 +176,7 @@
 
                 <div class="benefit-card__list-item">
                   <div class="benefit-card__list-icon">
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       xmlns="http://www.w3.org/2000/svg"
                       width="29"
                       height="29"
@@ -195,7 +198,7 @@
 
                 <div class="benefit-card__list-item">
                   <div class="benefit-card__list-icon">
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       xmlns="http://www.w3.org/2000/svg"
                       width="29"
                       height="29"
@@ -275,7 +278,7 @@
               <div class="benefit-card__list">
                 <div class="benefit-card__list-item">
                   <div class="benefit-card__list-icon">
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       xmlns="http://www.w3.org/2000/svg"
                       width="29"
                       height="29"
@@ -298,7 +301,7 @@
 
                 <div class="benefit-card__list-item">
                   <div class="benefit-card__list-icon">
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       xmlns="http://www.w3.org/2000/svg"
                       width="29"
                       height="29"
@@ -318,7 +321,7 @@
 
                 <div class="benefit-card__list-item">
                   <div class="benefit-card__list-icon">
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       xmlns="http://www.w3.org/2000/svg"
                       width="29"
                       height="29"
@@ -391,7 +394,7 @@
                 <p>Patented.</p>
                 <img
                   src="./src/assets/nvidia.png"
-                  alt="DOC"
+                  alt="NVIDIA"
                   class="icon"
                   height="97"
                   width="159"
@@ -427,7 +430,7 @@
               <div class="benefit-card__list no-mr">
                 <div class="benefit-card__list-item">
                   <div class="benefit-card__list-icon">
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       xmlns="http://www.w3.org/2000/svg"
                       width="29"
                       height="29"
@@ -447,7 +450,7 @@
 
                 <div class="benefit-card__list-item">
                   <div class="benefit-card__list-icon">
-                    <svg
+                    <svg aria-hidden="true" focusable="false"
                       xmlns="http://www.w3.org/2000/svg"
                       width="29"
                       height="29"
@@ -473,7 +476,7 @@
     <section class="how-it-works">
       <div class="container">
         <div class="content-title" data-scroll data-scroll-speed="0.1">
-          <h3>How it works</h3>
+          <h2>How it works</h2>
           <p>
             V2M-One sensors capture the vehicle’s sound, digitize it and upload
             the recordings — with time, speed and location metadata — to V2M’s
@@ -519,39 +522,31 @@
           <div class="content-right">
             <div class="dots">
               <div class="dot-wrap">
-                <button class="dot dot-first-up" aria-label="More info">
-                  <span class="dot-tooltip dot-tooltip-dark"
-                    >Works with V2M App available for smartphones and
-                    tablets</span
-                  >
+                <button class="dot dot-first-up" aria-label="Works with V2M App available for smartphones and tablets" aria-expanded="false" aria-controls="home-detail-1">
+                  <span class="dot-tooltip" id="home-detail-1" hidden>Works with V2M App available for smartphones and
+                    tablets</span>
                 </button>
                 <button
                   class="dot dot-second-mid dot-white"
-                  aria-label="More info"
+                  aria-label="V2M proprietary circuit board" aria-expanded="false" aria-controls="home-detail-2"
                 >
-                  <span class="dot-tooltip dot-tooltip-dark"
-                    >V2M proprietary circuit board</span
-                  >
+                  <span class="dot-tooltip" id="home-detail-2" hidden>V2M proprietary circuit board</span>
                 </button>
-                <button class="dot dot-third-down" aria-label="More info">
-                  <span class="dot-tooltip dot-tooltip-dark"
-                    >Designed and produced from widely available components in
-                    the US</span
-                  >
+                <button class="dot dot-third-down" aria-label="Designed and produced from widely available components in the US" aria-expanded="false" aria-controls="home-detail-3">
+                  <span class="dot-tooltip" id="home-detail-3" hidden>Designed and produced from widely available components in
+                    the US</span>
                 </button>
                 <button
                   class="dot dot-fourth-end dot-white"
-                  aria-label="More info"
+                  aria-label="Fully autonomous from the vehicle and Internet" aria-expanded="false" aria-controls="home-detail-4"
                 >
-                  <span class="dot-tooltip dot-tooltip-dark"
-                    >Fully autonomous from the vehicle and Internet</span
-                  >
+                  <span class="dot-tooltip" id="home-detail-4" hidden>Fully autonomous from the vehicle and Internet</span>
                 </button>
               </div>
             </div>
             <div class="images">
               <img src="./src/assets/v2m-device.png" alt="V2M device" />
-              <img src="./src/assets/v2m-device.png" alt="V2M device" />
+              <img src="./src/assets/v2m-device.png" alt="" />
             </div>
           </div>
         </div>
@@ -559,7 +554,7 @@
           <button
             class="video-preview"
             type="button"
-            aria-label="Play V2M video on YouTube"
+            aria-label="Play video · Connects to YouTube — V2M"
           >
             <img
               class="video-preview__image"
@@ -591,7 +586,7 @@
       <div class="container">
         <div class="why-we-are-here-inner" data-scroll-section>
           <div class="content-title" data-scroll data-scroll-speed="0.1">
-            <h3>Why we are here</h3>
+            <h2>Why we are here</h2>
           </div>
           <div class="content-text" data-scroll data-scroll-speed="0.1">
             <p>
@@ -632,27 +627,27 @@
               <div class="dot-wrap">
                 <button
                   class="dot dot-white dot-first-down"
-                  aria-label="More info"
+                  aria-label="Alternator" aria-expanded="false" aria-controls="home-detail-5"
                 >
-                  <span class="dot-tooltip">Alternator</span>
+                  <span class="dot-tooltip" id="home-detail-5" hidden>Alternator</span>
                 </button>
                 <button
                   class="dot dot-white dot-second-down"
-                  aria-label="More info"
+                  aria-label="Bevel gear bushing" aria-expanded="false" aria-controls="home-detail-6"
                 >
-                  <span class="dot-tooltip">Bevel gear bushing</span>
+                  <span class="dot-tooltip" id="home-detail-6" hidden>Bevel gear bushing</span>
                 </button>
                 <button
                   class="dot dot-white dot-third-down"
-                  aria-label="More info"
+                  aria-label="Front right hub" aria-expanded="false" aria-controls="home-detail-7"
                 >
-                  <span class="dot-tooltip">Front right hub</span>
+                  <span class="dot-tooltip" id="home-detail-7" hidden>Front right hub</span>
                 </button>
                 <button
                   class="dot dot-white dot-fourth-up"
-                  aria-label="More info"
+                  aria-label="Rear left hub" aria-expanded="false" aria-controls="home-detail-8"
                 >
-                  <span class="dot-tooltip">Rear left hub</span>
+                  <span class="dot-tooltip" id="home-detail-8" hidden>Rear left hub</span>
                 </button>
               </div>
             </div>
@@ -660,7 +655,7 @@
               <img src="./src/assets/car-transparent.png" alt="Car" />
             </div>
           </div>
-          <div class="test-result" id="testResult">
+          <div class="test-result" id="testResult" role="status" aria-live="polite" aria-atomic="true">
             <div class="test-result__text"></div>
           </div>
           <div class="sound-cards">
@@ -669,15 +664,15 @@
                 <button
                   type="button"
                   class="play-button"
-                  aria-label="Play audio"
+                  aria-label="Play Sound 1"
                 ></button>
 
                 <div class="sound-player__content">
-                  <div class="sound-player__title">Sound 1</div>
+                  <div class="sound-player__title" id="sound-title-1">Sound 1</div>
 
                   <input
                     type="range"
-                    class="sound-progress"
+                    class="sound-progress" aria-label="Playback position — Sound 1" aria-valuetext="0 seconds"
                     min="0"
                     max="100"
                     step="0.1"
@@ -690,7 +685,7 @@
                 <source src="/assets/audio/sound-1.aac" type="audio/aac" />
               </audio>
 
-              <div class="sound-checks">
+              <div class="sound-checks" role="group" aria-labelledby="sound-title-1">
                 <label class="sound-check-item">
                   <input type="radio" name="sound-1" value="1" />
                   <span>Exhaust gas recirculation</span>
@@ -717,15 +712,15 @@
                 <button
                   type="button"
                   class="play-button"
-                  aria-label="Play audio"
+                  aria-label="Play Sound 2"
                 ></button>
 
                 <div class="sound-player__content">
-                  <div class="sound-player__title">Sound 2</div>
+                  <div class="sound-player__title" id="sound-title-2">Sound 2</div>
 
                   <input
                     type="range"
-                    class="sound-progress"
+                    class="sound-progress" aria-label="Playback position — Sound 2" aria-valuetext="0 seconds"
                     min="0"
                     max="100"
                     step="0.1"
@@ -738,7 +733,7 @@
                 <source src="/assets/audio/sound-2.aac" type="audio/aac" />
               </audio>
 
-              <div class="sound-checks">
+              <div class="sound-checks" role="group" aria-labelledby="sound-title-2">
                 <label class="sound-check-item">
                   <input type="radio" name="sound-2" value="1" />
                   <span>Exhaust gas recirculation</span>
@@ -765,15 +760,15 @@
                 <button
                   type="button"
                   class="play-button"
-                  aria-label="Play audio"
+                  aria-label="Play Sound 3"
                 ></button>
 
                 <div class="sound-player__content">
-                  <div class="sound-player__title">Sound 3</div>
+                  <div class="sound-player__title" id="sound-title-3">Sound 3</div>
 
                   <input
                     type="range"
-                    class="sound-progress"
+                    class="sound-progress" aria-label="Playback position — Sound 3" aria-valuetext="0 seconds"
                     min="0"
                     max="100"
                     step="0.1"
@@ -786,7 +781,7 @@
                 <source src="/assets/audio/sound-3.aac" type="audio/aac" />
               </audio>
 
-              <div class="sound-checks">
+              <div class="sound-checks" role="group" aria-labelledby="sound-title-3">
                 <label class="sound-check-item">
                   <input type="radio" name="sound-3" value="1" />
                   <span>Exhaust gas recirculation</span>
@@ -813,15 +808,15 @@
                 <button
                   type="button"
                   class="play-button"
-                  aria-label="Play audio"
+                  aria-label="Play Sound 4"
                 ></button>
 
                 <div class="sound-player__content">
-                  <div class="sound-player__title">Sound 4</div>
+                  <div class="sound-player__title" id="sound-title-4">Sound 4</div>
 
                   <input
                     type="range"
-                    class="sound-progress"
+                    class="sound-progress" aria-label="Playback position — Sound 4" aria-valuetext="0 seconds"
                     min="0"
                     max="100"
                     step="0.1"
@@ -834,7 +829,7 @@
                 <source src="/assets/audio/sound-4.aac" type="audio/aac" />
               </audio>
 
-              <div class="sound-checks">
+              <div class="sound-checks" role="group" aria-labelledby="sound-title-4">
                 <label class="sound-check-item">
                   <input type="radio" name="sound-4" value="1" />
                   <span>Exhaust gas recirculation</span>
@@ -869,7 +864,7 @@
       <div class="container" data-scroll-section>
         <div class="impact-inner">
           <div class="content-title" data-scroll data-scroll-speed="0.1">
-            <h3>The impact</h3>
+            <h2>The impact</h2>
           </div>
           <div class="benefits-inner">
             <div
@@ -877,10 +872,10 @@
               data-scroll
               data-scroll-speed="0.1"
             >
-              <h2>
+              <h3>
                 Why automotive industry players need V2M One and adoption of
                 data-based diagnostics
-              </h2>
+              </h3>
             </div>
             <div class="benefits-inner-list">
               <div
@@ -926,6 +921,7 @@
         </div>
       </div>
     </section>
+    </main>
     {{> footer}}
     <script type="module" src="/src/main.js"></script>
   </body>

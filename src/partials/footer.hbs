@@ -1,6 +1,6 @@
 <footer class="footer">
   <div class="footer__col footer__col--brand">
-    <a href="./index.html" class="footer__logo" style="display: block"><svg
+    <a href="./index.html" class="footer__logo" aria-label="V2M — Home" style="display: block"><svg
         xmlns="http://www.w3.org/2000/svg"
         width="176"
         height="33"
@@ -50,43 +50,51 @@
     <form class="footer-form" id="contactForm" novalidate>
       <div class="footer-form__row footer-form__row--top">
         <label class="footer-field">
-          <input
+          <span class="footer-field__label" id="contact-1-name-label">Full name (required)</span>
+          <input id="contact-1-name" aria-labelledby="contact-1-name-label" aria-describedby="contact-1-name-hint contact-1-name-error" autocomplete="name"
             type="text"
             name="name"
             placeholder="Full Name"
             required
             minlength="2"
           />
-          <span class="footer-field__error"></span>
+          <span class="field-hint" id="contact-1-name-hint">Required. At least 2 characters.</span>
+          <span class="footer-field__error" id="contact-1-name-error"></span>
         </label>
 
         <label class="footer-field">
-          <input type="email" name="email" placeholder="Email" required />
-          <span class="footer-field__error"></span>
+          <span class="footer-field__label" id="contact-1-email-label">Email (required)</span>
+          <input id="contact-1-email" aria-labelledby="contact-1-email-label" aria-describedby="contact-1-email-hint contact-1-email-error" autocomplete="email" type="email" name="email" placeholder="Email" required />
+          <span class="field-hint" id="contact-1-email-hint">Required.</span>
+          <span class="footer-field__error" id="contact-1-email-error"></span>
         </label>
 
         <label class="footer-field">
-          <input
+          <span class="footer-field__label" id="contact-1-company-label">Company (required)</span>
+          <input id="contact-1-company" aria-labelledby="contact-1-company-label" aria-describedby="contact-1-company-hint contact-1-company-error" autocomplete="organization"
             type="text"
             name="company"
             placeholder="Company"
             required
             minlength="2"
           />
-          <span class="footer-field__error"></span>
+          <span class="field-hint" id="contact-1-company-hint">Required. At least 2 characters.</span>
+          <span class="footer-field__error" id="contact-1-company-error"></span>
         </label>
       </div>
 
       <div class="footer-form__row footer-form__row--bottom">
         <label class="footer-field footer-field--message">
-          <input
+          <span class="footer-field__label" id="contact-1-message-label">Message (required)</span>
+          <input id="contact-1-message" aria-labelledby="contact-1-message-label" aria-describedby="contact-1-message-hint contact-1-message-error"
             type="text"
             name="message"
             placeholder="Message"
             required
             minlength="10"
           />
-          <span class="footer-field__error"></span>
+          <span class="field-hint" id="contact-1-message-hint">Required. At least 10 characters.</span>
+          <span class="footer-field__error" id="contact-1-message-error"></span>
         </label>
 
         <button
@@ -107,7 +115,7 @@
       >
         Send
       </button>
-      <div class="footer-form__status" id="formStatus"></div>
+      <div class="footer-form__status" role="status" aria-live="polite" aria-atomic="true" id="formStatus"></div>
     </form>
     <div class="google-privacy">
       <p>This site is protected by reCAPTCHA and the
@@ -140,14 +148,10 @@
     </div>
   </div>
 </footer>
-<div class="popup" id="formPopup" aria-hidden="true">
-  <div class="popup__backdrop"></div>
+<dialog class="popup" id="formPopup" aria-labelledby="contact-popup-title">
 
   <div
     class="popup__content"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Form popup"
   >
     <button class="popup__close" type="button" aria-label="Close popup">
       X
@@ -155,48 +159,56 @@
 
     <div class="popup__body">
       <div class="footer__col footer__col--connect">
-        <h3 class="footer__title">PLEASE, FILL IN THE FORM</h3>
+        <h2 class="footer__title" id="contact-popup-title">Contact us</h2>
 
         <form class="footer-form" novalidate>
           <div class="footer-form__row footer-form__row--top">
             <label class="footer-field">
-              <input
+          <span class="footer-field__label" id="contact-2-name-label">Full name (required)</span>
+          <input id="contact-2-name" aria-labelledby="contact-2-name-label" aria-describedby="contact-2-name-hint contact-2-name-error" autocomplete="name"
                 type="text"
                 name="name"
                 placeholder="Full Name"
                 required
                 minlength="2"
               />
-              <span class="footer-field__error"></span>
+          <span class="field-hint" id="contact-2-name-hint">Required. At least 2 characters.</span>
+          <span class="footer-field__error" id="contact-2-name-error"></span>
             </label>
 
             <label class="footer-field">
-              <input type="email" name="email" placeholder="Email" required />
-              <span class="footer-field__error"></span>
+          <span class="footer-field__label" id="contact-2-email-label">Email (required)</span>
+          <input id="contact-2-email" aria-labelledby="contact-2-email-label" aria-describedby="contact-2-email-hint contact-2-email-error" autocomplete="email" type="email" name="email" placeholder="Email" required />
+          <span class="field-hint" id="contact-2-email-hint">Required.</span>
+          <span class="footer-field__error" id="contact-2-email-error"></span>
             </label>
 
             <label class="footer-field">
-              <input
+          <span class="footer-field__label" id="contact-2-company-label">Company (required)</span>
+          <input id="contact-2-company" aria-labelledby="contact-2-company-label" aria-describedby="contact-2-company-hint contact-2-company-error" autocomplete="organization"
                 type="text"
                 name="company"
                 placeholder="Company"
                 required
                 minlength="2"
               />
-              <span class="footer-field__error"></span>
+          <span class="field-hint" id="contact-2-company-hint">Required. At least 2 characters.</span>
+          <span class="footer-field__error" id="contact-2-company-error"></span>
             </label>
           </div>
 
           <div class="footer-form__row footer-form__row--bottom">
             <label class="footer-field footer-field--message">
-              <input
+          <span class="footer-field__label" id="contact-2-message-label">Message (required)</span>
+          <input id="contact-2-message" aria-labelledby="contact-2-message-label" aria-describedby="contact-2-message-hint contact-2-message-error"
                 type="text"
                 name="message"
                 placeholder="Message"
                 required
                 minlength="10"
               />
-              <span class="footer-field__error"></span>
+          <span class="field-hint" id="contact-2-message-hint">Required. At least 10 characters.</span>
+          <span class="footer-field__error" id="contact-2-message-error"></span>
             </label>
 
             <button
@@ -219,7 +231,7 @@
             Send
           </button>
 
-          <div class="footer-form__status"></div>
+          <div class="footer-form__status" role="status" aria-live="polite" aria-atomic="true"></div>
         </form>
 
         <div class="google-privacy">
@@ -254,7 +266,7 @@
       </div>
     </div>
   </div>
-</div>
+</dialog>
 <dialog
   class="newsletter-popup"
   id="subscribePopup"

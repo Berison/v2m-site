@@ -2,6 +2,7 @@ import './styles/main.scss';
 import './scripts/accordion';
 import './scripts/popup';
 import './scripts/game';
+import './scripts/accessibility';
 import LocomotiveScroll from 'locomotive-scroll';
 import { CountUp } from 'countup.js';
 import 'locomotive-scroll/dist/locomotive-scroll.css';
@@ -220,6 +221,7 @@ async function initRecaptcha() {
  * Updates the visual progress fill for a range input.
  */
 function updateProgressFill(progress, percent) {
+  progress.style.setProperty('--playback-progress', `${percent}%`);
   progress.style.background = `linear-gradient(
     to right,
     #9cd874 ${percent}%,
@@ -233,7 +235,7 @@ function updateProgressFill(progress, percent) {
 function initSoundCards() {
   const cards = document.querySelectorAll('.sound-card');
 
-  cards.forEach((card) => {
+  cards.forEach((card, index) => {
     const button = card.querySelector('.play-button');
     const audio = card.querySelector('.game-audio');
     const progress = card.querySelector('.sound-progress');
@@ -242,6 +244,14 @@ function initSoundCards() {
       return;
     }
 
+    const soundName = `Sound ${index + 1}`;
+    const formatTime = (seconds) =>
+      `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+    const updateTime = () => {
+      if (Number.isFinite(audio.duration)) {
+        progress.setAttribute('aria-valuetext', `${formatTime(audio.currentTime)} of ${formatTime(audio.duration)}`);
+      }
+    };
     audio.volume = 1;
     audio.muted = false;
 
@@ -269,6 +279,7 @@ function initSoundCards() {
      * Updates the button when audio starts playing.
      */
     audio.addEventListener('play', () => {
+      button.setAttribute('aria-label', `Pause ${soundName}`);
       button.classList.add('is-playing');
       button.classList.remove('is-paused');
     });
@@ -277,6 +288,7 @@ function initSoundCards() {
      * Updates the button when audio is paused.
      */
     audio.addEventListener('pause', () => {
+      button.setAttribute('aria-label', `Play ${soundName}`);
       button.classList.remove('is-playing');
       button.classList.add('is-paused');
     });
@@ -285,6 +297,7 @@ function initSoundCards() {
      * Initializes progress UI when metadata is loaded.
      */
     audio.addEventListener('loadedmetadata', () => {
+      updateTime();
       progress.value = '0';
       updateProgressFill(progress, 0);
     });
@@ -293,8 +306,11 @@ function initSoundCards() {
      * Resets UI when playback ends.
      */
     audio.addEventListener('ended', () => {
+      audio.currentTime = 0;
+      button.setAttribute('aria-label', `Play ${soundName}`);
       button.classList.remove('is-playing');
       button.classList.add('is-paused');
+      updateTime();
       progress.value = '0';
       updateProgressFill(progress, 0);
     });
@@ -309,6 +325,7 @@ function initSoundCards() {
 
       const percent = (audio.currentTime / audio.duration) * 100;
       progress.value = String(percent);
+      updateTime();
       updateProgressFill(progress, percent);
     });
 
@@ -322,6 +339,7 @@ function initSoundCards() {
 
       const percent = Number(progress.value);
       audio.currentTime = (percent / 100) * audio.duration;
+      updateTime();
       updateProgressFill(progress, percent);
     });
   });
@@ -460,7 +478,7 @@ function initSiteMenu(scroll) {
   const syncScroll = () => {
     const shouldLock =
       dialog.open ||
-      Boolean(formPopup?.classList.contains('is-open')) ||
+      Boolean(formPopup?.open) ||
       Boolean(subscribePopup?.open);
 
     if (shouldLock === scrollLocked) return;
@@ -539,7 +557,7 @@ function initSiteMenu(scroll) {
 
     observer.observe(formPopup, {
       attributes: true,
-      attributeFilter: ['class'],
+      attributeFilter: ['open'],
     });
   }
 
@@ -641,7 +659,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
   const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
+    smooth: !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
   });
   initSiteMenu(scroll);
   initSubscribePopup();
@@ -670,6 +688,10 @@ window.addEventListener('DOMContentLoaded', () => {
       if (entry.isIntersecting) {
         const numbers = card.querySelectorAll('.benefit-card__stat-value span:not(.not)');
 
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          observer.disconnect();
+          return;
+        }
         numbers.forEach(el => {
           const value = el.innerText.replace('%', '').replace('x', '');
 
@@ -727,20 +749,23 @@ window.addEventListener('DOMContentLoaded', () => {
     const errorEl = field.querySelector('.footer-field__error');
 
     if (input.validity.valid) {
+      input.removeAttribute('aria-invalid');
       field.classList.remove('is-invalid');
       errorEl.textContent = '';
       return true;
     }
 
+    input.setAttribute('aria-invalid', 'true');
     field.classList.add('is-invalid');
     errorEl.textContent = getError(input);
     return false;
   };
 
   forms.forEach((form) => {
-    const inputs = form.querySelectorAll('input');
+    const inputs = form.querySelectorAll('.footer-field input');
     const statusEl = form.querySelector('.footer-form__status');
-    const btn = form.querySelector('.footer-form__button');
+    const buttons = form.querySelectorAll('.footer-form__button');
+    let isSubmitting = false;
 
     inputs.forEach((input) => {
       input.addEventListener('input', () => {
@@ -754,6 +779,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (isSubmitting) return;
 
       let isValid = true;
 
@@ -774,6 +800,7 @@ window.addEventListener('DOMContentLoaded', () => {
         form.classList.add('is-error');
         form.classList.remove('is-success');
         if (statusEl) statusEl.textContent = 'Fill all fields correctly';
+        form.querySelector('[aria-invalid="true"]')?.focus();
         return;
       }
 
@@ -788,8 +815,12 @@ window.addEventListener('DOMContentLoaded', () => {
       formData.append('action', 'contact-form');
 
       try {
-        btn.disabled = true;
-        btn.textContent = 'Sending...';
+        isSubmitting = true;
+        form.setAttribute('aria-busy', 'true');
+        buttons.forEach((button) => {
+          button.disabled = true;
+          button.textContent = 'Sending...';
+        });
 
         const response = await fetch('/send2.php', {
           method: 'POST',
@@ -820,8 +851,12 @@ window.addEventListener('DOMContentLoaded', () => {
           grecaptcha.reset(Number(captchaId));
         }
       } finally {
-        btn.disabled = false;
-        btn.textContent = 'Send';
+        isSubmitting = false;
+        form.removeAttribute('aria-busy');
+        buttons.forEach((button) => {
+          button.disabled = false;
+          button.textContent = 'Send';
+        });
       }
     });
   });

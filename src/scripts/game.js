@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const correctAnswers = ['1', '4', '2', '3'];
 
-  if (!testBtn) return;
+  if (!testBtn || !resultEl) return;
   testBtn.addEventListener('click', () => {
     const cards = document.querySelectorAll('.sound-card');
 
@@ -27,13 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
     resultEl.classList.remove('success', 'error', 'show');
 
     if (!allAnswered) {
-      resultEl.textContent = 'OOPS, YOU LOSE ;(\nBut dont worry, its ok. V2M is here to help you!';
+      resultEl.textContent = 'Please choose an answer for each sound before checking your results.';
       resultEl.classList.add('error');
     } else if (score === correctAnswers.length) {
       resultEl.textContent = 'Got it! You must be an expert!';
       resultEl.classList.add('success');
     } else {
-      resultEl.textContent = 'Oops';
+      resultEl.textContent = `You identified ${score} of ${correctAnswers.length} sounds correctly. Try again!`;
       resultEl.classList.add('error');
     }
 
