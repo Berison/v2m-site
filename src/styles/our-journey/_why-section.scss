@@ -218,3 +218,46 @@
     transform: translateY(0);
   }
 }
+
+
+.journey-page {
+  #journey-title {
+    margin-bottom: 32px;
+    color: #1e2f30;
+    font-family: "SF Pro";
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .why-section__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .why-section__item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .why-section__year h2 {
+    color: #1e2f30;
+    font-family: "SF Pro";
+    font-size: 92px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.6px;
+    width: 230px;
+    text-align: left;
+  }
+
+  .why-section .dot::before { animation: none; }
+
+  @media (max-width: 780px) {
+    .why-section__year h2 { width: auto; font-size: 32px; }
+    .why-section__item-title,
+    .why-section__amount-text { font-size: 16px; line-height: 1.5; }
+  }
+}

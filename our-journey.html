@@ -68,164 +68,154 @@
       }
     </script>
   </head>
-  <body>
-    <div class="cursor"></div>
-    <div class="cursor-dot"></div>
+  <body class="journey-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
     {{> header}}
-    <section class="why-section">
+    <main class="why-section" id="main-content" tabindex="-1" aria-labelledby="journey-title">
       <div class="container">
         <div class="why-section__content">
-          <div class="why-section__header" data-scroll-section>
-            <h2 class="why-section__title" data-scroll data-scroll-speed="0.1">
+          <div class="why-section__header">
+            <h1 id="journey-title">Milestones</h1>
+            <p class="why-section__title">
               Spearheading a new AI field which called Computer hearing, V2M
               creates a solution for on-board diagnostics using sound. The
               development of V2M can not only effectively find and detect
               malfunctions while driving, but also predict future breakdowns.
-            </h2>
+            </p>
           </div>
 
           <div class="why-section__timeline">
-            <div class="why-section__line">
+            <div class="why-section__line" aria-hidden="true">
               <div class="why-section__line-stick"></div>
             </div>
 
-            <div class="why-section__list" data-scroll-section>
-              <div
+            <ol class="why-section__list" role="list" data-scroll-section>
+              <li
                 class="why-section__item"
-                data-scroll
-                data-scroll-class="is-inview"
               >
                 <div class="why-section__year">
-                  <p>2021</p>
-                  <div class="dot-wrap">
+                  <h2><time datetime="2021">2021</time></h2>
+                  <div class="dot-wrap" aria-hidden="true">
                     <span class="dot disabled"></span>
                   </div>
                 </div>
 
                 <div class="why-section__item-content">
-                  <h3 class="why-section__item-title">
+                  <p class="why-section__item-title">
                     Spun-off from academic research, concept was transformed
                     into a first prototype and the basis for a new innovative
                     solution. V2M LLC incorporated.
-                  </h3>
+                  </p>
 
                   <span class="why-section__amount">$50k</span>
                   <p class="why-section__amount-text">Raised capital</p>
                 </div>
-              </div>
-              <div
+              </li>
+              <li
                 class="why-section__item"
-                data-scroll
-                data-scroll-class="is-inview"
               >
                 <div class="why-section__year">
-                  <p>2022</p>
-                  <div class="dot-wrap">
+                  <h2><time datetime="2022">2022</time></h2>
+                  <div class="dot-wrap" aria-hidden="true">
                     <span class="dot disabled"></span>
                   </div>
                 </div>
 
                 <div class="why-section__item-content">
-                  <h3 class="why-section__item-title">
+                  <p class="why-section__item-title">
                     Following the successful build of the first working
                     prototype, road testing began to refine the technology and
                     prepare for broader deployment. <br />
                     <br />
                     Patent for technology filed and pending.
-                  </h3>
+                  </p>
                 </div>
-              </div>
-              <div
+              </li>
+              <li
                 class="why-section__item"
-                data-scroll
-                data-scroll-class="is-inview"
               >
                 <div class="why-section__year">
-                  <p>2023</p>
-                  <div class="dot-wrap">
+                  <h2><time datetime="2023">2023</time></h2>
+                  <div class="dot-wrap" aria-hidden="true">
                     <span class="dot disabled"></span>
                   </div>
                 </div>
 
                 <div class="why-section__item-content">
-                  <h3 class="why-section__item-title">
+                  <p class="why-section__item-title">
                     Software enhancements introduced a new method, while
                     prototype upgrades simplified setup and reduced costs. V2M’s
                     acoustic fault-localization method is patented in the United
                     States.
-                  </h3>
+                  </p>
                 </div>
-              </div>
-              <div
+              </li>
+              <li
                 class="why-section__item"
-                data-scroll
-                data-scroll-class="is-inview"
               >
                 <div class="why-section__year">
-                  <p>2024</p>
-                  <div class="dot-wrap">
+                  <h2><time datetime="2024">2024</time></h2>
+                  <div class="dot-wrap" aria-hidden="true">
                     <span class="dot disabled"></span>
                   </div>
                 </div>
 
                 <div class="why-section__item-content">
-                  <h3 class="why-section__item-title">
+                  <p class="why-section__item-title">
                     Completed two pilot projects with automotive OEMs, expanded
                     its team, initiated first MVP production, raised seed
                     funding, and continued R&D in predictive diagnostics.
-                  </h3>
+                  </p>
 
                   <span class="why-section__amount">$200k</span>
                   <p class="why-section__amount-text">Raised capital</p>
                 </div>
-              </div>
-              <div
+              </li>
+              <li
                 class="why-section__item"
-                data-scroll
-                data-scroll-class="is-inview"
               >
                 <div class="why-section__year">
-                  <p>2025</p>
-                  <div class="dot-wrap">
+                  <h2><time datetime="2025">2025</time></h2>
+                  <div class="dot-wrap" aria-hidden="true">
                     <span class="dot disabled"></span>
                   </div>
                 </div>
 
                 <div class="why-section__item-content">
-                  <h3 class="why-section__item-title">
+                  <p class="why-section__item-title">
                     Finished design and development of a software application
                     for mobile, desktop. V2M One is ready and moved through
                     product development in Q1, and began mass production in Q3.
                     Three new partnerships with global clients in automotive
                     industry
-                  </h3>
+                  </p>
 
                   <span class="why-section__amount">$500k</span>
                   <p class="why-section__amount-text">Raised capital</p>
                 </div>
-              </div>
-              <div
+              </li>
+              <li
                 class="why-section__item why-section__item_only-title"
-                data-scroll
-                data-scroll-class="is-inview"
               >
                 <div class="why-section__year">
-                  <p>2026</p>
-                  <div class="dot-wrap">
+                  <h2><time datetime="2026">2026</time></h2>
+                  <div class="dot-wrap" aria-hidden="true">
                     <span class="dot disabled"></span>
                   </div>
                 </div>
 
                 <div class="why-section__item-content">
-                  <h3 class="why-section__item-title">
+                  <p class="why-section__item-title">
                     Continuous product validation and improvement. Launch of
                     initial B2B sales and onboarding of beta users. Further
                     market expansion through a defined sales and marketing
                     strategy
-                  </h3>
+                  </p>
                 </div>
-              </div>
-            </div>
+              </li>
+            </ol>
           </div>
 
           <div class="why-section__image" data-scroll-section>
@@ -238,7 +228,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </main>
     {{> footer}}
     <script type="module" src="/src/main.js"></script>
   </body>
