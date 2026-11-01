@@ -81,15 +81,16 @@
     </script>
   </head>
   <body>
-    <div class="cursor"></div>
-    <div class="cursor-dot"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
     {{> header}}
-    <section class="report">
+    <main class="report" id="main-content" tabindex="-1" aria-labelledby="report-title">
       <div class="container">
         <div class="report-inner">
           <div class="report-inner__content">
             <div class="report-inner__header">
-              <h3>Driving Innovation</h3>
+              <h1 id="report-title">Driving Innovation</h1>
               <span
                 >The imperative for automotive companies to embrace AI
               </span>
@@ -108,15 +109,16 @@
               intelligence and the automotive industry, uncovering key trends,
               challenges, and opportunities along the way.
             </p>
-            <br />
-            <a href="/V2M-report.pdf" download class="green-button">DOWNLOAD</a>
+            <a href="/V2M-report.pdf" download class="green-button report-download">
+              Download Driving Innovation report (PDF)
+            </a>
           </div>
           <div class="report-inner__image">
-            <img src="./src/assets/report.png" alt="Report" />
+            <img src="./src/assets/report.png" alt="" />
           </div>
         </div>
       </div>
-    </section>
+    </main>
     {{> footer}}
     <script type="module" src="/src/main.js"></script>
   </body>
