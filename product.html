@@ -72,12 +72,13 @@
   </head>
 
   <body data-scroll-container id="body">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="cursor" aria-hidden="true"></div>
     <div class="cursor-dot" aria-hidden="true"></div>
 
     {{> header}}
 
-    <main class="product-section" aria-labelledby="product-title">
+    <main id="main-content" class="product-section" aria-labelledby="product-title" tabindex="-1">
       <div class="container">
         <div class="product-inner">
           <div class="product-inner__title">
@@ -86,21 +87,18 @@
           </div>
 
           <div class="product-columns">
-            <section
-              class="product-column"
-              aria-labelledby="product-hardware-title"
-            >
+            <div class="product-column">
               <ul class="product-list">
                 <li class="product-list__item">
                   <a class="product-card" href="/the-V2M-automotive-audio.html">
                     <div class="product-card__content">
-                      <time class="product-card__date" datetime="2026-10-08">
+                      <time class="product-card__date" datetime="2026-10-22">
                         Oct 22, 2026
                       </time>
 
-                      <h3 class="product-card__title">
+                      <h2 class="product-card__title">
                         The V2M automotive audio archive
-                      </h3>
+                      </h2>
                     </div>
 
                     <svg
@@ -128,13 +126,13 @@
                     href="/evolution-of-v2m-one-software.html"
                   >
                     <div class="product-card__content">
-                      <time class="product-card__date" datetime="2026-10-08">
+                      <time class="product-card__date" datetime="2026-10-13">
                         Oct 13, 2026
                       </time>
 
-                      <h3 class="product-card__title">
+                      <h2 class="product-card__title">
                         2023–2026: Evolution of V2M-One Software
-                      </h3>
+                      </h2>
                     </div>
 
                     <svg
@@ -163,9 +161,9 @@
                         Oct 8, 2026
                       </time>
 
-                      <h3 class="product-card__title">
+                      <h2 class="product-card__title">
                         2021-2026: Evolution of V2M-One
-                      </h3>
+                      </h2>
                     </div>
 
                     <svg
@@ -188,7 +186,7 @@
                   </a>
                 </li>
               </ul>
-            </section>
+            </div>
           </div>
         </div>
       </div>
