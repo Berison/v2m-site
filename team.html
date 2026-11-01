@@ -71,22 +71,23 @@
 }
 </script>
   </head>
-  <body>
-    <div class="cursor"></div>
-    <div class="cursor-dot"></div>
+  <body class="team-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
     {{> header}}
 
-    <section class="team-section">
+    <main class="team-section" id="main-content" tabindex="-1" aria-labelledby="team-title">
       <div class="container">
         <div class="team-inner">
           <div class="team-inner__title">
-            <span>TEAM</span>
+            <h1 id="team-title">Team</h1>
           </div>
 
           <div class="team-title" data-scroll data-scroll-class="is-inview">
-            <h2>
+            <p class="team-intro">
               V2M builds AI that locates a vehicle fault by the sound it makes.
-            </h2>
+            </p>
             <p>Founded in New York City in 2021 · Member of NVIDIA Inception · Patented</p>
           </div>
         </div>
@@ -97,10 +98,10 @@
           <!-- Petr Bakulov -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h2 id="team-person-1">
                 Petr Bakulov <br />
                 Founder and CEO
-              </strong>
+              </h2>
             </div>
 
             <div class="team-list-item__button">
@@ -108,8 +109,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-1"
+                aria-controls="team-bio-1"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -129,7 +132,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-1" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                  Petr Bakulov is the founder and CEO of V2M and the inventor of its acoustic fault-localization method. V2M’s acoustic fault-localization method is patented in the United States. He holds a PhD in vehicle diagnostics, started out as a dealership mechanic, and has spent 15+ years building auto-service businesses. He is a race-winning driver (FSL class, 2020). Founded V2M in New York City in 2021.
@@ -147,10 +150,10 @@
           <!-- Igor Kordunsky -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h2 id="team-person-2">
                 Igor Kordunsky <br />
                 R&amp;D Lead
-              </strong>
+              </h2>
             </div>
 
             <div class="team-list-item__button">
@@ -158,8 +161,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-2"
+                aria-controls="team-bio-2"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -179,7 +184,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-2" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                   Leads hardware and embedded signal-processing development for
@@ -200,10 +205,10 @@
           <!-- Andrew Maltsev -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h2 id="team-person-3">
                 Andrew Maltsev <br />
                 Engineer
-              </strong>
+              </h2>
             </div>
 
             <div class="team-list-item__button">
@@ -211,8 +216,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-3"
+                aria-controls="team-bio-3"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -232,7 +239,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-3" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                   Electrical engineer focused on PCB design, radio electronics
@@ -252,10 +259,10 @@
           <!-- Roman Gordeev -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h2 id="team-person-4">
                 Roman Gordeev <br />
                 Research Engineer
-              </strong>
+              </h2>
             </div>
 
             <div class="team-list-item__button">
@@ -263,8 +270,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-4"
+                aria-controls="team-bio-4"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -284,7 +293,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-4" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                   Engineer and software developer. Works across V2M’s data
@@ -304,10 +313,10 @@
           <!-- Alex Demshin -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h2 id="team-person-5">
                 Alex Demshin <br />
                 IoT Data Platform engineer
-              </strong>
+              </h2>
             </div>
 
             <div class="team-list-item__button">
@@ -315,8 +324,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-5"
+                aria-controls="team-bio-5"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -336,7 +347,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-5" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                   Connected-vehicle telemetry and distributed-systems engineer with over a decade of experience building high-throughput streaming and data platforms.
@@ -354,10 +365,10 @@
           <!-- Aleksandr Iovlev -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h2 id="team-person-6">
                 Aleksandr Iovlev <br />
                 AI Engineer
-              </strong>
+              </h2>
             </div>
 
             <div class="team-list-item__button">
@@ -365,8 +376,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-6"
+                aria-controls="team-bio-6"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -386,7 +399,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-6" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                   ML engineer with a background in hardware and embedded
@@ -406,10 +419,10 @@
           <!-- Vladislav Zaigraev -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h2 id="team-person-7">
                 Vladislav Zaigraev <br />
                 Audio ML Engineer
-              </strong>
+              </h2>
             </div>
 
             <div class="team-list-item__button">
@@ -417,8 +430,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-7"
+                aria-controls="team-bio-7"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -438,7 +453,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-7" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                   Works on speech, language and audio analysis for V2M’s
@@ -458,10 +473,10 @@
           <!-- Sergey Surguchev -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h2 id="team-person-8">
                 Sergey Surguchev <br />
                 AI Engineer
-              </strong>
+              </h2>
             </div>
 
             <div class="team-list-item__button">
@@ -469,8 +484,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-8"
+                aria-controls="team-bio-8"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -490,7 +507,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-8" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                   Machine-learning engineer. Built visual perception systems for
@@ -511,10 +528,10 @@
           <!-- Oleg Shevchenko -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h2 id="team-person-9">
                 Oleg Shevchenko <br />
                 Front-End Developer
-              </strong>
+              </h2>
             </div>
 
             <div class="team-list-item__button">
@@ -522,8 +539,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-9"
+                aria-controls="team-bio-9"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -543,7 +562,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-9" hidden>
               <div class="team-list-item__content-inner">
                 <p>Builds V2M’s web and mobile clients.</p>
                 <img
@@ -559,10 +578,10 @@
            <!-- Vladimir Ezhov -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h2 id="team-person-10">
                 Vladimir Ezhov <br />
                 IT Specialist
-              </strong>
+              </h2>
             </div>
 
             <div class="team-list-item__button">
@@ -570,8 +589,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-10"
+                aria-controls="team-bio-10"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -591,7 +612,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-10" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                   Supports V2M’s internal systems and infrastructure.
@@ -608,10 +629,10 @@
           <!-- Dennis Nguyen -->
         <div class="team-list-item" data-scroll data-scroll-class="is-inview">
           <div class="team-list-item__title">
-            <strong>
+            <h2 id="team-person-11">
               Dennis Nguyen <br />
               VP Sales
-            </strong>
+            </h2>
           </div>
 
           <div class="team-list-item__button">
@@ -619,8 +640,10 @@
               type="button"
               class="team-list-item__toggle"
               aria-expanded="false"
+                aria-labelledby="team-person-11"
+                aria-controls="team-bio-11"
             >
-              <svg
+              <svg aria-hidden="true" focusable="false"
                 width="47"
                 height="47"
                 viewBox="0 0 47 47"
@@ -640,7 +663,7 @@
             </button>
           </div>
 
-          <div class="team-list-item__content">
+          <div class="team-list-item__content" id="team-bio-11" hidden>
             <div class="team-list-item__content-inner">
               <p>Leads commercial partnerships with used-car retailers and fleets in North America.</p>
               <img
@@ -651,6 +674,8 @@
               />
             </div>
           </div>
+        </div>
+
         </div>
 
         <!-- Advisors -->
@@ -664,10 +689,10 @@
           <!-- Ivan Mishanin -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h3 id="team-person-12">
                 Ivan Mishanin <br />
                 Connected Car Advisor
-              </strong>
+              </h3>
             </div>
 
             <div class="team-list-item__button">
@@ -675,8 +700,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-12"
+                aria-controls="team-bio-12"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -696,7 +723,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-12" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                  Co-founded Bright Box in 2012 and led it as CEO for eight years; the connected-car company behind the Remoto platform was acquired by Zurich Insurance Group in 2017. Advises V2M on OEM and dealer partnerships and go-to-market.
@@ -713,10 +740,10 @@
           <!-- Anton Labozin -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h3 id="team-person-13">
                 Anton Labozin <br />
                 Technology Advisor
-              </strong>
+              </h3>
             </div>
 
             <div class="team-list-item__button">
@@ -724,8 +751,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-13"
+                aria-controls="team-bio-13"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -745,7 +774,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-13" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                   Advises V2M on software and hardware: embedded systems,
@@ -764,10 +793,10 @@
           <!-- Tommaso Li Vigni -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h3 id="team-person-14">
                 Tommaso Li Vigni <br />
                 Automotive Advisor
-              </strong>
+              </h3>
             </div>
 
             <div class="team-list-item__button">
@@ -775,8 +804,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-14"
+                aria-controls="team-bio-14"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -796,7 +827,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-14" hidden>
               <div class="team-list-item__content-inner">
                 <p>
                   Hands-on automotive engineer. Advises V2M on vehicle platforms
@@ -815,10 +846,10 @@
           <!-- Anton Kaplun -->
           <div class="team-list-item" data-scroll data-scroll-class="is-inview">
             <div class="team-list-item__title">
-              <strong>
+              <h3 id="team-person-15">
                 Anton Kaplun <br />
                 Strategic Advisor
-              </strong>
+              </h3>
             </div>
 
             <div class="team-list-item__button">
@@ -826,8 +857,10 @@
                 type="button"
                 class="team-list-item__toggle"
                 aria-expanded="false"
+                aria-labelledby="team-person-15"
+                aria-controls="team-bio-15"
               >
-                <svg
+                <svg aria-hidden="true" focusable="false"
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -847,7 +880,7 @@
               </button>
             </div>
 
-            <div class="team-list-item__content">
+            <div class="team-list-item__content" id="team-bio-15" hidden>
               <div class="team-list-item__content-inner">
                 <p>Advises V2M on go-to-market and startup operations.</p>
                 <img
@@ -861,7 +894,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </main>
    {{> footer}}
     <script type="module" src="/src/main.js"></script>
   </body>

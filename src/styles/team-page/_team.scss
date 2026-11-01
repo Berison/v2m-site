@@ -439,3 +439,78 @@
     font-size: 42px;
   }
 }
+
+// Team disclosures use natural content height, including after resize or font changes.
+.team-page {
+  .team-inner__title h1 {
+    color: #1e2f30;
+    font-family: "Akzidenz-Grotesk Pro Ext";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .team-title .team-intro {
+    margin-bottom: 16px;
+    font-size: 52px;
+    line-height: 1.2;
+  }
+
+  .team-title,
+  .team-list-item {
+    opacity: 1;
+    transform: none;
+  }
+
+  .team-list-item {
+    scroll-margin-block: 120px 40px;
+
+    &__title {
+      padding-right: 72px;
+      :where(h2, h3) {
+        color: #1e2f30;
+        font-family: "SF Pro";
+        font-size: 42px;
+        font-weight: 400;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+      }
+    }
+
+    &__toggle {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      padding: 8px;
+      scroll-margin-block: 120px 40px;
+      svg { width: 100%; height: 100%; }
+    }
+
+    &__content {
+      max-height: none;
+      opacity: 1;
+      overflow: visible;
+      transition: none;
+      &[hidden] { display: none; }
+    }
+
+    &__content-inner { transition: none; }
+  }
+
+  @media (max-width: 780px) {
+    .team-title .team-intro { font-size: 24px; }
+    .team-title p { font-size: 16px; line-height: 1.5; }
+    .team-list-item {
+      padding: 16px;
+      &__title {
+        padding-right: 52px;
+        :where(h2, h3) { font-size: 18px; }
+      }
+      &__button { top: 12px; right: 12px; }
+      &__toggle { width: 44px; height: 44px; }
+      &__content p { font-size: 16px; line-height: 1.5; }
+    }
+  }
+}
