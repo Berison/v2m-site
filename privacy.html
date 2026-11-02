@@ -15,14 +15,14 @@
     />
     <!-- Draft: replace with index, follow only after completing the review notes. -->
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://v2minc.com/website-privacy.html" />
+    <link rel="canonical" href="https://v2minc.com/privacy.html" />
     <meta property="og:title" content="Website Privacy Policy — V2M" />
     <meta
       property="og:description"
       content="How V2M processes personal information through its website, contact forms and email newsletter."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://v2minc.com/website-privacy.html" />
+    <meta property="og:url" content="https://v2minc.com/privacy.html" />
     <meta property="og:image" content="https://v2minc.com/og-image.png" />
     <meta property="og:site_name" content="V2M" />
     <meta property="og:locale" content="en_US" />
@@ -41,13 +41,27 @@
       #website-privacy-policy li {
         list-style: disc;
       }
+      #website-privacy-policy :is(p, li) {
+        line-height: 1.6;
+      }
+      #website-privacy-policy h2 {
+        line-height: 1.3;
+        scroll-margin-top: 130px;
+      }
+      #website-privacy-policy a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        overflow-wrap: anywhere;
+        scroll-margin-block: 130px 40px;
+      }
     </style>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "@id": "https://v2minc.com/website-privacy.html#webpage",
-        "url": "https://v2minc.com/website-privacy.html",
+        "@id": "https://v2minc.com/privacy.html#webpage",
+        "url": "https://v2minc.com/privacy.html",
         "name": "Website Privacy Policy — V2M",
         "description": "How V2M processes personal information through its website, contact forms and email newsletter.",
         "inLanguage": "en",
@@ -62,18 +76,21 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="cursor" aria-hidden="true"></div>
     <div class="cursor-dot" aria-hidden="true"></div>
     {{> header}}
 
     <main
+      id="main-content"
+      tabindex="-1"
       class="privacy-policy website-privacy"
       aria-labelledby="privacy-title"
       data-popup-background
     >
       <div class="container">
         <div id="website-privacy-policy" class="level1">
-          <h1>Website Privacy Policy</h1>
+          <h1 id="privacy-title">Website Privacy Policy</h1>
           <p>V2M Inc. · v2minc.com · Last updated: 13 October 2026</p>
           <section id="in-short" class="level2">
             <h2>In short</h2>
@@ -109,7 +126,7 @@
               This policy covers the website only. The V2M One mobile
               application and the V2M diagnostic service are covered by a
               separate App Privacy Policy, available at
-              v2minc.com/privacy-policy.html.
+              <a href="/privacy-policy.html">v2minc.com/privacy-policy.html</a>.
             </p>
           </section>
           <section id="information-we-process" class="level2">
@@ -228,8 +245,8 @@
               your IP address, browser information and your interaction with the
               reCAPTCHA widget, and may set cookies on Google’s domain. This
               processing is subject to Google’s Privacy Policy
-              (policies.google.com/privacy) and Terms of Service
-              (policies.google.com/terms). We do not receive any personal
+              (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>) and Terms of Service
+              (<a href="https://policies.google.com/terms">policies.google.com/terms</a>). We do not receive any personal
               information from reCAPTCHA other than the result of the check.
             </p>
             <p>
