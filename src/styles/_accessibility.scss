@@ -183,3 +183,21 @@ dialog.popup {
   .home-page .dot, .home-page .sound-check-item input { border-color: ButtonText; }
   .home-page .sound-check-item input:checked { appearance: auto; }
 }
+
+
+.app-privacy {
+  :is(p, li) { line-height: 1.6; }
+  :is(h1, h2, h3) { line-height: 1.3; overflow-wrap: anywhere; }
+  :is(h2, h3) { scroll-margin-top: 130px; }
+  h3 { margin: 20px 0 10px; }
+  ul { padding-left: 26px; }
+  ul > li { list-style: disc outside; }
+  li + li { margin-top: 6px; }
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+    scroll-margin-block: 130px 40px;
+  }
+}

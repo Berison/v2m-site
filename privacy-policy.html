@@ -65,14 +65,15 @@
     </script>
   </head>
   <body>
-    <div class="cursor"></div>
-    <div class="cursor-dot"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
     {{> header}}
-    <section class="privacy-policy">
+    <main class="privacy-policy app-privacy" id="main-content" tabindex="-1" aria-labelledby="app-privacy-title">
       <div class="container">
-        <h1 class="privacy-policy__title">Privacy Policy</h1>
+        <h1 class="privacy-policy__title" id="app-privacy-title">Privacy Policy</h1>
         <p class="privacy-link">
-          <a href="/privacy-policy.html">App Privacy Policy</a>
+          <a href="/privacy.html">Website Privacy Policy</a>
         </p>
         <div class="privacy-policy__content">
           <h2>Introduction</h2>
@@ -101,7 +102,7 @@
             <li>Application activity and performance logs.</li>
           </ul>
 
-          <p>Location Data</p>
+          <h3>Location Data</h3>
           <p>
             We only request location access during test drives, and solely to
             ensure diagnostic accuracy. Location information is not used for any
@@ -114,7 +115,7 @@
             </li>
           </ul>
 
-          <p>Account Information</p>
+          <h3>Account Information</h3>
           <ul>
             <li>
               Email address and password (for account registration and login).
@@ -263,7 +264,7 @@
           <p>Phone: <a href="tel:+12124332922">+1 (212) 433-2922</a></p>
         </div>
       </div>
-    </section>
+    </main>
     {{> footer}}
     <script type="module" src="/src/main.js"></script>
   </body>
