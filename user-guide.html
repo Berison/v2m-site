@@ -73,13 +73,14 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     {{> header}}
 
-    <section class="user-guide-section">
+    <main class="user-guide-section" id="main-content" tabindex="-1" aria-labelledby="guide-title">
       <div class="container">
-        <h2>USER GUIDE</h2>
-        <h4>V2MOne app and V2MOne sensors</h4>
-        <h3>INTRODUCTION</h3>
+        <h1 id="guide-title">User guide</h1>
+        <p class="user-guide-subtitle">V2MOne app and V2MOne sensors</p>
+        <h2>INTRODUCTION</h2>
         <p>
           Welcome to V2M. This guide walks you through installing the V2MOne
           app, checking your kit, preparing the sensors, mounting them on your
@@ -88,8 +89,10 @@
           to capture its acoustic signature during the drive. Throughout the
           rest of this guide, they are referred to simply as “the sensors.”
         </p>
-        <p>
-          <strong>1. Install the V2MOne app.</strong> Scan the QR code below to
+        <ol class="guide-steps">
+<li>
+<p>
+          <strong>Install the V2MOne app.</strong> Scan the QR code below to
           open the app download page. The link works for both iOS (App Store)
           and Android (Google Play).
         </p>
@@ -99,13 +102,15 @@
             alt="QR code to open the V2MOne app download page for iOS and Android"
             decoding="async"
         /></a>
+        <p><a href="https://onelink.to/ym7yjy">Download the V2MOne app for iOS or Android</a></p>
         <p>
           After installation, open the app and log in with the credentials
           provided to you.
         </p>
-        <div class="installation-step">
-          <p class="installation-step__intro">
-            <strong>2. Check your kit.</strong>
+</li>
+<li>
+<p class="installation-step__intro">
+            <strong>Check your kit.</strong>
             Before you begin, confirm that your box contains all of the
             following items:
           </p>
@@ -135,47 +140,56 @@
               decoding="async"
             />
 
-            <p>Scan the QR code to access the installation guide video</p>
+            <p><a href="https://youtu.be/jFN-_sGUNGo?si=oAoYA6BHVAl3bPgR">Watch the sensor installation guide video</a>, or scan the QR code.</p>
           </div>
-        </div>
+</li>
+</ol>
 
-        <h3>Preparing for use</h3>
+
+
+        <h2>Preparing for use</h2>
 
         <p>
           Complete the following steps once, before the first test drive. The
           same steps apply each time you use the system after an extended break.
         </p>
 
-        <p>
-          <strong>1. Assemble the charger.</strong>
+        <ol class="guide-steps">
+<li>
+<p>
+          <strong>Assemble the charger.</strong>
           Connect the power supply to the wireless charging platform using the
           USB-C cable, then plug the power supply into a wall outlet.
         </p>
-
-        <p>
-          <strong>2. Turn on both sensors.</strong>
+</li>
+<li>
+<p>
+          <strong>Turn on both sensors.</strong>
           Press and hold the power button on each sensor until you hear two
           beeps. To turn a sensor off, press the button once, then press and
           hold it for about 5 seconds until you hear three beeps.
         </p>
-
-        <p>
-          <strong>3. Charge the sensors.</strong>
+</li>
+<li>
+<p>
+          <strong>Charge the sensors.</strong>
           Place both sensors on the charging platform. The platform's indicator
           LEDs are red when a sensor is not properly seated and turn blue once
           charging begins correctly. Do not continue until both LEDs are blue.
         </p>
-
-        <p>
+</li>
+<li>
+<p>
           <strong>
-            4. Open the V2MOne app and sign in with your account credentials.
+            Open the V2MOne app and sign in with your account credentials.
           </strong>
           You can sign in with your email and password, or use Face ID if your
           device supports it and you have it enabled for the V2MOne app.
         </p>
-
-        <p>
-          <strong>5. Pair the sensors.</strong>
+</li>
+<li>
+<p>
+          <strong>Pair the sensors.</strong>
           In the app, open the Devices screen and make sure both sensors appear
           in the list of discovered devices. Tap Connect next to each sensor to
           pair it with the app.
@@ -195,9 +209,10 @@
           positions, remove a sensor, or locate a sensor — swipe right on the
           sensor entry to access these actions.
         </p>
-
-        <p class="installation-step__intro">
-          <strong>6. Connect the sensors to Wi-Fi.</strong>
+</li>
+<li>
+<p class="installation-step__intro">
+          <strong>Connect the sensors to Wi-Fi.</strong>
           The sensors need a Wi-Fi connection to send audio data to the V2M
           server for analysis. Until this step is complete, each sensor card on
           the Devices screen will show WiFi not connected. On the Devices
@@ -253,7 +268,7 @@
           />
         </figure>
 
-        <aside class="troubleshooting-tip" aria-label="Tip">
+        <aside class="troubleshooting-tip" aria-label="Tip — Preparing for use">
           <svg
             class="troubleshooting-tip__border"
             viewBox="0 0 600 80"
@@ -277,21 +292,26 @@
             remembered, and your phone's hotspot takes care of the rest.
           </p>
         </aside>
-
-        <p>
-          <strong>7. Check the battery level.</strong>
+</li>
+<li>
+<p>
+          <strong>Check the battery level.</strong>
           Before starting a diagnostic session, make sure each sensor's battery
           level is at least 40%.
         </p>
-
-        <p>
-          <strong>8. Install the sensors on the vehicle.</strong>
+</li>
+<li>
+<p>
+          <strong>Install the sensors on the vehicle.</strong>
           With the sensors turned on and paired, mount them on the vehicle
           according to the appropriate Sensor Installation Guide on the
           following pages — ICE or EV.
         </p>
+</li>
+</ol>
 
-        <h3>Mounting the sensors</h3>
+
+        <h2>Mounting the sensors</h2>
 
         <p>
           Choose your mounting method. Both methods are field-proven and
@@ -316,9 +336,9 @@
           base level with the road.
         </p>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title">
           Mode A: Double-sided tape strips, recommended.
-        </h4>
+        </h3>
 
         <ol>
           <li>
@@ -333,7 +353,7 @@
           <li>Wait 15–20 minutes before starting the test drive.</li>
         </ol>
 
-        <aside class="troubleshooting-tip" aria-label="Tip">
+        <aside class="troubleshooting-tip" aria-label="Tip — Mode A: Double-sided tape strips, recommended">
           <svg
             class="troubleshooting-tip__border"
             viewBox="0 0 600 80"
@@ -388,9 +408,9 @@
           </figure>
         </div>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title">
           Mode B: Zip ties, when in doubt.
-        </h4>
+        </h3>
 
         <ol>
           <li>
@@ -408,7 +428,7 @@
           <li>Trim the tie tails flush so nothing rattles in the airflow.</li>
         </ol>
 
-        <aside class="troubleshooting-tip" aria-label="Tip">
+        <aside class="troubleshooting-tip" aria-label="Tip — Mode B: Zip ties, when in doubt">
           <svg
             class="troubleshooting-tip__border"
             viewBox="0 0 600 80"
@@ -443,27 +463,34 @@
           ties for every install — never reuse a closed tie.
         </p>
 
-        <h3>Sensor installation guide — ICE vehicles</h3>
+        <h2>Sensor installation guide — ICE vehicles</h2>
 
         <p>
           Follow these steps for vehicles with an internal combustion engine
           (ICE).
         </p>
 
-        <p>
-          1. With both sensors turned on, begin installation on the vehicle.
+        <ol class="guide-steps">
+<li>
+<p>
+          With both sensors turned on, begin installation on the vehicle.
           <br />
           Attach the sensor as described in Mounting the Sensors, then continue
           below.
         </p>
-
-        <p>
-          2. Pay particular attention to sensor positioning. Both the front and
+</li>
+<li>
+<p>
+          Pay particular attention to sensor positioning. Both the front and
           rear sensors must be placed between the wheels, as close as possible
           to the vehicle's centerline.
         </p>
+</li>
+<li>
+<p>Remove the sensors after the test drive is complete.</p>
+</li>
+</ol>
 
-        <p>3. Remove the sensors after the test drive is complete.</p>
 
         <figure class="installation-kit">
           <img
@@ -483,28 +510,35 @@
             decoding="async"
           />
 
-          <p>Scan the QR code to access the installation guide video</p>
+          <p><a href="https://youtu.be/jFN-_sGUNGo?si=oAoYA6BHVAl3bPgR">Watch the sensor installation guide video</a>, or scan the QR code.</p>
         </div>
 
-        <h3>Sensor installation guide — EV vehicles</h3>
+        <h2>Sensor installation guide — EV vehicles</h2>
 
         <p>Follow these steps for battery electric vehicles (EV).</p>
 
-        <p>
-          1. With both sensors turned on, begin installation on the vehicle.
+        <ol class="guide-steps">
+<li>
+<p>
+          With both sensors turned on, begin installation on the vehicle.
           <br />
           Attach the sensor as described in Mounting the Sensors, then continue
           below.
         </p>
-
-        <p>
-          2. Mount the sensors in the front and rear trunks (frunk and trunk).
+</li>
+<li>
+<p>
+          Mount the sensors in the front and rear trunks (frunk and trunk).
           Center each sensor so that the microphones face the left and right
           sides of the trunk compartment, and keep the sensor horizontally
           aligned with the road surface.
         </p>
+</li>
+<li>
+<p>Remove the sensors after the test drive is complete.</p>
+</li>
+</ol>
 
-        <p>3. Remove the sensors after the test drive is complete.</p>
 
         <figure class="installation-kit">
           <img
@@ -524,26 +558,29 @@
             decoding="async"
           />
 
-          <p>Scan the QR code to access the installation guide video</p>
+          <p><a href="https://youtu.be/jFN-_sGUNGo?si=oAoYA6BHVAl3bPgR">Watch the sensor installation guide video</a>, or scan the QR code.</p>
         </div>
 
-        <h3>Running a diagnostic session</h3>
+        <h2>Running a diagnostic session</h2>
 
         <p>
           Once the sensors are mounted on the vehicle, switch to the V2MOne app
           to set up the test and start the diagnostic session.
         </p>
 
-        <p>
-          <strong>1. Open the Testing tab.</strong> In the V2MOne app, tap the
+        <ol class="guide-steps">
+<li>
+<p>
+          <strong>Open the Testing tab.</strong> In the V2MOne app, tap the
           Testing tab to begin a new session.
         </p>
-
-        <p><strong>2. Enter the vehicle information.</strong></p>
+</li>
+<li>
+<p><strong>Enter the vehicle information.</strong></p>
 
         <aside
           class="troubleshooting-tip troubleshooting-tip--warning"
-          aria-label="Warning"
+          aria-label="Warning — Running a diagnostic session"
         >
           <svg
             class="troubleshooting-tip__border"
@@ -575,14 +612,18 @@
             and model year using NHTSA data.
           </p>
         </aside>
-
-        <p>
-          <strong>3. Start the test.</strong> Once all required vehicle
+</li>
+<li>
+<p>
+          <strong>Start the test.</strong> Once all required vehicle
           information has been entered, the Start the test button becomes
           active. The V2MOne app is now ready to run the diagnostic.
         </p>
+</li>
+</ol>
 
-        <h3>Performing the test drive</h3>
+
+        <h2>Performing the test drive</h2>
 
         <p>
           With the sensors installed, paired, and the session started in the
@@ -602,7 +643,7 @@
 
         <aside
           class="troubleshooting-tip troubleshooting-tip--speed"
-          aria-label="Tip"
+          aria-label="Tip — Performing the test drive"
         >
           <svg
             class="troubleshooting-tip__border"
@@ -633,7 +674,7 @@
 
         <aside
           class="troubleshooting-tip troubleshooting-tip--warning"
-          aria-label="Warning"
+          aria-label="Warning — Performing the test drive"
         >
           <svg
             class="troubleshooting-tip__border"
@@ -704,7 +745,7 @@
           />
         </figure>
 
-        <h3>Ending the session and reviewing results</h3>
+        <h2>Ending the session and reviewing results</h2>
 
         <p>
           When V2MOne app ends the session, the app automatically switches to
@@ -826,7 +867,7 @@
           View PDF opens a preview before sharing.
         </p>
       </div>
-    </section>
+    </main>
     {{> footer}}
     <script type="module" src="/src/main.js"></script>
   </body>

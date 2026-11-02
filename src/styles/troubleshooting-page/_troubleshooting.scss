@@ -748,3 +748,57 @@
     h3.troubleshooting-issue-title { font-size: 16px; scroll-margin-top: 110px; }
   }
 }
+
+
+.user-guide-section {
+  h1 {
+    margin: 0 0 12px;
+    color: #1e2f30;
+    font-family: "Akzidenz-Grotesk Pro Ext";
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 400;
+    line-height: 1.3;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+
+  .user-guide-subtitle { margin-bottom: 48px; font-size: 18px; line-height: 1.5; }
+
+  h2 {
+    margin: 36px 0 22px;
+    padding-left: 12px;
+    border-left: 5px solid #1e2f30;
+    font-size: 20px;
+    line-height: 1.4;
+    scroll-margin-top: 130px;
+    overflow-wrap: anywhere;
+    &::before { content: none; }
+  }
+
+  h3.troubleshooting-issue-title {
+    margin: 32px 0 8px;
+    padding: 0;
+    border: 0;
+    font-family: "SF Pro";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: none;
+    overflow-wrap: anywhere;
+  }
+
+  aside.troubleshooting-tip > .troubleshooting-tip__label { color: #00754a; }
+  aside.troubleshooting-tip--warning > .troubleshooting-tip__label { color: #c62828; }
+  .report-grades__letter--a { color: #007a2c; }
+  .report-grades__letter--b { color: #006d64; }
+  .report-grades__letter--c { color: #9a4800; }
+  .report-grades__letter--d { color: #b42318; }
+  a { scroll-margin-block: 120px 40px; }
+  .guide-steps > li { margin-bottom: 24px; }
+  .guide-steps > li > :last-child { margin-bottom: 0; }
+
+  @media (max-width: 780px) {
+    h2 { font-size: 18px; scroll-margin-top: 110px; }
+    h3.troubleshooting-issue-title { font-size: 16px; }
+  }
+}
