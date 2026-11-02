@@ -694,3 +694,57 @@
     line-height: 1.5;
   }
 }
+
+
+// Troubleshooting page heading levels and anchor navigation.
+.troubleshooting-section {
+  h1 {
+    margin: 0 0 12px;
+    color: #1e2f30;
+    font-family: "Akzidenz-Grotesk Pro Ext";
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 400;
+    line-height: 1.3;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+
+  .troubleshooting-subtitle {
+    margin-bottom: 48px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  h2 {
+    margin: 36px 0 22px;
+    padding-left: 12px;
+    border-left: 5px solid #1e2f30;
+    font-size: 20px;
+    line-height: 1.4;
+    scroll-margin-top: 130px;
+    overflow-wrap: anywhere;
+    &::before { content: none; }
+  }
+
+  h3.troubleshooting-issue-title {
+    margin: 32px 0 8px;
+    padding: 0;
+    border: 0;
+    font-family: "SF Pro";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: none;
+    scroll-margin-top: 130px;
+    overflow-wrap: anywhere;
+    &:focus { outline: 2px solid #00754a; outline-offset: 4px; }
+  }
+
+  aside.troubleshooting-tip > .troubleshooting-tip__label { color: #00754a; }
+  aside.troubleshooting-tip--warning > .troubleshooting-tip__label { color: #c62828; }
+
+  @media (max-width: 780px) {
+    h2 { font-size: 18px; scroll-margin-top: 110px; }
+    h3.troubleshooting-issue-title { font-size: 16px; scroll-margin-top: 110px; }
+  }
+}

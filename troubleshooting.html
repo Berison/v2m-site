@@ -67,13 +67,14 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     {{> header}}
 
-    <section class="troubleshooting-section">
+    <main class="troubleshooting-section" id="main-content" tabindex="-1" aria-labelledby="troubleshooting-title">
       <div class="container">
-        <h2>TROUBLESHOOTING GUIDE</h2>
-        <h4>Common issues and how to resolve them</h4>
-        <h3>HOW TO USE THIS GUIDE</h3>
+        <h1 id="troubleshooting-title">Troubleshooting guide</h1>
+        <p class="troubleshooting-subtitle">Common issues and how to resolve them</p>
+        <h2>HOW TO USE THIS GUIDE</h2>
         <p>
           Throughout this guide, the V2MOne sensors mounted on the vehicle are
           referred to simply as “the sensors.” Issues are grouped by phase:
@@ -83,7 +84,7 @@
           to the most involved. If nothing here resolves the issue, see Getting
           further help at the end of this document.
         </p>
-        <h3 id="quick-reference">Quick Reference</h3>
+        <h2 id="quick-reference">Quick Reference</h2>
 
         <p>Find your symptom and go straight to the matching section.</p>
 
@@ -98,121 +99,121 @@
           <tbody>
             <tr>
               <td><p>A sensor won't turn on (no beep)</p></td>
-              <td><p>Setup → Sensor won't turn on</p></td>
+              <td><p><a href="#sensor-won-t-turn-on">Setup → Sensor won't turn on</a></p></td>
             </tr>
 
             <tr>
               <td><p>Charging-platform LED stays red</p></td>
-              <td><p>Setup → Sensor won't charge</p></td>
+              <td><p><a href="#sensor-won-t-charge-platform-led-stays-red">Setup → Sensor won't charge</a></p></td>
             </tr>
 
             <tr>
               <td><p>A sensor doesn't appear in the Devices list</p></td>
-              <td><p>Setup → Sensor not appearing in app</p></td>
+              <td><p><a href="#sensor-doesn-t-appear-in-the-devices-list">Setup → Sensor not appearing in app</a></p></td>
             </tr>
 
             <tr>
               <td><p>Battery is below 40% before a test</p></td>
-              <td><p>Setup → Low battery before a test</p></td>
+              <td><p><a href="#battery-is-below-40-before-a-test">Setup → Low battery before a test</a></p></td>
             </tr>
 
             <tr>
               <td>
                 <p>VIN scan fails or vehicle info doesn't auto-populate</p>
               </td>
-              <td><p>Setup → VIN won't scan</p></td>
+              <td><p><a href="#vin-won-t-scan-or-vehicle-info-doesn-t-auto-populate">Setup → VIN won't scan</a></p></td>
             </tr>
 
             <tr>
               <td><p>Sensor cards still show “WiFi not connected”</p></td>
-              <td><p>Setup → Sensors won’t connect to Wi-Fi</p></td>
+              <td><p><a href="#sensors-won-t-connect-to-wi-fi">Setup → Sensors won’t connect to Wi-Fi</a></p></td>
             </tr>
 
             <tr>
               <td><p>iPhone Personal Hotspot credentials are rejected</p></td>
-              <td><p>Setup → iPhone Personal Hotspot won’t connect</p></td>
+              <td><p><a href="#iphone-personal-hotspot-credentials-are-rejected">Setup → iPhone Personal Hotspot won’t connect</a></p></td>
             </tr>
 
             <tr>
               <td><p>Public Wi-Fi shows a sign-in page</p></td>
-              <td><p>Setup → Captive-portal Wi-Fi</p></td>
+              <td><p><a href="#external-wi-fi-shows-a-sign-in-page-captive-portal">Setup → Captive-portal Wi-Fi</a></p></td>
             </tr>
 
             <tr>
               <td><p>Tape strips won’t stick</p></td>
-              <td><p>Setup → Tape strips won’t stick</p></td>
+              <td><p><a href="#tape-strips-won-t-stick">Setup → Tape strips won’t stick</a></p></td>
             </tr>
 
             <tr>
               <td>
                 <p>Bluetooth dropped during the drive and didn't reconnect</p>
               </td>
-              <td><p>Test Drive → Bluetooth dropped mid-test</p></td>
+              <td><p><a href="#bluetooth-dropped-during-the-drive-and-didn-t-reconnect">Test Drive → Bluetooth dropped mid-test</a></p></td>
             </tr>
 
             <tr>
               <td>
                 <p>A sensor came loose from the vehicle during the drive</p>
               </td>
-              <td><p>Test Drive → Sensor came loose</p></td>
+              <td><p><a href="#sensor-came-loose-from-the-vehicle-during-the-drive">Test Drive → Sensor came loose</a></p></td>
             </tr>
 
             <tr>
               <td><p>A sensor rattles or buzzes during the drive</p></td>
               <td>
-                <p>
+                <p><a href="#sensor-rattles-buzzes-or-came-loose-during-the-drive">
                   Test Drive → Sensor rattles, buzzes, or came loose during the
                   drive
-                </p>
+                </a></p>
               </td>
             </tr>
 
             <tr>
               <td><p>Phone died or restarted during the test</p></td>
-              <td><p>Test Drive → Phone shut down mid-test</p></td>
+              <td><p><a href="#phone-shut-down-or-restarted-during-the-test">Test Drive → Phone shut down mid-test</a></p></td>
             </tr>
 
             <tr>
               <td><p>The session ended in under 5 minutes</p></td>
-              <td><p>Test Drive → Session ended too early</p></td>
+              <td><p><a href="#session-ended-in-under-5-minutes">Test Drive → Session ended too early</a></p></td>
             </tr>
 
             <tr>
               <td><p>The session ended between 5 and 9 minutes</p></td>
               <td>
-                <p>Test Drive → Session ended in the 5–9 minute window</p>
+                <p><a href="#session-ended-in-the-5-9-minute-window">Test Drive → Session ended in the 5–9 minute window</a></p>
               </td>
             </tr>
 
             <tr>
               <td><p>Route on the report map shows a straight-line gap</p></td>
-              <td><p>Reports → Straight line on the route map</p></td>
+              <td><p><a href="#straight-line-on-the-route-map">Reports → Straight line on the route map</a></p></td>
             </tr>
 
             <tr>
               <td><p>Average or maximum speed in the report looks wrong</p></td>
-              <td><p>Reports → Speed values look wrong</p></td>
+              <td><p><a href="#average-or-maximum-speed-in-the-report-looks-wrong">Reports → Speed values look wrong</a></p></td>
             </tr>
 
             <tr>
               <td>
                 <p>Report status stays in processing for more than 2 minutes</p>
               </td>
-              <td><p>Reports → Report stuck in processing</p></td>
+              <td><p><a href="#report-stuck-in-processing-for-more-than-2-minutes">Reports → Report stuck in processing</a></p></td>
             </tr>
 
             <tr>
               <td><p>Report can't be graded by the model</p></td>
-              <td><p>Reports → Report has no grade</p></td>
+              <td><p><a href="#report-has-no-grade">Reports → Report has no grade</a></p></td>
             </tr>
 
             <tr>
               <td><p>No report appears after the test ends</p></td>
-              <td><p>Reports → Report didn't appear at all</p></td>
+              <td><p><a href="#no-report-appears-after-the-test-ends">Reports → Report didn't appear at all</a></p></td>
             </tr>
           </tbody>
         </table>
-        <h3>Setup issues</h3>
+        <h2>Setup issues</h2>
 
         <p>
           Problems that occur before you start a test — while preparing the
@@ -220,7 +221,7 @@
           information.
         </p>
 
-        <h4 class="troubleshooting-issue-title">Sensor won't turn on.</h4>
+        <h3 class="troubleshooting-issue-title" id="sensor-won-t-turn-on" tabindex="-1">Sensor won't turn on.</h3>
 
         <p>
           What it means. Pressing and holding the power button does not produce
@@ -254,9 +255,9 @@
           </li>
         </ol>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="sensor-won-t-charge-platform-led-stays-red" tabindex="-1">
           Sensor won't charge (platform LED stays red).
-        </h4>
+        </h3>
 
         <p>
           What it means. The wireless charging platform shows a red LED instead
@@ -284,9 +285,9 @@
           </li>
         </ol>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="sensor-doesn-t-appear-in-the-devices-list" tabindex="-1">
           Sensor doesn't appear in the Devices list.
-        </h4>
+        </h3>
 
         <p>
           What it means. The sensor is turned on but the V2MOne app is not
@@ -311,9 +312,9 @@
           <li>If the sensor still doesn't appear, contact V2M support.</li>
         </ol>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="battery-is-below-40-before-a-test" tabindex="-1">
           Battery is below 40% before a test.
-        </h4>
+        </h3>
 
         <p>
           What it means. The V2MOne app reports a sensor's battery level below
@@ -335,7 +336,7 @@
           </li>
         </ol>
 
-        <aside class="troubleshooting-tip" aria-label="Tip">
+        <aside class="troubleshooting-tip" aria-label="Tip — Battery is below 40% before a test.">
           <svg
             class="troubleshooting-tip__border"
             viewBox="0 0 600 80"
@@ -359,9 +360,9 @@
           </p>
         </aside>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="vin-won-t-scan-or-vehicle-info-doesn-t-auto-populate" tabindex="-1">
           VIN won't scan or vehicle info doesn't auto-populate.
-        </h4>
+        </h3>
 
         <p>
           What it means. The V2MOne app can't read the VIN from the source you
@@ -396,9 +397,9 @@
           </li>
         </ol>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="sensors-won-t-connect-to-wi-fi" tabindex="-1">
           Sensors won’t connect to Wi-Fi.
-        </h4>
+        </h3>
 
         <p>
           What it means. You entered the network credentials and tapped Connect
@@ -433,7 +434,7 @@
           </li>
         </ol>
 
-        <aside class="troubleshooting-tip" aria-label="Tip">
+        <aside class="troubleshooting-tip" aria-label="Tip — Sensors won’t connect to Wi-Fi.">
           <svg
             class="troubleshooting-tip__border"
             viewBox="0 0 600 80"
@@ -457,9 +458,9 @@
           </p>
         </aside>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="iphone-personal-hotspot-credentials-are-rejected" tabindex="-1">
           iPhone Personal Hotspot credentials are rejected.
-        </h4>
+        </h3>
 
         <p>
           What it means. The sensors won’t join your iPhone’s Personal Hotspot
@@ -497,9 +498,9 @@
           before they connect.
         </p>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="external-wi-fi-shows-a-sign-in-page-captive-portal" tabindex="-1">
           External Wi-Fi shows a sign-in page (captive portal).
-        </h4>
+        </h3>
 
         <p>
           What it means. The sensors joined a public network (café, hotel,
@@ -522,7 +523,7 @@
           </li>
         </ol>
 
-        <aside class="troubleshooting-tip" aria-label="Tip">
+        <aside class="troubleshooting-tip" aria-label="Tip — External Wi-Fi shows a sign-in page (captive portal).">
           <svg
             class="troubleshooting-tip__border"
             viewBox="0 0 600 80"
@@ -546,7 +547,7 @@
           </p>
         </aside>
 
-        <h4 class="troubleshooting-issue-title">Tape strips won’t stick</h4>
+        <h3 class="troubleshooting-issue-title" id="tape-strips-won-t-stick" tabindex="-1">Tape strips won’t stick</h3>
 
         <p>
           What it means. The surface is too cold or not clean enough. The
@@ -574,7 +575,7 @@
           </li>
         </ol>
 
-        <aside class="troubleshooting-tip" aria-label="Tip">
+        <aside class="troubleshooting-tip" aria-label="Tip — Tape strips won’t stick">
           <svg
             class="troubleshooting-tip__border"
             viewBox="0 0 600 80"
@@ -597,7 +598,7 @@
             and IPA. Don’t scrape it.
           </p>
         </aside>
-        <h3>Test drive issues</h3>
+        <h2>Test drive issues</h2>
 
         <p>
           Problems that occur after the session has started — while you are
@@ -609,9 +610,9 @@
           the report.
         </p>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="bluetooth-dropped-during-the-drive-and-didn-t-reconnect" tabindex="-1">
           Bluetooth dropped during the drive and didn't reconnect.
-        </h4>
+        </h3>
 
         <p>
           What it means. The phone lost its Bluetooth link to the sensors and
@@ -637,9 +638,9 @@
           <li>If the sensors still don't reconnect, contact V2M support.</li>
         </ol>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="sensor-came-loose-from-the-vehicle-during-the-drive" tabindex="-1">
           Sensor came loose from the vehicle during the drive.
-        </h4>
+        </h3>
 
         <p>
           What it means. A cable tie (ICE) or adhesive pad (EV) failed during
@@ -668,7 +669,7 @@
 
         <aside
           class="troubleshooting-tip troubleshooting-tip--warning"
-          aria-label="Warning"
+          aria-label="Warning — Sensor came loose from the vehicle during the drive."
         >
           <svg
             class="troubleshooting-tip__border"
@@ -692,9 +693,9 @@
           <p>Don't try to reattach the sensor while driving.</p>
         </aside>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="phone-shut-down-or-restarted-during-the-test" tabindex="-1">
           Phone shut down or restarted during the test.
-        </h4>
+        </h3>
 
         <p>
           What it means. The sensors continued recording — the audio side of the
@@ -721,9 +722,9 @@
           </li>
         </ol>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="sensor-rattles-buzzes-or-came-loose-during-the-drive" tabindex="-1">
           Sensor rattles, buzzes, or came loose during the drive.
-        </h4>
+        </h3>
 
         <p>
           What it means. The mounting has lost tension or grip, so the sensor is
@@ -755,9 +756,9 @@
           changing the mounting method changes how the sensors hear the car.
         </p>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="session-ended-in-under-5-minutes" tabindex="-1">
           Session ended in under 5 minutes.
-        </h4>
+        </h3>
 
         <p>
           What it means. A session shorter than 5 minutes does not contain
@@ -778,9 +779,9 @@
           </li>
         </ol>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="session-ended-in-the-5-9-minute-window" tabindex="-1">
           Session ended in the 5–9 minute window.
-        </h4>
+        </h3>
 
         <p>
           What it means. Sessions in this window may produce a result, but a
@@ -802,16 +803,16 @@
           </li>
         </ol>
 
-        <h3>Reports and results issues</h3>
+        <h2>Reports and results issues</h2>
 
         <p>
           Problems with the report itself — its contents, how it looks, or
           whether it appears at all.
         </p>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="straight-line-on-the-route-map" tabindex="-1">
           Straight line on the route map.
-        </h4>
+        </h3>
 
         <p>
           What it means. Location capture was paused at some point during the
@@ -841,9 +842,9 @@
           diagnostic itself is still valid.
         </p>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="average-or-maximum-speed-in-the-report-looks-wrong" tabindex="-1">
           Average or maximum speed in the report looks wrong.
-        </h4>
+        </h3>
 
         <p>
           What it means. Average and maximum speed are calculated from location
@@ -865,9 +866,9 @@
           </li>
         </ol>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="report-stuck-in-processing-for-more-than-2-minutes" tabindex="-1">
           Report stuck in processing for more than 2 minutes.
-        </h4>
+        </h3>
 
         <p>
           What it means. The recording has been uploaded but the V2M model has
@@ -903,7 +904,7 @@
           </li>
         </ol>
 
-        <h4 class="troubleshooting-issue-title">Report has no grade.</h4>
+        <h3 class="troubleshooting-issue-title" id="report-has-no-grade" tabindex="-1">Report has no grade.</h3>
 
         <p>
           What it means. The model received the recording but couldn't assign a
@@ -926,9 +927,9 @@
           </li>
         </ol>
 
-        <h4 class="troubleshooting-issue-title">
+        <h3 class="troubleshooting-issue-title" id="no-report-appears-after-the-test-ends" tabindex="-1">
           No report appears after the test ends.
-        </h4>
+        </h3>
 
         <p>
           What it means. The session ended but no entry showed up at the top of
@@ -951,7 +952,7 @@
           </li>
         </ol>
 
-        <h3>Getting further help</h3>
+        <h2>Getting further help</h2>
 
         <p>
           If you've worked through the steps above and the issue isn't resolved,
@@ -975,7 +976,7 @@
           <li>Screenshots from the V2MOne app, if applicable.</li>
         </ul>
       </div>
-    </section>
+    </main>
     {{> footer}}
     <script type="module" src="/src/main.js"></script>
   </body>
