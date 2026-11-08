@@ -717,18 +717,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const messages = {
     name: {
+      label: 'Full name',
       valueMissing: 'Enter your name',
       tooShort: 'Minimum 2 characters',
     },
     email: {
+      label: 'Email',
       valueMissing: 'Enter email',
       typeMismatch: 'Invalid email',
     },
     company: {
+      label: 'Company',
       valueMissing: 'Enter company',
       tooShort: 'Minimum 2 characters',
     },
     message: {
+      label: 'Message',
       valueMissing: 'Enter message',
       tooShort: 'Minimum 10 characters',
     },
@@ -781,11 +785,7 @@ window.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       if (isSubmitting) return;
 
-      let isValid = true;
-
-      inputs.forEach((input) => {
-        if (!validateField(input)) isValid = false;
-      });
+      const invalidInputs = [...inputs].filter((input) => !validateField(input));
 
       // const captchaToken =
       //   typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
@@ -796,11 +796,16 @@ window.addEventListener('DOMContentLoaded', () => {
           ? grecaptcha.getResponse(Number(captchaId))
           : '';
 
-      if (!isValid) {
+      if (invalidInputs.length > 0) {
         form.classList.add('is-error');
         form.classList.remove('is-success');
-        if (statusEl) statusEl.textContent = 'Fill all fields correctly';
-        form.querySelector('[aria-invalid="true"]')?.focus();
+        if (statusEl) {
+          const fieldNames = invalidInputs.map((input) => messages[input.name].label);
+          statusEl.textContent = invalidInputs.length === 1
+            ? `Please check this field: ${fieldNames[0]}.`
+            : `Please check these ${invalidInputs.length} fields: ${fieldNames.join(', ')}.`;
+        }
+        invalidInputs[0].focus();
         return;
       }
 
@@ -818,7 +823,8 @@ window.addEventListener('DOMContentLoaded', () => {
         isSubmitting = true;
         form.setAttribute('aria-busy', 'true');
         buttons.forEach((button) => {
-          button.disabled = true;
+          // Keep keyboard focus while the submit guard prevents duplicate requests.
+          button.setAttribute('aria-disabled', 'true');
           button.textContent = 'Sending...';
         });
 
@@ -854,7 +860,7 @@ window.addEventListener('DOMContentLoaded', () => {
         isSubmitting = false;
         form.removeAttribute('aria-busy');
         buttons.forEach((button) => {
-          button.disabled = false;
+          button.removeAttribute('aria-disabled');
           button.textContent = 'Send';
         });
       }

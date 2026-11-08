@@ -29,6 +29,7 @@
 .footer-field__error { display: block; line-height: 1.5; }
 .footer-field input:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 .footer-form__row--top { row-gap: 24px; margin-bottom: 28px; }
+.footer-form__button[aria-disabled="true"] { cursor: progress; }
 .footer__title { font-size: 16px; }
 html.contact-popup-open,
 html.contact-popup-open body { overflow: hidden; }
