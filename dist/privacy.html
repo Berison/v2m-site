@@ -15,14 +15,14 @@
     />
     <!-- Draft: replace with index, follow only after completing the review notes. -->
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://v2minc.com/website-privacy.html" />
+    <link rel="canonical" href="https://v2minc.com/privacy.html" />
     <meta property="og:title" content="Website Privacy Policy — V2M" />
     <meta
       property="og:description"
       content="How V2M processes personal information through its website, contact forms and email newsletter."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://v2minc.com/website-privacy.html" />
+    <meta property="og:url" content="https://v2minc.com/privacy.html" />
     <meta property="og:image" content="https://v2minc.com/og-image.png" />
     <meta property="og:site_name" content="V2M" />
     <meta property="og:locale" content="en_US" />
@@ -41,13 +41,27 @@
       #website-privacy-policy li {
         list-style: disc;
       }
+      #website-privacy-policy :is(p, li) {
+        line-height: 1.6;
+      }
+      #website-privacy-policy h2 {
+        line-height: 1.3;
+        scroll-margin-top: 130px;
+      }
+      #website-privacy-policy a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        overflow-wrap: anywhere;
+        scroll-margin-block: 130px 40px;
+      }
     </style>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "@id": "https://v2minc.com/website-privacy.html#webpage",
-        "url": "https://v2minc.com/website-privacy.html",
+        "@id": "https://v2minc.com/privacy.html#webpage",
+        "url": "https://v2minc.com/privacy.html",
         "name": "Website Privacy Policy — V2M",
         "description": "How V2M processes personal information through its website, contact forms and email newsletter.",
         "inLanguage": "en",
@@ -60,10 +74,11 @@
         }
       }
     </script>
-    <script type="module" crossorigin src="./assets/main-D4ENAWVs.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-TrUZok-U.css">
+    <script type="module" crossorigin src="./assets/main-mxo_BzDX.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-D3JG3GAx.css">
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="cursor" aria-hidden="true"></div>
     <div class="cursor-dot" aria-hidden="true"></div>
     <header class="site-header">
@@ -103,7 +118,7 @@
           <button
             class="header-burger"
             type="button"
-            aria-label="Open navigation"
+            aria-label="Menu — Open navigation"
             aria-haspopup="dialog"
             aria-controls="siteMenu"
             aria-expanded="false"
@@ -195,13 +210,15 @@
       </div>
     </dialog>
     <main
+      id="main-content"
+      tabindex="-1"
       class="privacy-policy website-privacy"
       aria-labelledby="privacy-title"
       data-popup-background
     >
       <div class="container">
         <div id="website-privacy-policy" class="level1">
-          <h1>Website Privacy Policy</h1>
+          <h1 id="privacy-title">Website Privacy Policy</h1>
           <p>V2M Inc. · v2minc.com · Last updated: 13 October 2026</p>
           <section id="in-short" class="level2">
             <h2>In short</h2>
@@ -237,7 +254,7 @@
               This policy covers the website only. The V2M One mobile
               application and the V2M diagnostic service are covered by a
               separate App Privacy Policy, available at
-              v2minc.com/privacy-policy.html.
+              <a href="/privacy-policy.html">v2minc.com/privacy-policy.html</a>.
             </p>
           </section>
           <section id="information-we-process" class="level2">
@@ -356,8 +373,8 @@
               your IP address, browser information and your interaction with the
               reCAPTCHA widget, and may set cookies on Google’s domain. This
               processing is subject to Google’s Privacy Policy
-              (policies.google.com/privacy) and Terms of Service
-              (policies.google.com/terms). We do not receive any personal
+              (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>) and Terms of Service
+              (<a href="https://policies.google.com/terms">policies.google.com/terms</a>). We do not receive any personal
               information from reCAPTCHA other than the result of the check.
             </p>
             <p>
@@ -518,7 +535,7 @@
 
     <footer class="footer">
       <div class="footer__col footer__col--brand">
-        <a href="./index.html" class="footer__logo" style="display: block"><svg
+        <a href="./index.html" class="footer__logo" aria-label="V2M — Home" style="display: block"><svg
             xmlns="http://www.w3.org/2000/svg"
             width="176"
             height="33"
@@ -544,7 +561,7 @@
       </div>
     
       <div class="footer__col footer__col--nav">
-        <h3 class="footer__title">Navigate</h3>
+        <h2 class="footer__title">Navigate</h2>
     
         <nav class="footer__nav">
           <a href="./our-journey.html">Milestones</a>
@@ -563,48 +580,56 @@
       </div>
     
       <div class="footer__col footer__col--connect">
-        <h3 class="footer__title">Connect</h3>
+        <h2 class="footer__title">Connect</h2>
     
         <form class="footer-form" id="contactForm" novalidate>
           <div class="footer-form__row footer-form__row--top">
             <label class="footer-field">
-              <input
+              <span class="footer-field__label" id="contact-1-name-label">Full name (required)</span>
+              <input id="contact-1-name" aria-labelledby="contact-1-name-label" aria-describedby="contact-1-name-hint contact-1-name-error" autocomplete="name"
                 type="text"
                 name="name"
                 placeholder="Full Name"
                 required
                 minlength="2"
               />
-              <span class="footer-field__error"></span>
+              <span class="field-hint" id="contact-1-name-hint">Required. At least 2 characters.</span>
+              <span class="footer-field__error" id="contact-1-name-error"></span>
             </label>
     
             <label class="footer-field">
-              <input type="email" name="email" placeholder="Email" required />
-              <span class="footer-field__error"></span>
+              <span class="footer-field__label" id="contact-1-email-label">Email (required)</span>
+              <input id="contact-1-email" aria-labelledby="contact-1-email-label" aria-describedby="contact-1-email-hint contact-1-email-error" autocomplete="email" type="email" name="email" placeholder="Email" required />
+              <span class="field-hint" id="contact-1-email-hint">Required.</span>
+              <span class="footer-field__error" id="contact-1-email-error"></span>
             </label>
     
             <label class="footer-field">
-              <input
+              <span class="footer-field__label" id="contact-1-company-label">Company (required)</span>
+              <input id="contact-1-company" aria-labelledby="contact-1-company-label" aria-describedby="contact-1-company-hint contact-1-company-error" autocomplete="organization"
                 type="text"
                 name="company"
                 placeholder="Company"
                 required
                 minlength="2"
               />
-              <span class="footer-field__error"></span>
+              <span class="field-hint" id="contact-1-company-hint">Required. At least 2 characters.</span>
+              <span class="footer-field__error" id="contact-1-company-error"></span>
             </label>
           </div>
     
           <div class="footer-form__row footer-form__row--bottom">
             <label class="footer-field footer-field--message">
-              <input
+              <span class="footer-field__label" id="contact-1-message-label">Message (required)</span>
+              <input id="contact-1-message" aria-labelledby="contact-1-message-label" aria-describedby="contact-1-message-hint contact-1-message-error"
                 type="text"
                 name="message"
                 placeholder="Message"
                 required
                 minlength="10"
               />
-              <span class="footer-field__error"></span>
+              <span class="field-hint" id="contact-1-message-hint">Required. At least 10 characters.</span>
+              <span class="footer-field__error" id="contact-1-message-error"></span>
             </label>
     
             <button
@@ -625,7 +650,7 @@
           >
             Send
           </button>
-          <div class="footer-form__status" id="formStatus"></div>
+          <div class="footer-form__status" role="status" aria-live="polite" aria-atomic="true" id="formStatus"></div>
         </form>
         <div class="google-privacy">
           <p>This site is protected by reCAPTCHA and the
@@ -658,14 +683,10 @@
         </div>
       </div>
     </footer>
-    <div class="popup" id="formPopup" aria-hidden="true">
-      <div class="popup__backdrop"></div>
+    <dialog class="popup" id="formPopup" aria-labelledby="contact-popup-title">
     
       <div
         class="popup__content"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Form popup"
       >
         <button class="popup__close" type="button" aria-label="Close popup">
           X
@@ -673,48 +694,56 @@
     
         <div class="popup__body">
           <div class="footer__col footer__col--connect">
-            <h3 class="footer__title">PLEASE, FILL IN THE FORM</h3>
+            <h2 class="footer__title" id="contact-popup-title">Contact us</h2>
     
             <form class="footer-form" novalidate>
               <div class="footer-form__row footer-form__row--top">
                 <label class="footer-field">
-                  <input
+              <span class="footer-field__label" id="contact-2-name-label">Full name (required)</span>
+              <input id="contact-2-name" aria-labelledby="contact-2-name-label" aria-describedby="contact-2-name-hint contact-2-name-error" autocomplete="name"
                     type="text"
                     name="name"
                     placeholder="Full Name"
                     required
                     minlength="2"
                   />
-                  <span class="footer-field__error"></span>
+              <span class="field-hint" id="contact-2-name-hint">Required. At least 2 characters.</span>
+              <span class="footer-field__error" id="contact-2-name-error"></span>
                 </label>
     
                 <label class="footer-field">
-                  <input type="email" name="email" placeholder="Email" required />
-                  <span class="footer-field__error"></span>
+              <span class="footer-field__label" id="contact-2-email-label">Email (required)</span>
+              <input id="contact-2-email" aria-labelledby="contact-2-email-label" aria-describedby="contact-2-email-hint contact-2-email-error" autocomplete="email" type="email" name="email" placeholder="Email" required />
+              <span class="field-hint" id="contact-2-email-hint">Required.</span>
+              <span class="footer-field__error" id="contact-2-email-error"></span>
                 </label>
     
                 <label class="footer-field">
-                  <input
+              <span class="footer-field__label" id="contact-2-company-label">Company (required)</span>
+              <input id="contact-2-company" aria-labelledby="contact-2-company-label" aria-describedby="contact-2-company-hint contact-2-company-error" autocomplete="organization"
                     type="text"
                     name="company"
                     placeholder="Company"
                     required
                     minlength="2"
                   />
-                  <span class="footer-field__error"></span>
+              <span class="field-hint" id="contact-2-company-hint">Required. At least 2 characters.</span>
+              <span class="footer-field__error" id="contact-2-company-error"></span>
                 </label>
               </div>
     
               <div class="footer-form__row footer-form__row--bottom">
                 <label class="footer-field footer-field--message">
-                  <input
+              <span class="footer-field__label" id="contact-2-message-label">Message (required)</span>
+              <input id="contact-2-message" aria-labelledby="contact-2-message-label" aria-describedby="contact-2-message-hint contact-2-message-error"
                     type="text"
                     name="message"
                     placeholder="Message"
                     required
                     minlength="10"
                   />
-                  <span class="footer-field__error"></span>
+              <span class="field-hint" id="contact-2-message-hint">Required. At least 10 characters.</span>
+              <span class="footer-field__error" id="contact-2-message-error"></span>
                 </label>
     
                 <button
@@ -737,7 +766,7 @@
                 Send
               </button>
     
-              <div class="footer-form__status"></div>
+              <div class="footer-form__status" role="status" aria-live="polite" aria-atomic="true"></div>
             </form>
     
             <div class="google-privacy">
@@ -772,7 +801,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </dialog>
     <dialog
       class="newsletter-popup"
       id="subscribePopup"
