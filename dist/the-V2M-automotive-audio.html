@@ -84,8 +84,8 @@
         }
       }
     </script>
-    <script type="module" crossorigin src="./assets/main-DTrelYj_.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-b3le5YXk.css">
+    <script type="module" crossorigin src="./assets/main-tpcR5Hxw.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-DJT94t9S.css">
   </head>
 
   <body data-scroll-container id="body">
@@ -438,7 +438,11 @@
       <div class="footer__col footer__col--connect">
         <h2 class="footer__title">Connect</h2>
     
-        <form class="footer-form" id="contactForm" novalidate>
+        <form class="footer-form" id="contactForm" aria-describedby="contact-1-captcha-instructions" novalidate>
+          <p class="captcha-instructions" id="contact-1-captcha-instructions">
+            Before sending, complete the “I’m not a robot” checkbox below.
+            If you cannot use the verification, <a href="mailto:info@v2minc.com">email info@v2minc.com</a> instead.
+          </p>
           <div class="footer-form__row footer-form__row--top">
             <label class="footer-field">
               <span class="footer-field__label" id="contact-1-name-label">Full name (required)</span>
@@ -499,7 +503,9 @@
                 class="g-recaptcha"
                 data-sitekey="6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ"
               ></div> -->
-          <div class="g-recaptcha"></div>
+          <div class="g-recaptcha" data-size="compact"></div>
+          <p class="captcha-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+          <button class="captcha-retry" type="button">Load verification</button>
           <button
             type="submit"
             class="footer-form__button footer-form__button_mobile"
@@ -552,7 +558,11 @@
           <div class="footer__col footer__col--connect">
             <h2 class="footer__title" id="contact-popup-title">Contact us</h2>
     
-            <form class="footer-form" novalidate>
+            <form class="footer-form" aria-describedby="contact-2-captcha-instructions" novalidate>
+              <p class="captcha-instructions" id="contact-2-captcha-instructions">
+                Before sending, complete the “I’m not a robot” checkbox below.
+                If you cannot use the verification, <a href="mailto:info@v2minc.com">email info@v2minc.com</a> instead.
+              </p>
               <div class="footer-form__row footer-form__row--top">
                 <label class="footer-field">
               <span class="footer-field__label" id="contact-2-name-label">Full name (required)</span>
@@ -614,7 +624,9 @@
                     class="g-recaptcha"
                     data-sitekey="6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ"
                   ></div> -->
-              <div class="g-recaptcha"></div>
+              <div class="g-recaptcha" data-size="compact"></div>
+              <p class="captcha-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+              <button class="captcha-retry" type="button">Load verification</button>
               <button
                 type="submit"
                 class="footer-form__button footer-form__button_mobile"
@@ -681,7 +693,7 @@
           Product developments, engineering stories and company news.
         </p>
     
-        <form class="subscribe-form" action="/subscribe.php" method="post">
+        <form class="subscribe-form" action="/subscribe.php" method="post" aria-describedby="subscribe-captcha-instructions">
           <label class="subscribe-form__field" for="subscribe-email">
             Email address
           </label>
@@ -696,8 +708,15 @@
             required
           />
     
+          <p class="captcha-instructions" id="subscribe-captcha-instructions">
+            Before subscribing, complete the “I’m not a robot” checkbox below.
+            If you cannot use the verification, <a href="mailto:info@v2minc.com">email info@v2minc.com</a> for help.
+          </p>
+    
           <div class="subscribe-form__captcha">
             <div class="g-recaptcha" data-size="compact"></div>
+            <p class="captcha-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+            <button class="captcha-retry" type="button">Load verification</button>
           </div>
     
           <button class="subscribe-form__button" type="submit">
@@ -726,5 +745,6 @@
         </div>
       </div>
     </dialog>
+
   </body>
 </html>

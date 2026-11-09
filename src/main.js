@@ -3,76 +3,10 @@ import './scripts/accordion';
 import './scripts/popup';
 import './scripts/game';
 import './scripts/accessibility';
+import { initRecaptcha, getCaptchaResponse, resetCaptcha } from './scripts/recaptcha';
 import LocomotiveScroll from 'locomotive-scroll';
 import { CountUp } from 'countup.js';
 import 'locomotive-scroll/dist/locomotive-scroll.css';
-
-// const SITE_KEY = '6Lez8h0sAAAAADdaE2JnXf7Q-9WmNsRBTO5UitSQ';
-
-// window.onRecaptchaLoad = function () {
-//   document.querySelectorAll('.footer-form').forEach((form) => {
-//     const captchaEl = form.querySelector('.g-recaptcha');
-
-//     if (captchaEl) {
-//       form.dataset.captchaId = grecaptcha.render(captchaEl, {
-//         sitekey: SITE_KEY,
-//       });
-//     }
-//   });
-// };
-
-const SITE_KEY = '6LdoHHctAAAAAEtHnOQk7artruoIaoWxmMlF6mYG';
-
-let recaptchaLoadingPromise = null;
-
-/**
- * Loads Google reCAPTCHA after registering the global callback.
- */
-function loadRecaptcha() {
-  if (window.grecaptcha?.render) {
-    return Promise.resolve(window.grecaptcha);
-  }
-
-  if (recaptchaLoadingPromise) {
-    return recaptchaLoadingPromise;
-  }
-
-  recaptchaLoadingPromise = new Promise((resolve, reject) => {
-    window.onRecaptchaLoad = () => {
-      const recaptcha = window.grecaptcha;
-
-      delete window.onRecaptchaLoad;
-
-      if (!recaptcha?.render) {
-        reject(new Error('reCAPTCHA API is unavailable'));
-        return;
-      }
-
-      resolve(recaptcha);
-    };
-
-    const script = document.createElement('script');
-
-    script.src =
-      'https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit';
-    script.async = true;
-    script.defer = true;
-
-    script.addEventListener(
-      'error',
-      () => {
-        delete window.onRecaptchaLoad;
-        recaptchaLoadingPromise = null;
-        reject(new Error('Failed to load reCAPTCHA'));
-      },
-      { once: true },
-    );
-
-    document.head.appendChild(script);
-  });
-
-  return recaptchaLoadingPromise;
-}
 
 function initSubscribePopup() {
   const dialog = document.querySelector('#subscribePopup');
@@ -127,18 +61,9 @@ function initSubscribePopup() {
 
     if (isSubmitting || !form.reportValidity()) return;
 
-    const captchaId = form.dataset.captchaId;
-    const captcha = window.grecaptcha;
-
-    if (!captcha || captchaId === undefined) {
-      showStatus('Verification is loading. Please try again shortly.', 'error');
-      return;
-    }
-
-    const token = captcha.getResponse(Number(captchaId));
-
-    if (!token) {
-      showStatus('Please complete the captcha.', 'error');
+    const { token, error: captchaError } = getCaptchaResponse(form);
+    if (captchaError) {
+      showStatus(captchaError, 'error');
       return;
     }
 
@@ -184,37 +109,12 @@ function initSubscribePopup() {
         'error',
       );
     } finally {
-      captcha.reset(Number(captchaId));
+      resetCaptcha(form);
       isSubmitting = false;
       submitButton.disabled = false;
       submitButton.textContent = 'Subscribe';
     }
   });
-}
-
-/**
- * Renders reCAPTCHA for every contact form.
- */
-async function initRecaptcha() {
-  try {
-    const recaptcha = await loadRecaptcha();
-
-    document.querySelectorAll('.footer-form, .subscribe-form').forEach((form) => {
-      const captchaEl = form.querySelector('.g-recaptcha');
-
-      if (!captchaEl || form.dataset.captchaId !== undefined) {
-        return;
-      }
-
-      const captchaId = recaptcha.render(captchaEl, {
-        sitekey: SITE_KEY,
-        size: captchaEl.dataset.size || 'normal',
-      });
-      form.dataset.captchaId = String(captchaId);
-    });
-  } catch (error) {
-    console.error('Failed to initialize reCAPTCHA:', error);
-  }
 }
 
 /**
@@ -649,14 +549,7 @@ function initYoutubePreviews() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  // void initRecaptcha()
-  document.addEventListener('focusin', (event) => {
-    if (!(event.target instanceof Element)) return;
-
-    if (event.target.closest('form')) {
-      void initRecaptcha();
-    }
-  });
+  initRecaptcha();
   const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
@@ -787,15 +680,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
       const invalidInputs = [...inputs].filter((input) => !validateField(input));
 
-      // const captchaToken =
-      //   typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
-      const captchaId = form.dataset.captchaId;
-
-      const captchaToken =
-        typeof grecaptcha !== 'undefined' && captchaId !== undefined
-          ? grecaptcha.getResponse(Number(captchaId))
-          : '';
-
       if (invalidInputs.length > 0) {
         form.classList.add('is-error');
         form.classList.remove('is-success');
@@ -809,15 +693,17 @@ window.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      if (!captchaToken) {
+      const { token: captchaToken, error: captchaError } = getCaptchaResponse(form);
+      if (captchaError) {
         form.classList.add('is-error');
         form.classList.remove('is-success');
-        if (statusEl) statusEl.textContent = 'Please complete the captcha';
+        if (statusEl) statusEl.textContent = captchaError;
         return;
       }
 
       const formData = new FormData(form);
       formData.append('action', 'contact-form');
+      formData.set('g-recaptcha-response', captchaToken);
 
       try {
         isSubmitting = true;
@@ -842,20 +728,14 @@ window.addEventListener('DOMContentLoaded', () => {
         if (statusEl) statusEl.textContent = 'Sent successfully';
         form.reset();
 
-        if (typeof grecaptcha !== 'undefined') {
-          // grecaptcha.reset();
-          grecaptcha.reset(Number(captchaId));
-        }
+        resetCaptcha(form);
       } catch (err) {
         form.classList.add('is-error');
         form.classList.remove('is-success');
         if (statusEl) statusEl.textContent = err.message || 'Error. Try again';
         console.error(err);
 
-        if (typeof grecaptcha !== 'undefined') {
-          // grecaptcha.reset();
-          grecaptcha.reset(Number(captchaId));
-        }
+        resetCaptcha(form);
       } finally {
         isSubmitting = false;
         form.removeAttribute('aria-busy');

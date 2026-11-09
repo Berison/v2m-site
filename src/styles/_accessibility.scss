@@ -30,6 +30,36 @@
 .footer-field input:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 .footer-form__row--top { row-gap: 24px; margin-bottom: 28px; }
 .footer-form__button[aria-disabled="true"] { cursor: progress; }
+.captcha-instructions {
+  margin: 0 0 24px;
+  color: #ddd;
+  font-size: 16px;
+  line-height: 1.5;
+  a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+}
+.captcha-feedback {
+  min-height: 3em;
+  margin: 12px 0;
+  color: #ddd;
+  font-size: 16px;
+  line-height: 1.5;
+  &.is-error { color: #ffb4b4; }
+}
+.footer-form .g-recaptcha,
+.subscribe-form .g-recaptcha { min-height: 144px; }
+.captcha-retry {
+  min-height: 44px;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  line-height: 1.5;
+  &[hidden] { display: none; }
+  &[aria-disabled="true"] { cursor: progress; }
+}
 .footer__title { font-size: 16px; }
 html.contact-popup-open,
 html.contact-popup-open body { overflow: hidden; }
