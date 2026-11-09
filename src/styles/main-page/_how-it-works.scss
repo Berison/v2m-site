@@ -32,7 +32,11 @@
     }
 
     &-text {
-      p {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
         color: #1e2f30;
         font-family: "SF Pro";
         font-size: 24px;

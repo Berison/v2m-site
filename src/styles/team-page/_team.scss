@@ -262,6 +262,8 @@
 .team-list {
   max-width: 1460px;
   margin: 0 auto;
+  padding: 0;
+  list-style: none;
 
   &-item {
     border-radius: 20px;

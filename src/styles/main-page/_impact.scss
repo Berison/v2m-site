@@ -8,7 +8,8 @@
     flex-direction: column;
   }
 
-  & > div {
+  & > .benefits-inner-title,
+  & > .benefits-inner-list {
     max-width: calc(50% - 20px);
     width: 100%;
 
@@ -32,6 +33,10 @@
   }
 
   .benefits-inner-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
     .benefit-item:not(:last-of-type) {
       border-bottom: 1px solid #cacbbd;
     }

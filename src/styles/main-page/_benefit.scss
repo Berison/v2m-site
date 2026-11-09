@@ -144,6 +144,12 @@
     }
   }
 
+  ul.benefit-card__list {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+  }
+
   &__list-item {
     display: flex;
     align-items: flex-start;
