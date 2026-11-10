@@ -318,7 +318,7 @@
   }
 
   .press-card a,
-  .insight-card { scroll-margin-block: 120px 40px; }
+  .insight-card { scroll-margin-block-end: 40px; }
   .press-card a { display: block; }
   .press-card a:focus-visible { outline-color: #fff; }
   .insights-section__label { font-weight: 400; }

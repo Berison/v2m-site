@@ -110,7 +110,6 @@
     line-height: 1.05;
     letter-spacing: -1.5px;
     overflow-wrap: anywhere;
-    scroll-margin-top: 140px;
   }
 
   &__empty {
@@ -150,7 +149,6 @@
     &__title {
       font-size: 44px;
       letter-spacing: -1px;
-      scroll-margin-top: 120px;
     }
 
     &__empty {
@@ -248,7 +246,7 @@
     }
   }
 
-  scroll-margin-block: 120px 40px;
+  scroll-margin-block-end: 40px;
 
   &:focus-visible {
     outline: 2px solid #1e2f30;

@@ -1,4 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.site-header');
+  if (header) {
+    let headerClearance;
+    // Keep anchors and keyboard focus clear of the fixed header, including after text resizing.
+    const updateHeaderClearance = () => {
+      headerClearance = Math.ceil(header.getBoundingClientRect().bottom + 16);
+      document.documentElement.style.setProperty('--site-header-clearance', `${headerClearance}px`);
+    };
+    updateHeaderClearance();
+    if ('ResizeObserver' in window) new ResizeObserver(updateHeaderClearance).observe(header);
+    window.addEventListener('resize', updateHeaderClearance);
+
+    document.addEventListener('focusin', ({ target }) => {
+      if (!target.closest('main') || target.matches('main')) return;
+      // Native focus scrolling can center tall controls with their top behind the header.
+      requestAnimationFrame(() => {
+        if (target === document.activeElement && target.getBoundingClientRect().top < headerClearance) {
+          target.scrollIntoView({ block: 'start', behavior: 'instant' });
+        }
+      });
+    });
+  }
+
   // Explicit disclosures work with keyboard, mouse and touch, without hover traps.
   const dots = document.querySelectorAll('.home-page .dot');
   const closeDetails = () => dots.forEach(button => {

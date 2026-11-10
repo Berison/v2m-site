@@ -69,10 +69,11 @@
     </script>
   </head>
   <body data-scroll-container id="body">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="cursor" aria-hidden="true"></div>
     <div class="cursor-dot" aria-hidden="true"></div>
     {{> header}}
-    <main class="product-article-section" id="main-content">
+    <main class="product-article-section" id="main-content" tabindex="-1" aria-labelledby="article-title">
       <div class="container">
         <article
           id="article"
