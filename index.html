@@ -655,8 +655,15 @@
               <img src="./src/assets/car-transparent.png" alt="Car" />
             </div>
           </div>
-          <div class="test-result" id="testResult" role="status" aria-live="polite" aria-atomic="true">
-            <div class="test-result__text"></div>
+          <div class="sound-quiz-intro">
+            <h3>Can you identify these vehicle sounds?</h3>
+            <p>
+              This optional audio quiz contains four vehicle noise recordings.
+              Listen to each recording and choose the component you think is
+              responsible. You can
+              <a class="sound-answers-link" href="#sound-answers-summary">read the answers without audio</a>
+              at any time. Completing the quiz is not required to contact us.
+            </p>
           </div>
           <div class="sound-cards">
             <div class="sound-card">
@@ -665,6 +672,7 @@
                   type="button"
                   class="play-button"
                   aria-label="Play Sound 1"
+                  aria-describedby="sound-description-1"
                 ></button>
 
                 <div class="sound-player__content">
@@ -681,11 +689,14 @@
                 </div>
               </div>
 
+              <p class="sound-card__description" id="sound-description-1">
+                Vehicle noise recording 1 of 4. Which component is making this sound?
+              </p>
               <audio class="game-audio" preload="metadata">
                 <source src="/assets/audio/sound-1.aac" type="audio/aac" />
               </audio>
 
-              <div class="sound-checks" role="group" aria-labelledby="sound-title-1">
+              <div class="sound-checks" role="group" aria-labelledby="sound-title-1" aria-describedby="sound-description-1">
                 <label class="sound-check-item">
                   <input type="radio" name="sound-1" value="1" />
                   <span>Exhaust gas recirculation</span>
@@ -713,6 +724,7 @@
                   type="button"
                   class="play-button"
                   aria-label="Play Sound 2"
+                  aria-describedby="sound-description-2"
                 ></button>
 
                 <div class="sound-player__content">
@@ -729,11 +741,14 @@
                 </div>
               </div>
 
+              <p class="sound-card__description" id="sound-description-2">
+                Vehicle noise recording 2 of 4. Which component is making this sound?
+              </p>
               <audio class="game-audio" preload="metadata">
                 <source src="/assets/audio/sound-2.aac" type="audio/aac" />
               </audio>
 
-              <div class="sound-checks" role="group" aria-labelledby="sound-title-2">
+              <div class="sound-checks" role="group" aria-labelledby="sound-title-2" aria-describedby="sound-description-2">
                 <label class="sound-check-item">
                   <input type="radio" name="sound-2" value="1" />
                   <span>Exhaust gas recirculation</span>
@@ -761,6 +776,7 @@
                   type="button"
                   class="play-button"
                   aria-label="Play Sound 3"
+                  aria-describedby="sound-description-3"
                 ></button>
 
                 <div class="sound-player__content">
@@ -777,11 +793,14 @@
                 </div>
               </div>
 
+              <p class="sound-card__description" id="sound-description-3">
+                Vehicle noise recording 3 of 4. Which component is making this sound?
+              </p>
               <audio class="game-audio" preload="metadata">
                 <source src="/assets/audio/sound-3.aac" type="audio/aac" />
               </audio>
 
-              <div class="sound-checks" role="group" aria-labelledby="sound-title-3">
+              <div class="sound-checks" role="group" aria-labelledby="sound-title-3" aria-describedby="sound-description-3">
                 <label class="sound-check-item">
                   <input type="radio" name="sound-3" value="1" />
                   <span>Exhaust gas recirculation</span>
@@ -809,6 +828,7 @@
                   type="button"
                   class="play-button"
                   aria-label="Play Sound 4"
+                  aria-describedby="sound-description-4"
                 ></button>
 
                 <div class="sound-player__content">
@@ -825,11 +845,14 @@
                 </div>
               </div>
 
+              <p class="sound-card__description" id="sound-description-4">
+                Vehicle noise recording 4 of 4. Which component is making this sound?
+              </p>
               <audio class="game-audio" preload="metadata">
                 <source src="/assets/audio/sound-4.aac" type="audio/aac" />
               </audio>
 
-              <div class="sound-checks" role="group" aria-labelledby="sound-title-4">
+              <div class="sound-checks" role="group" aria-labelledby="sound-title-4" aria-describedby="sound-description-4">
                 <label class="sound-check-item">
                   <input type="radio" name="sound-4" value="1" />
                   <span>Exhaust gas recirculation</span>
@@ -854,9 +877,39 @@
           </div>
           <div class="why-we-are-here-button">
             <button type="button" class="green-button test-button">
-              Test your hearing
+              Check my answers
             </button>
           </div>
+          <p class="test-result" id="testResult" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
+          <details class="sound-answers" id="sound-answers">
+            <summary id="sound-answers-summary">Read the answers without audio</summary>
+            <div class="sound-answers__content">
+              <h3>Quiz answer key</h3>
+              <p>
+                These recordings illustrate how difficult it can be to identify a
+                vehicle component by sound alone. The answer key below gives the
+                component for each recording.
+              </p>
+              <ol role="list">
+                <li data-answer-for="sound-1" data-correct-answer="1">
+                  <h4>Sound 1 — Exhaust gas recirculation (EGR)</h4>
+                  <p>The EGR system routes some exhaust gas back into the engine intake.</p>
+                </li>
+                <li data-answer-for="sound-2" data-correct-answer="4">
+                  <h4>Sound 2 — Alternator</h4>
+                  <p>The alternator generates electrical power while the engine is running.</p>
+                </li>
+                <li data-answer-for="sound-3" data-correct-answer="2">
+                  <h4>Sound 3 — Belt tensioner</h4>
+                  <p>The belt tensioner maintains tension in the engine's accessory drive belt.</p>
+                </li>
+                <li data-answer-for="sound-4" data-correct-answer="3">
+                  <h4>Sound 4 — Blower motor</h4>
+                  <p>The blower motor drives the fan that moves air through the vehicle's heating and ventilation system.</p>
+                </li>
+              </ol>
+            </div>
+          </details>
         </div>
       </div>
     </section>

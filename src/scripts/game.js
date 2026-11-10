@@ -1,42 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
   const testBtn = document.querySelector('.test-button');
   const resultEl = document.getElementById('testResult');
+  const answerKey = document.getElementById('sound-answers');
+  const cards = [...document.querySelectorAll('.sound-card')];
 
-  const correctAnswers = ['1', '4', '2', '3'];
+  if (!testBtn || !resultEl || !answerKey || !cards.length) return;
 
-  if (!testBtn || !resultEl) return;
+  // Keep scoring and the visible answer key in sync, even if cards are reordered.
+  const correctAnswers = new Map(
+    [...answerKey.querySelectorAll('[data-answer-for]')].map(answer =>
+      [answer.dataset.answerFor, answer.dataset.correctAnswer]),
+  );
+
+  document.querySelector('.sound-answers-link')?.addEventListener('click', () => {
+    answerKey.open = true;
+  });
+
   testBtn.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.sound-card');
-
     let score = 0;
-    let allAnswered = true;
+    const unanswered = [];
 
-    cards.forEach((card, index) => {
+    cards.forEach(card => {
       const checked = card.querySelector('input[type="radio"]:checked');
 
       if (!checked) {
-        allAnswered = false;
+        unanswered.push(card.querySelector('.sound-player__title').textContent.trim());
         return;
       }
 
-      if (checked.value === correctAnswers[index]) {
+      if (checked.value === correctAnswers.get(checked.name)) {
         score += 1;
       }
     });
 
     resultEl.classList.remove('success', 'error', 'show');
 
-    if (!allAnswered) {
-      resultEl.textContent = 'Please choose an answer for each sound before checking your results.';
+    if (unanswered.length) {
+      resultEl.textContent = `Please choose an answer for ${unanswered.join(', ')} before checking your results.`;
       resultEl.classList.add('error');
-    } else if (score === correctAnswers.length) {
-      resultEl.textContent = 'Got it! You must be an expert!';
+    } else if (score === cards.length) {
+      resultEl.textContent = 'Got it! You must be an expert! The answers are shown below.';
       resultEl.classList.add('success');
     } else {
-      resultEl.textContent = `You identified ${score} of ${correctAnswers.length} sounds correctly. Try again!`;
+      resultEl.textContent = `You identified ${score} of ${cards.length} sounds correctly. Read the answers below and try again!`;
       resultEl.classList.add('error');
     }
 
+    if (!unanswered.length) answerKey.open = true;
     resultEl.classList.add('show');
+    resultEl.focus();
   });
 });
